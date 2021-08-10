@@ -60,6 +60,10 @@ object PishkhanCore {
         applicationUniqueToken?.let { VersionControl.getDownloadLink(context, it, callback) }
     }
 
+    fun logout(context: Context) {
+        PishkhanUser.saveSession(context, "")
+    }
+
     fun startHistoryFragment(
         activity: WhyGoogleActivity<*>,
         transActionCategoryTypeName: String,

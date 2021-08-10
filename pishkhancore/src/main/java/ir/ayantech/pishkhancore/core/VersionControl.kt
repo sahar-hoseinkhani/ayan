@@ -33,7 +33,7 @@ internal class VersionControl(
             },
             EndPoint.CheckVersion,
             CheckVersionInput(
-                InformationHelper.getApplicationName(activity),
+                InformationHelper.getApplicationNameForVersionControl(activity),
                 InformationHelper.getApplicationType(activity),
                 InformationHelper.getApplicationCategory(applicationUniqueToken),
                 InformationHelper.getApplicationVersion(activity),
@@ -57,7 +57,7 @@ internal class VersionControl(
             },
             EndPoint.GetLastVersion,
             GetLastVersionInput(
-                InformationHelper.getApplicationName(activity),
+                InformationHelper.getApplicationNameForVersionControl(activity),
                 InformationHelper.getApplicationType(activity),
                 InformationHelper.getApplicationCategory(applicationUniqueToken),
                 InformationHelper.getApplicationVersion(activity),
@@ -80,7 +80,7 @@ internal class VersionControl(
                 },
                 EndPoint.GetLastVersion,
                 GetLastVersionInput(
-                    InformationHelper.getApplicationName(context),
+                    InformationHelper.getApplicationNameForVersionControl(context),
                     InformationHelper.getApplicationType(context),
                     InformationHelper.getApplicationCategory(applicationUniqueToken),
                     InformationHelper.getApplicationVersion(context),
@@ -110,7 +110,7 @@ internal class VersionControl(
                 },
                 EndPoint.GetLastVersion,
                 GetLastVersionInput(
-                    InformationHelper.getApplicationName(context),
+                    InformationHelper.getApplicationNameForVersionControl(context),
                     InformationHelper.getApplicationType(context),
                     InformationHelper.getApplicationCategory(applicationUniqueToken),
                     InformationHelper.getApplicationVersion(context),

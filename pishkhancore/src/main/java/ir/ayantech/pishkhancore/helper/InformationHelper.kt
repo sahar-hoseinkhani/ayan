@@ -5,8 +5,11 @@ import ir.ayantech.pishkhancore.R
 
 internal class InformationHelper {
     companion object {
-        fun getApplicationName(context: Context) =
-            context.resources.getString(R.string.applicationName)
+        fun getApplicationNameForVersionControl(context: Context) =
+            context.resources.getString(R.string.applicationNameForVersionControl)
+
+        fun getApplicationNameForPishkhan(context: Context) =
+            context.resources.getString(R.string.applicationNameForPishkhan)
 
         fun getApplicationType(context: Context) =
             context.resources.getString(R.string.applicationType)
