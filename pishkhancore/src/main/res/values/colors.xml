@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="ayanColorLightGray">#f3f6ff</color>
+    <color name="ayanGreyTextColor">#9b9b9b</color>
+    <color name="ayanColorHighlight">#1a9b9b9b</color>
+    <color name="ayanTextColor">#000000</color>
+    <color name="ayanColorWhite">#ffffff</color>
+    <color name="ayanIconAccent">#FFFF9800</color>
+
+
+</resources>

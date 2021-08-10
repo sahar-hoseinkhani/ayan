@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainLl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/ayanHalfPadding"
+    android:paddingTop="@dimen/ayanHalfPadding"
+    android:paddingRight="@dimen/ayanHalfPadding"
+    android:paddingBottom="@dimen/ayanHalfPadding">
+
+    <LinearLayout
+        android:id="@+id/expandCollapseLl"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:splitMotionEvents="false">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/main_padding"
+            android:layout_height="@dimen/main_padding"
+            android:tint="@color/colorAccent"
+            app:srcCompat="@drawable/ic_keyboard_arrow_down_black_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/ayanCardPadding"
+            android:text="جزئیات"
+            android:textColor="@color/colorAccent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/itemTitleTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/ayanHalfPadding"
+            android:layout_marginRight="@dimen/ayanHalfPadding"
+            android:ellipsize="end"
+            android:gravity="right"
+            android:maxLines="1"
+            android:textColor="@color/ayanTextColor"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/itemDescriptionTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/ayanHalfPadding"
+            android:layout_marginTop="@dimen/ayanCardPadding"
+            android:layout_marginRight="@dimen/ayanHalfPadding"
+            android:ellipsize="end"
+            android:gravity="right"
+            android:maxLines="1"
+            android:textColor="@color/ayanGreyTextColor"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/yearTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/ayanTextColor"
+        android:textStyle="bold" />
+</LinearLayout>

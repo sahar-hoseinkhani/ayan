@@ -1,0 +1,30 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="50.622dp"
+    android:height="41.467dp"
+    android:viewportWidth="50.622"
+    android:viewportHeight="41.467">
+  <path
+      android:pathData="M24.843,31.666L5.8,31.666a5.807,5.807 0,0 1,-5.8 -5.8L0,5.8A5.808,5.808 0,0 1,5.8 0L44.821,0a5.807,5.807 0,0 1,5.8 5.8L50.621,23.729L47.458,23.729L47.458,5.8a2.64,2.64 0,0 0,-2.637 -2.637L5.8,3.163A2.64,2.64 0,0 0,3.164 5.8L3.164,25.865A2.64,2.64 0,0 0,5.8 28.5L24.843,28.5Z"
+      android:fillColor="@color/ayanTextColor"/>
+  <path
+      android:pathData="M25.311,22.16a6.328,6.328 0,1 1,6.328 -6.328A6.335,6.335 0,0 1,25.311 22.16ZM25.311,12.668a3.164,3.164 0,1 0,3.164 3.164A3.168,3.168 0,0 0,25.311 12.669Z"
+      android:fillColor="@color/ayanTextColor"/>
+  <path
+      android:pathData="M8.649,10.144a1.972,1.972 0,1 1,1.972 -1.972A1.975,1.975 0,0 1,8.649 10.144Z"
+      android:fillColor="@color/ayanTextColor"/>
+  <path
+      android:pathData="M45.035,26.846h2.437v9.747L45.035,36.593Z"
+      android:fillColor="@color/ayanIconAccent"/>
+  <path
+      android:pathData="M26.352,26.846h2.437v9.747L26.352,36.593Z"
+      android:fillColor="@color/ayanIconAccent"/>
+  <path
+      android:pathData="M36.912,31.719c-5.247,0 -10.56,-1.673 -10.56,-4.874S31.664,21.972 36.912,21.972s10.56,1.673 10.56,4.874S42.159,31.719 36.912,31.719ZM36.912,24.408c-5.359,0 -8.123,1.709 -8.123,2.437s2.763,2.437 8.123,2.437 8.123,-1.709 8.123,-2.437S42.271,24.409 36.912,24.409Z"
+      android:fillColor="@color/ayanIconAccent"/>
+  <path
+      android:pathData="M36.912,41.467C31.664,41.467 26.352,39.793 26.352,36.593h2.437c0,0.728 2.763,2.437 8.123,2.437S45.035,37.321 45.035,36.593h2.437C47.471,39.793 42.159,41.467 36.912,41.467Z"
+      android:fillColor="@color/ayanIconAccent"/>
+  <path
+      android:pathData="M36.912,36.593C31.664,36.593 26.352,34.919 26.352,31.719h2.437c0,0.728 2.763,2.437 8.123,2.437S45.035,32.447 45.035,31.719h2.437C47.471,34.919 42.159,36.593 36.912,36.593Z"
+      android:fillColor="@color/ayanIconAccent"/>
+</vector>

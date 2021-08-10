@@ -1,0 +1,25 @@
+<vector android:height="16dp" android:viewportHeight="34"
+    android:viewportWidth="51" android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="@color/ayanIconAccent" android:pathData="M2,7h47v7h-47z"/>
+    <path android:fillColor="#00000000"
+        android:pathData="M5,1.5L46,1.5A3.5,3.5 0,0 1,49.5 5L49.5,29A3.5,3.5 0,0 1,46 32.5L5,32.5A3.5,3.5 0,0 1,1.5 29L1.5,5A3.5,3.5 0,0 1,5 1.5z"
+        android:strokeColor="@color/ayanTextColor" android:strokeWidth="3"/>
+    <path android:fillColor="#00000000"
+        android:pathData="M39,23m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0"
+        android:strokeColor="@color/ayanTextColor" android:strokeWidth="1"/>
+    <path android:fillColor="#00000000"
+        android:pathData="M43,23m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0"
+        android:strokeColor="@color/ayanIconAccent" android:strokeWidth="1"/>
+    <path android:fillColor="@color/ayanTextColor"
+        android:pathData="M7.5,20L11.5,20A1.5,1.5 0,0 1,13 21.5L13,21.5A1.5,1.5 0,0 1,11.5 23L7.5,23A1.5,1.5 0,0 1,6 21.5L6,21.5A1.5,1.5 0,0 1,7.5 20z"
+        android:strokeColor="#00000000" android:strokeWidth="1"/>
+    <path android:fillColor="#00000000"
+        android:pathData="M7.5,20.5L11.5,20.5A1,1 0,0 1,12.5 21.5L12.5,21.5A1,1 0,0 1,11.5 22.5L7.5,22.5A1,1 0,0 1,6.5 21.5L6.5,21.5A1,1 0,0 1,7.5 20.5z"
+        android:strokeColor="@color/ayanTextColor" android:strokeWidth="1"/>
+    <path android:fillColor="@color/ayanTextColor"
+        android:pathData="M7,24L17,24A1,1 0,0 1,18 25L18,25A1,1 0,0 1,17 26L7,26A1,1 0,0 1,6 25L6,25A1,1 0,0 1,7 24z"
+        android:strokeColor="#00000000" android:strokeWidth="1"/>
+    <path android:fillColor="#00000000"
+        android:pathData="M7,24.5L17,24.5A0.5,0.5 0,0 1,17.5 25L17.5,25A0.5,0.5 0,0 1,17 25.5L7,25.5A0.5,0.5 0,0 1,6.5 25L6.5,25A0.5,0.5 0,0 1,7 24.5z"
+        android:strokeColor="@color/ayanTextColor" android:strokeWidth="1"/>
+</vector>

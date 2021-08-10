@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/ayanMainRadius"/>
+            <solid android:color="@color/colorPrimary"/>
+            <stroke android:color="@color/ayanGreyTextColor" android:width="@dimen/ayanThinLineHeight"/>
+        </shape>
+    </item>
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/ayanMainRadius"/>
+            <solid android:color="@color/ayanGreyTextColor"/>
+        </shape>
+    </item>
+</selector>
