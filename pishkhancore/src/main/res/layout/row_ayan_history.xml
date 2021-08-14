@@ -57,7 +57,7 @@
         android:layout_toLeftOf="@+id/inquiryTypeIcon"
         android:layout_toRightOf="@+id/divider"
         android:gravity="right"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/ayanColorAccent" />
 
     <TextView
         android:id="@+id/dateTv"
@@ -68,7 +68,7 @@
         android:layout_marginRight="@dimen/ayanDoubleMainPadding"
         android:layout_toLeftOf="@+id/divider"
         android:gravity="right"
-        android:textColor="@color/black" />
+        android:textColor="@color/ayanTextColor" />
 
     <TextView
         android:layout_width="0dp"
@@ -81,7 +81,7 @@
         android:layout_toLeftOf="@+id/divider"
         android:gravity="right"
         android:text="جزئیات"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/ayanColorAccent"
         android:textStyle="bold" />
 
     <View

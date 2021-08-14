@@ -6,7 +6,8 @@
     <color name="ayanColorHighlight">#1a9b9b9b</color>
     <color name="ayanTextColor">#000000</color>
     <color name="ayanColorWhite">#ffffff</color>
-    <color name="ayanIconAccent">#FFFF9800</color>
-
+    <color name="ayanIconAccent">#FF9800</color>
+    <color name="ayanColorAccent">#2196F3</color>
+    <color name="ayanColorPrimary">#072740</color>
 
 </resources>

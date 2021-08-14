@@ -16,7 +16,7 @@
             android:id="@+id/titleTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorAccent" />
+            android:textColor="@color/ayanColorAccent" />
 
         <TextView
             android:id="@+id/messageTv"
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/ayanMainPadding"
             android:text="%0"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/ayanColorAccent"
             android:visibility="gone" />
 
         <ProgressBar
@@ -60,7 +60,7 @@
                 android:id="@+id/negativeTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/ayanColorAccent"
                 android:textSize="16sp" />
 
             <TextView
@@ -68,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/ayanMainPadding"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/ayanColorAccent"
                 android:textSize="16sp" />
         </LinearLayout>
     </LinearLayout>

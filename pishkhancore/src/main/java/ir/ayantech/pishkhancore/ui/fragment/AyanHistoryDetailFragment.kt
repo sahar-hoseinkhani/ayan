@@ -2,7 +2,7 @@ package ir.ayantech.pishkhancore.ui.fragment
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import ir.ayantech.pishkhancore.databinding.FragmentHistoryDetailBinding
+import ir.ayantech.pishkhancore.databinding.FragmentAyanHistoryDetailBinding
 import ir.ayantech.pishkhancore.helper.*
 import ir.ayantech.pishkhancore.model.PaymentHistoryGetTransactionInfoOutput
 import ir.ayantech.pishkhancore.model.getProductIcon
@@ -13,7 +13,7 @@ import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.fragment.WhyGoogleFragment
 import ir.ayantech.whygoogle.helper.*
 
-class HistoryDetailFragment : WhyGoogleFragment<FragmentHistoryDetailBinding>() {
+class AyanHistoryDetailFragment : WhyGoogleFragment<FragmentAyanHistoryDetailBinding>() {
 
     var transaction: PaymentHistoryGetTransactionInfoOutput? = null
 
@@ -82,6 +82,6 @@ class HistoryDetailFragment : WhyGoogleFragment<FragmentHistoryDetailBinding>() 
         return true
     }
 
-    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentHistoryDetailBinding
-        get() = FragmentHistoryDetailBinding::inflate
+    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentAyanHistoryDetailBinding
+        get() = FragmentAyanHistoryDetailBinding::inflate
 }

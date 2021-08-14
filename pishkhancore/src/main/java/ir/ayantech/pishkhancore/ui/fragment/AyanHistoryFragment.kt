@@ -7,16 +7,14 @@ import ir.ayantech.ayannetworking.api.AyanCallStatus
 import ir.ayantech.ayannetworking.api.CallingState
 import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.core.PishkhanCore
-import ir.ayantech.pishkhancore.databinding.FragmentHistoryBinding
+import ir.ayantech.pishkhancore.databinding.FragmentAyanHistoryBinding
 import ir.ayantech.pishkhancore.model.*
 import ir.ayantech.pishkhancore.ui.adapter.HistoryAdapter
 import ir.ayantech.pishkhancore.ui.bottomSheet.AyanErrorBottomSheet
 import ir.ayantech.whygoogle.fragment.WhyGoogleFragment
 import ir.ayantech.whygoogle.helper.*
 
-class HistoryFragment : WhyGoogleFragment<FragmentHistoryBinding>() {
-    var transActionCategoryTypeName = ""
-    var transActionTypeName = ""
+class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>() {
 
     override fun onCreate() {
         super.onCreate()
@@ -24,7 +22,7 @@ class HistoryFragment : WhyGoogleFragment<FragmentHistoryBinding>() {
             inquiryHistoryWp10?.showProgressBar()
             historyRv.verticalSetup()
             delayed {
-                getHistory(transActionCategoryTypeName, transActionTypeName)
+                getHistory()
             }
             requireContext().let { context ->
                 swipeRefreshLayout.setColorSchemeColors(
@@ -34,12 +32,12 @@ class HistoryFragment : WhyGoogleFragment<FragmentHistoryBinding>() {
             }
             swipeRefreshLayout.setOnRefreshListener {
                 swipeRefreshLayout.isRefreshing = false
-                getHistory(transActionCategoryTypeName, transActionTypeName)
+                getHistory()
             }
         }
     }
 
-    private fun getHistory(transActionCategoryTypeName: String, transActionTypeName: String) {
+    private fun getHistory() {
         accessViews {
             PishkhanCore.ayanApi?.ayanCall<PaymentHistoryGetTransactionListOutput>(
                 AyanCallStatus {
@@ -58,7 +56,7 @@ class HistoryFragment : WhyGoogleFragment<FragmentHistoryBinding>() {
                                                 PaymentHistoryGetTransactionInfoInput(it1)
                                             }
                                         ) { resp ->
-                                            start(HistoryDetailFragment().also {
+                                            start(AyanHistoryDetailFragment().also {
                                                 it.transaction = resp
                                             })
                                         }
@@ -95,8 +93,7 @@ class HistoryFragment : WhyGoogleFragment<FragmentHistoryBinding>() {
                 },
                 EndPoint.PaymentHistoryGetTransactionList,
                 PaymentHistoryGetTransactionListInput(
-                    transActionCategoryTypeName,
-                    transActionTypeName
+                    "", ""
                 )
             )
         }
@@ -112,6 +109,6 @@ class HistoryFragment : WhyGoogleFragment<FragmentHistoryBinding>() {
         }
     }
 
-    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentHistoryBinding
-        get() = FragmentHistoryBinding::inflate
+    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentAyanHistoryBinding
+        get() = FragmentAyanHistoryBinding::inflate
 }

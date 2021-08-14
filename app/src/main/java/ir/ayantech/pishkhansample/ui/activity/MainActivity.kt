@@ -18,9 +18,11 @@ class MainActivity : WhyGoogleActivity<ActivityMainBinding>() {
 
         login {
             Toast.makeText(this, PishkhanCore.getUserToken(this), Toast.LENGTH_SHORT).show()
-            PishkhanCore.startHistoryFragment(this, "", "")
+            PishkhanCore.startHistoryFragment(this)
 
             PishkhanCore.onlinePaymentBills(arrayListOf(), "", this, changeStatus = {
+
+            }, failure = {
 
             })
         }

@@ -4,10 +4,12 @@ import android.app.Application
 import android.content.Context
 import ir.ayantech.ayannetworking.api.AyanApi
 import ir.ayantech.ayannetworking.api.OnChangeStatus
+import ir.ayantech.ayannetworking.api.OnFailure
+import ir.ayantech.ayannetworking.api.SimpleCallback
 import ir.ayantech.ayannetworking.ayanModel.LogLevel
 import ir.ayantech.pishkhancore.model.AppExtraInfo
 import ir.ayantech.pishkhancore.ui.bottomSheet.AyanCheckStatusBottomSheet
-import ir.ayantech.pishkhancore.ui.fragment.HistoryFragment
+import ir.ayantech.pishkhancore.ui.fragment.AyanHistoryFragment
 import ir.ayantech.pushsdk.core.AyanNotification
 import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.helper.BooleanCallBack
@@ -66,31 +68,37 @@ object PishkhanCore {
 
     fun startHistoryFragment(
         activity: WhyGoogleActivity<*>,
-        transActionCategoryTypeName: String,
-        transActionTypeName: String
     ) {
-        activity.start(HistoryFragment().also {
-            it.transActionCategoryTypeName = transActionCategoryTypeName
-            it.transActionTypeName = transActionTypeName
-        })
+        activity.start(AyanHistoryFragment())
     }
 
     fun onlinePaymentBills(
         bills: List<String>,
         product: String,
         activity: WhyGoogleActivity<*>,
-        changeStatus: OnChangeStatus
+        changeStatus: OnChangeStatus,
+        failure: OnFailure
     ) {
-        Payment.onlinePaymentBills(bills, product, activity, changeStatus)
+        Payment.onlinePaymentBills(bills, product, activity, changeStatus, failure)
     }
 
     fun getInquiryHistory(
         product: String,
         changeStatus: OnChangeStatus,
+        failure: OnFailure,
         callBack: (List<ir.ayantech.pishkhancore.model.InquiryHistory>?) -> Unit
     ) {
-        InquiryHistory.getInquiryHistoryList(product, changeStatus) { list ->
+        InquiryHistory.getInquiryHistoryList(product, changeStatus, failure) { list ->
             callBack.invoke(list)
+        }
+    }
+
+    fun removeInquiryHistoryItem(
+        uniqueId: String, changeStatus: OnChangeStatus,
+        failure: OnFailure, removeSuccessCallback: SimpleCallback
+    ) {
+        InquiryHistory.removeInquiryHistoryItem(uniqueId, changeStatus, failure) {
+            removeSuccessCallback.invoke()
         }
     }
 }

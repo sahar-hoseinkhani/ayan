@@ -39,7 +39,8 @@ internal class VersionControl(
                 InformationHelper.getApplicationVersion(activity),
                 AppExtraInfo(PishkhanUser.getSession(activity))
             ), commonCallStatus = ayanCommonCallStatus,
-            baseUrl = defaultBaseUrl
+            baseUrl = defaultBaseUrl,
+            hasIdentity = false
         )
     }
 
@@ -63,7 +64,8 @@ internal class VersionControl(
                 InformationHelper.getApplicationVersion(activity),
                 AppExtraInfo(PishkhanUser.getSession(activity))
             ), commonCallStatus = ayanCommonCallStatus,
-            baseUrl = defaultBaseUrl
+            baseUrl = defaultBaseUrl,
+            hasIdentity = false
         )
     }
 
@@ -93,7 +95,7 @@ internal class VersionControl(
                             Toast.LENGTH_LONG
                         ).show()
                     }
-                })
+                }, hasIdentity = false)
 
         }
 
@@ -123,7 +125,8 @@ internal class VersionControl(
                             Toast.LENGTH_LONG
                         ).show()
                     }
-                }, baseUrl = defaultBaseUrl
+                }, baseUrl = defaultBaseUrl,
+                hasIdentity = false
             )
 
         }

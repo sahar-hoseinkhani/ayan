@@ -22,7 +22,7 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="@dimen/main_padding"
             android:layout_height="@dimen/main_padding"
-            android:tint="@color/colorAccent"
+            android:tint="@color/ayanColorAccent"
             app:srcCompat="@drawable/ic_keyboard_arrow_down_black_24dp" />
 
         <TextView
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/ayanCardPadding"
             android:text="جزئیات"
-            android:textColor="@color/colorAccent" />
+            android:textColor="@color/ayanColorAccent" />
     </LinearLayout>
 
     <LinearLayout

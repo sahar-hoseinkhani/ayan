@@ -9,5 +9,6 @@ object EndPoint {
     const val BillsPaymentGetLink = "BillsPaymentGetLink"
     const val BillsGetPaymentGatewayList = "BillsGetPaymentGatewayList"
     const val InquiryGetRecentList = "InquiryGetRecentList"
+    const val InquiryDeleteRecentListItem = "InquiryDeleteRecentListItem"
 
 }

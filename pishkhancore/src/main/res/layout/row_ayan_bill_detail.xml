@@ -15,7 +15,7 @@
         android:layout_width="@dimen/ayanTopIconSize"
         android:layout_height="@dimen/ayanTopIconSize"
         android:layout_marginRight="@dimen/ayanHalfPadding"
-        android:tint="@color/black"
+        android:tint="@color/ayanTextColor"
         android:visibility="gone"
         app:srcCompat="@drawable/ic_outline_file_copy_24" />
 

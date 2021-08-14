@@ -2,6 +2,7 @@ package ir.ayantech.pishkhancore.core
 
 import ir.ayantech.ayannetworking.api.AyanCallStatus
 import ir.ayantech.ayannetworking.api.OnChangeStatus
+import ir.ayantech.ayannetworking.api.OnFailure
 import ir.ayantech.pishkhancore.model.*
 import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.helper.LongCallBack
@@ -13,9 +14,10 @@ object Payment {
         bills: List<String>,
         product: String,
         activity: WhyGoogleActivity<*>,
-        changeStatus: OnChangeStatus
+        changeStatus: OnChangeStatus,
+        failure: OnFailure
     ) {
-        getBillIPGs(bills, product, changeStatus) { ipgId ->
+        getBillIPGs(bills, product, changeStatus, failure) { ipgId ->
             PishkhanCore.ayanApi?.simpleCall<BillsPaymentGetLinkOutput>(
                 EndPoint.BillsPaymentGetLink,
                 BillsPaymentGetLinkInput(bills, ipgId)
@@ -27,7 +29,7 @@ object Payment {
 
     private fun getBillIPGs(
         bills: List<String>, product: String,
-        changeStatus: OnChangeStatus, callback: LongCallBack
+        changeStatus: OnChangeStatus, failure: OnFailure, callback: LongCallBack
     ) {
         PishkhanCore.ayanApi?.ayanCall<SalesGetPaymentGatewayListOutput>(
             AyanCallStatus {
@@ -39,6 +41,7 @@ object Payment {
                     }
                 }
                 changeStatus(changeStatus)
+                failure(failure)
             }, EndPoint.BillsGetPaymentGatewayList,
             BillsGetPaymentGatewayListInput("", product, bills.size.toLong())
         )

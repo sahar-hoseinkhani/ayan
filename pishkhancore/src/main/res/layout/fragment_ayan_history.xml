@@ -9,13 +9,13 @@
         android:id="@+id/appBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/ayanColorPrimary"
         app:elevation="0dp">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:contentScrim="@color/colorPrimary"
+            app:contentScrim="@color/ayanColorPrimary"
             app:layout_scrollFlags="scroll|enterAlways|snap">
 
             <LinearLayout

@@ -9,9 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center|right"
-        android:text="لطفا صبر کنید..."
-        android:textColor="@color/ayanTextColor"
-        android:visibility="gone" />
+        android:text="لطفا صبر کنید"
+        android:textColor="@color/ayanTextColor" />
 
     <TextView
         android:id="@+id/descriptionTv"
@@ -20,20 +19,19 @@
         android:layout_below="@+id/waitTv"
         android:layout_marginTop="@dimen/ayanCardPadding"
         android:gravity="center|right"
-        android:text="در حال دریافت اطلاعات از سرور"
-        android:textColor="@color/ayanTextColor"
-        android:visibility="gone" />
+        android:text="در حال دریافت اطلاعات از سرور..."
+        android:textColor="@color/ayanTextColor" />
 
     <TextView
         android:id="@+id/cancelTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/descriptionTv"
         android:gravity="center|right"
         android:padding="@dimen/main_padding"
         android:text="انصراف"
-        android:textColor="@color/colorAccent"
-        android:textStyle="bold"
-        android:visibility="gone" />
+        android:textColor="@color/ayanColorAccent"
+        android:textStyle="bold" />
 
     <RelativeLayout
         android:id="@+id/retryRl"
@@ -68,7 +66,7 @@
             android:gravity="center|right"
             android:padding="@dimen/main_padding"
             android:text="تلاش مجدد"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/ayanColorAccent"
             android:textStyle="bold" />
 
     </RelativeLayout>
