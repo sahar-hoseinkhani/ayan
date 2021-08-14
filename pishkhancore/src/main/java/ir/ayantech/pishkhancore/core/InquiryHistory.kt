@@ -18,8 +18,8 @@ object InquiryHistory {
         PishkhanCore.ayanApi?.ayanCall<InquiryGetRecentListOutput>(
             AyanCallStatus {
                 success {
-                    it.response?.Parameters?.Recent?.let { inquiryHistoryList ->
-                        callBack.invoke(inquiryHistoryList)
+                    it.response?.Parameters?.let { resp ->
+                        callBack.invoke(resp.Recent)
                     }
                 }
                 changeStatus(changeStatus)
