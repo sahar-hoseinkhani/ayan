@@ -14,7 +14,7 @@ import ir.ayantech.pishkhancore.ui.bottomSheet.AyanErrorBottomSheet
 import ir.ayantech.whygoogle.fragment.WhyGoogleFragment
 import ir.ayantech.whygoogle.helper.*
 
-class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>() {
+open class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>() {
 
     override fun onCreate() {
         super.onCreate()
