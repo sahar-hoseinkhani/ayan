@@ -7,6 +7,7 @@ import ir.ayantech.ayannetworking.api.OnChangeStatus
 import ir.ayantech.ayannetworking.api.OnFailure
 import ir.ayantech.ayannetworking.api.SimpleCallback
 import ir.ayantech.ayannetworking.ayanModel.LogLevel
+import ir.ayantech.pishkhancore.model.AppConfigAdvertisementOutput
 import ir.ayantech.pishkhancore.model.AppExtraInfo
 import ir.ayantech.pishkhancore.ui.bottomSheet.AyanCheckStatusBottomSheet
 import ir.ayantech.pishkhancore.ui.fragment.AyanHistoryFragment
@@ -100,5 +101,12 @@ object PishkhanCore {
         AyanInquiryHistory.removeInquiryHistoryItem(uniqueId, changeStatus, failure) {
             removeSuccessCallback.invoke()
         }
+    }
+
+    fun getAppConfigAdvertisement(
+        failure: OnFailure,
+        respCallback: (AppConfigAdvertisementOutput) -> Unit
+    ) {
+        AyanAppConfigAdvertisement.getAppConfigAdvertisement(failure, respCallback)
     }
 }
