@@ -44,12 +44,12 @@ class AyanCheckStatusBottomSheet(
         super.onCreate()
 
         versionControl.checkForNewVersion { updateNotRequired ->
-            dismiss()
             when (updateNotRequired) {
                 true -> if (PishkhanUser.getSession(activity).isEmpty()) {
                     login(additionalData, mobileNumber, referenceToken)
                 } else {
                     callBack.invoke(true)
+                    dismiss()
                 }
                 else -> activity.finish()
             }
@@ -68,6 +68,7 @@ class AyanCheckStatusBottomSheet(
                         PishkhanUser.saveSession(activity, it.Token)
 //                    PishkhanUser.saveSession(activity, "ADE2F8705AFD4A7FBEE846BBCFE67F8F")
                         callBack.invoke(true)
+                        dismiss()
                     }
                 }
             }, EndPoint.Login,
@@ -80,7 +81,8 @@ class AyanCheckStatusBottomSheet(
                     )
                 },
                 mobileNumber,
-                referenceToken
+                referenceToken,
+                InformationHelper.getApplicationVersion(activity)
             ), commonCallStatus = ayanCommonCallingStatus,
             baseUrl = "https://application.monshiplus.ayantech.ir/WebServices/Services.svc/",
             hasIdentity = false
@@ -90,10 +92,14 @@ class AyanCheckStatusBottomSheet(
     private fun showNoInternetLayout(failure: Failure) {
         binding.apply {
             cancelTv.makeGone()
+            descriptionTv.makeGone()
             waitTv.makeGone()
             retryRl.makeVisible()
             errorTv.text = failure.failureMessage
             retryTv.setOnClickListener {
+                cancelTv.makeVisible()
+                descriptionTv.makeVisible()
+                waitTv.makeVisible()
                 retryRl.makeGone()
                 failure.reCallApi()
             }

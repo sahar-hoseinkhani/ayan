@@ -8,7 +8,7 @@ import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.helper.LongCallBack
 import ir.ayantech.whygoogle.helper.openUrl
 
-object Payment {
+object AyanPayment {
 
     fun onlinePaymentBills(
         bills: List<String>,

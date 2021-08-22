@@ -79,7 +79,7 @@ object PishkhanCore {
         changeStatus: OnChangeStatus,
         failure: OnFailure
     ) {
-        Payment.onlinePaymentBills(bills, product, activity, changeStatus, failure)
+        AyanPayment.onlinePaymentBills(bills, product, activity, changeStatus, failure)
     }
 
     fun getInquiryHistory(
@@ -88,7 +88,7 @@ object PishkhanCore {
         failure: OnFailure,
         callBack: (List<ir.ayantech.pishkhancore.model.InquiryHistory>?) -> Unit
     ) {
-        InquiryHistory.getInquiryHistoryList(product, changeStatus, failure) { list ->
+        AyanInquiryHistory.getInquiryHistoryList(product, changeStatus, failure) { list ->
             callBack.invoke(list)
         }
     }
@@ -97,7 +97,7 @@ object PishkhanCore {
         uniqueId: String, changeStatus: OnChangeStatus,
         failure: OnFailure, removeSuccessCallback: SimpleCallback
     ) {
-        InquiryHistory.removeInquiryHistoryItem(uniqueId, changeStatus, failure) {
+        AyanInquiryHistory.removeInquiryHistoryItem(uniqueId, changeStatus, failure) {
             removeSuccessCallback.invoke()
         }
     }

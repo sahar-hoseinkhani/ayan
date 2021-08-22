@@ -7,10 +7,10 @@ import ir.ayantech.ayannetworking.api.SimpleCallback
 import ir.ayantech.pishkhancore.model.*
 import ir.ayantech.pishkhancore.model.InquiryHistory
 
-object InquiryHistory {
+object AyanInquiryHistory {
 
     fun getInquiryHistoryList(
-        product: String,
+        product: String? = null,
         changeStatus: OnChangeStatus,
         failure: OnFailure,
         callBack: (List<InquiryHistory>?) -> Unit

@@ -10,7 +10,8 @@
         android:layout_height="wrap_content"
         android:gravity="center|right"
         android:text="لطفا صبر کنید"
-        android:textColor="@color/ayanTextColor" />
+        android:textColor="@color/ayanTextColor"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/descriptionTv"
@@ -46,7 +47,8 @@
             android:layout_height="wrap_content"
             android:gravity="center|right"
             android:text="خطا"
-            android:textColor="@color/ayanTextColor" />
+            android:textColor="@color/ayanColorAccent"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/errorTv"

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="applicationNameForVersionControl">VasHookTopUp</string>
-    <string name="applicationNameForPishkhan">android</string>
+<!--    <string name="applicationNameForVersionControl">VasHookTopUp</string>-->
+<!--    <string name="applicationNameForPishkhan">android</string>-->
+
+    <string name="applicationNameForVersionControl">VasHookWaterBillInquiry</string>
+    <string name="applicationNameForPishkhan">VasHookFreewayTollBillInquiry</string>
+
 </resources>
