@@ -74,7 +74,7 @@ class AyanCheckStatusBottomSheet(
             }, EndPoint.Login,
             LoginInput(
                 additionalData,
-                ApplicationName = InformationHelper.getApplicationNameForPishkhan(activity),
+                ApplicationName = InformationHelper.getApplicationName(activity),
                 Channel = PishkhanCore.applicationUniqueToken?.let {
                     InformationHelper.getApplicationCategory(
                         it
