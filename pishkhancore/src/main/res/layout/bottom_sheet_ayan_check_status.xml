@@ -23,17 +23,6 @@
         android:text="در حال دریافت اطلاعات از سرور..."
         android:textColor="@color/ayanTextColor" />
 
-    <TextView
-        android:id="@+id/cancelTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/descriptionTv"
-        android:gravity="center|right"
-        android:padding="@dimen/main_padding"
-        android:text="انصراف"
-        android:textColor="@color/ayanColorAccent"
-        android:textStyle="bold" />
-
     <RelativeLayout
         android:id="@+id/retryRl"
         android:layout_width="match_parent"

@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.core.app.ShareCompat
 import ir.ayantech.ayannetworking.api.AyanCallStatus
 import ir.ayantech.ayannetworking.api.AyanCommonCallStatus
+import ir.ayantech.ayannetworking.api.SimpleCallback
 import ir.ayantech.ayannetworking.api.WrappedPackage
 import ir.ayantech.pishkhancore.helper.InformationHelper
 import ir.ayantech.pishkhancore.model.*
@@ -20,7 +21,10 @@ internal class VersionControl(
     var checkVersion: WrappedPackage<*, CheckVersionOutput>? = null
     var getLastVersion: WrappedPackage<*, GetLastVersionOutput>? = null
 
-    fun checkForNewVersion(callback: (updateStatus: Boolean) -> Unit) {
+    fun checkForNewVersion(
+        getLastVersionCallback: SimpleCallback,
+        callback: (updateStatus: Boolean) -> Unit
+    ) {
         checkVersion = PishkhanCore.ayanApi?.ayanCall(
             AyanCallStatus {
                 success {
@@ -28,12 +32,12 @@ internal class VersionControl(
                         callback(true)
                         return@success
                     }
-                    getLastVersion(callback)
+                    getLastVersion(getLastVersionCallback, callback)
                 }
             },
             EndPoint.CheckVersion,
             CheckVersionInput(
-                InformationHelper.getApplicationName(activity),
+                InformationHelper.getApplicationNameForVersionControl(activity),
                 InformationHelper.getApplicationType(activity),
                 InformationHelper.getApplicationCategory(applicationUniqueToken),
                 InformationHelper.getApplicationVersion(activity),
@@ -44,10 +48,14 @@ internal class VersionControl(
         )
     }
 
-    private fun getLastVersion(callback: (updateStatus: Boolean) -> Unit) {
+    private fun getLastVersion(
+        getLastVersionCallback: SimpleCallback,
+        callback: (updateStatus: Boolean) -> Unit
+    ) {
         getLastVersion = PishkhanCore.ayanApi?.ayanCall(
             AyanCallStatus {
                 success {
+                    getLastVersionCallback.invoke()
                     AyanVersionControlDialog(
                         activity,
                         checkVersion?.response?.Parameters!!,
@@ -58,7 +66,7 @@ internal class VersionControl(
             },
             EndPoint.GetLastVersion,
             GetLastVersionInput(
-                InformationHelper.getApplicationName(activity),
+                InformationHelper.getApplicationNameForVersionControl(activity),
                 InformationHelper.getApplicationType(activity),
                 InformationHelper.getApplicationCategory(applicationUniqueToken),
                 InformationHelper.getApplicationVersion(activity),
@@ -82,7 +90,7 @@ internal class VersionControl(
                 },
                 EndPoint.GetLastVersion,
                 GetLastVersionInput(
-                    InformationHelper.getApplicationName(context),
+                    InformationHelper.getApplicationNameForVersionControl(context),
                     InformationHelper.getApplicationType(context),
                     InformationHelper.getApplicationCategory(applicationUniqueToken),
                     InformationHelper.getApplicationVersion(context),
@@ -95,7 +103,8 @@ internal class VersionControl(
                             Toast.LENGTH_LONG
                         ).show()
                     }
-                }, hasIdentity = false)
+                }, hasIdentity = false
+            )
 
         }
 
@@ -112,7 +121,7 @@ internal class VersionControl(
                 },
                 EndPoint.GetLastVersion,
                 GetLastVersionInput(
-                    InformationHelper.getApplicationName(context),
+                    InformationHelper.getApplicationNameForVersionControl(context),
                     InformationHelper.getApplicationType(context),
                     InformationHelper.getApplicationCategory(applicationUniqueToken),
                     InformationHelper.getApplicationVersion(context),

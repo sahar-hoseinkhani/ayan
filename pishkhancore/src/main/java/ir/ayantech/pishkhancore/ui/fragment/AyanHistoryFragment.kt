@@ -3,21 +3,41 @@ package ir.ayantech.pishkhancore.ui.fragment
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import ir.ayantech.advertisement.core.AdvertisementCore
 import ir.ayantech.ayannetworking.api.AyanCallStatus
 import ir.ayantech.ayannetworking.api.CallingState
 import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.core.PishkhanCore
 import ir.ayantech.pishkhancore.databinding.FragmentAyanHistoryBinding
 import ir.ayantech.pishkhancore.model.*
-import ir.ayantech.pishkhancore.ui.adapter.HistoryAdapter
+import ir.ayantech.pishkhancore.ui.adapter.AyanHistoryAdapter
 import ir.ayantech.pishkhancore.ui.bottomSheet.AyanErrorBottomSheet
 import ir.ayantech.whygoogle.fragment.WhyGoogleFragment
 import ir.ayantech.whygoogle.helper.*
 
 open class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>() {
 
+    var dataset = arrayListOf<Any>()
+    var showAds = false
+
     override fun onCreate() {
         super.onCreate()
+
+        PishkhanCore.getAppConfigAdvertisement {
+            showAds = it.Active
+            if (it.Active) {
+                activity?.application?.let { application ->
+                    AdvertisementCore.initialize(
+                        application,
+                        it.Sources.first { it.Key == "appKey" }.Value,
+                        it.Sources.first { it.Key == "adiveryInterstitialAdUnitID" }.Value,
+                        it.Sources.first { it.Key == "adiveryBannerAdUnitID" }.Value,
+                        it.Sources.first { it.Key == "adiveryNativeAdUnitID" }.Value
+                    )
+                }
+            }
+        }
+
         accessViews {
             inquiryHistoryWp10?.showProgressBar()
             historyRv.verticalSetup()
@@ -38,6 +58,7 @@ open class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>()
     }
 
     private fun getHistory() {
+        dataset.clear()
         accessViews {
             PishkhanCore.ayanApi?.ayanCall<PaymentHistoryGetTransactionListOutput>(
                 AyanCallStatus {
@@ -46,19 +67,27 @@ open class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>()
                             it.let {
                                 totalBillsCountTv.text = it.TotalNumberOfTransactions.toString()
                                 totalAmountTv.text = it.TotalAmountOfTransactions.formatAmount("")
+                                dataset.addAll(it.Transactions ?: listOf())
+                                if (!it.Transactions.isNullOrEmpty()) {
+                                    dataset.add(1, "")
+                                }
                                 historyRv.adapter =
-                                    HistoryAdapter(
-                                        it.Transactions ?: listOf()
+                                    AyanHistoryAdapter(
+                                        dataset, showAds
                                     ) { item, viewId, position ->
-                                        PishkhanCore.ayanApi?.simpleCall<PaymentHistoryGetTransactionInfoOutput>(
-                                            EndPoint.PaymentHistoryGetTransactionInfo,
-                                            item?.UniqueID?.let { it1 ->
-                                                PaymentHistoryGetTransactionInfoInput(it1)
+                                        item?.let { historyItem ->
+                                            (historyItem as? Transaction)?.let { transaction ->
+                                                PishkhanCore.ayanApi?.simpleCall<PaymentHistoryGetTransactionInfoOutput>(
+                                                    EndPoint.PaymentHistoryGetTransactionInfo,
+                                                    PaymentHistoryGetTransactionInfoInput(
+                                                        transaction.UniqueID
+                                                    )
+                                                ) { resp ->
+                                                    start(AyanHistoryDetailFragment().also {
+                                                        it.transaction = resp
+                                                    })
+                                                }
                                             }
-                                        ) { resp ->
-                                            start(AyanHistoryDetailFragment().also {
-                                                it.transaction = resp
-                                            })
                                         }
                                     }
                                 handleNoItemTv()

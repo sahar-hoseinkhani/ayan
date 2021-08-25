@@ -12,5 +12,18 @@
         <item name="android:windowMinWidthMinor">90%</item>
     </style>
 
+    <style name="AyanAppButton">
+        <item name="android:textColor">@color/ayanColorWhite</item>
+        <item name="android:textSize">@dimen/adButtonTextSize</item>
+        <item name="android:gravity">center</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:paddingLeft">@dimen/ayanHalfPadding</item>
+        <item name="android:paddingRight">@dimen/ayanHalfPadding</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:height">@dimen/ayanDoubleMainPadding</item>
+        <item name="android:background">@drawable/back_ayan_color_accent_button</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+
 
 </resources>

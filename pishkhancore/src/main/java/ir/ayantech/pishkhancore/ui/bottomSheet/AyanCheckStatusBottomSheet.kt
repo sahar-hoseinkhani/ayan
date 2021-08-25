@@ -43,7 +43,7 @@ class AyanCheckStatusBottomSheet(
     override fun onCreate() {
         super.onCreate()
 
-        versionControl.checkForNewVersion { updateNotRequired ->
+        versionControl.checkForNewVersion(getLastVersionCallback = { dismiss() }) { updateNotRequired ->
             when (updateNotRequired) {
                 true -> if (PishkhanUser.getSession(activity).isEmpty()) {
                     login(additionalData, mobileNumber, referenceToken)
@@ -74,7 +74,7 @@ class AyanCheckStatusBottomSheet(
             }, EndPoint.Login,
             LoginInput(
                 additionalData,
-                ApplicationName = InformationHelper.getApplicationName(activity),
+                ApplicationName = InformationHelper.getApplicationNameForPishkhan(activity),
                 Channel = PishkhanCore.applicationUniqueToken?.let {
                     InformationHelper.getApplicationCategory(
                         it
@@ -91,13 +91,11 @@ class AyanCheckStatusBottomSheet(
 
     private fun showNoInternetLayout(failure: Failure) {
         binding.apply {
-            cancelTv.makeGone()
             descriptionTv.makeGone()
             waitTv.makeGone()
             retryRl.makeVisible()
             errorTv.text = failure.failureMessage
             retryTv.setOnClickListener {
-                cancelTv.makeVisible()
                 descriptionTv.makeVisible()
                 waitTv.makeVisible()
                 retryRl.makeGone()

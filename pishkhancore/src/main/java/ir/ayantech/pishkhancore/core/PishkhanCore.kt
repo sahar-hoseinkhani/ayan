@@ -104,9 +104,8 @@ object PishkhanCore {
     }
 
     fun getAppConfigAdvertisement(
-        failure: OnFailure,
         respCallback: (AppConfigAdvertisementOutput) -> Unit
     ) {
-        AyanAppConfigAdvertisement.getAppConfigAdvertisement(failure, respCallback)
+        AyanAppConfigAdvertisement.getAppConfigAdvertisement(respCallback)
     }
 }

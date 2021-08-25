@@ -8,7 +8,6 @@ import ir.ayantech.pishkhancore.model.EndPoint
 object AyanAppConfigAdvertisement {
 
     fun getAppConfigAdvertisement(
-        failure: OnFailure,
         callBack: (AppConfigAdvertisementOutput) -> Unit
     ) {
         PishkhanCore.ayanApi?.ayanCall<AppConfigAdvertisementOutput>(
@@ -19,7 +18,7 @@ object AyanAppConfigAdvertisement {
                     }
                 }
                 changeStatus { }
-                failure(failure)
+                failure {  }
             },
             EndPoint.AppConfigAdvertisement
         )
