@@ -68,7 +68,7 @@ open class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>()
                                 totalBillsCountTv.text = it.TotalNumberOfTransactions.toString()
                                 totalAmountTv.text = it.TotalAmountOfTransactions.formatAmount("")
                                 dataset.addAll(it.Transactions ?: listOf())
-                                if (!it.Transactions.isNullOrEmpty()) {
+                                if (!it.Transactions.isNullOrEmpty() && showAds) {
                                     dataset.add(1, "")
                                 }
                                 historyRv.adapter =

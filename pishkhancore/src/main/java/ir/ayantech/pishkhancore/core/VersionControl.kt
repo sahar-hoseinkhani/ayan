@@ -37,7 +37,7 @@ internal class VersionControl(
             },
             EndPoint.CheckVersion,
             CheckVersionInput(
-                InformationHelper.getApplicationNameForVersionControl(activity),
+                InformationHelper.getApplicationName(activity),
                 InformationHelper.getApplicationType(activity),
                 InformationHelper.getApplicationCategory(applicationUniqueToken),
                 InformationHelper.getApplicationVersion(activity),
@@ -66,7 +66,7 @@ internal class VersionControl(
             },
             EndPoint.GetLastVersion,
             GetLastVersionInput(
-                InformationHelper.getApplicationNameForVersionControl(activity),
+                InformationHelper.getApplicationName(activity),
                 InformationHelper.getApplicationType(activity),
                 InformationHelper.getApplicationCategory(applicationUniqueToken),
                 InformationHelper.getApplicationVersion(activity),
@@ -90,7 +90,7 @@ internal class VersionControl(
                 },
                 EndPoint.GetLastVersion,
                 GetLastVersionInput(
-                    InformationHelper.getApplicationNameForVersionControl(context),
+                    InformationHelper.getApplicationName(context),
                     InformationHelper.getApplicationType(context),
                     InformationHelper.getApplicationCategory(applicationUniqueToken),
                     InformationHelper.getApplicationVersion(context),
@@ -103,7 +103,8 @@ internal class VersionControl(
                             Toast.LENGTH_LONG
                         ).show()
                     }
-                }, hasIdentity = false
+                }, baseUrl = defaultBaseUrl,
+                hasIdentity = false
             )
 
         }
@@ -121,7 +122,7 @@ internal class VersionControl(
                 },
                 EndPoint.GetLastVersion,
                 GetLastVersionInput(
-                    InformationHelper.getApplicationNameForVersionControl(context),
+                    InformationHelper.getApplicationName(context),
                     InformationHelper.getApplicationType(context),
                     InformationHelper.getApplicationCategory(applicationUniqueToken),
                     InformationHelper.getApplicationVersion(context),

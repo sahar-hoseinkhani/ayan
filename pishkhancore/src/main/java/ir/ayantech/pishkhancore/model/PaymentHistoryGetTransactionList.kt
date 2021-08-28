@@ -1,5 +1,7 @@
 package ir.ayantech.pishkhancore.model
 
+import ir.ayantech.pishkhancore.helper.removePishkhanFromString
+
 data class PaymentHistoryGetTransactionListInput(
     val TransactionCategoryTypeName: String,
     val TransactionTypeName: String
@@ -30,10 +32,17 @@ data class Type(
 
 open class NameShowName(
     open val Name: String,
-    open val ShowName: String
+    private val ShowName: String
 ) {
+    companion object {
+        const val ValidForPayment = "ValidForPayment"
+    }
+
     val validForPayment: Boolean
-        get() = this.Name == PaymentStatusModel.ValidForPayment
+        get() = this.Name == ValidForPayment
+
+    val getUsableShowName: String
+    get() = this.ShowName.removePishkhanFromString()
 }
 
 data class DateTime(
@@ -56,10 +65,4 @@ data class MonshiPlusDateTime(
     val Year: Int
 ) {
     override fun toString() = DateFormatted
-}
-
-class PaymentStatusModel(name: String, showName: String) : NameShowName(name, showName) {
-    companion object {
-        const val ValidForPayment = "ValidForPayment"
-    }
 }

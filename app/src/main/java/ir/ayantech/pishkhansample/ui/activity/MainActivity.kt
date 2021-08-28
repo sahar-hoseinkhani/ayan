@@ -19,6 +19,10 @@ class MainActivity : WhyGoogleActivity<ActivityMainBinding>() {
         login {
             Toast.makeText(this, PishkhanCore.getUserToken(this), Toast.LENGTH_SHORT).show()
             PishkhanCore.startHistoryFragment(this)
+            PishkhanCore.getAppConfigBasicInformation(changeStatus = {}, failure = {
+            }){
+
+            }
         }
     }
 

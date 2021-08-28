@@ -44,3 +44,12 @@ fun String.openUrlViaChromeCustomTab(context: Context?, color: String? = null) {
     }.build()
     context?.let { customTabsIntent.launchUrl(it, Uri.parse(this)) }
 }
+
+fun String.removePishkhanFromString() =
+    this.replace("با پشیخوان 24", "")
+        .replace("پیشخوان 24", "")
+        .replace("با پیشخوان24", "")
+        .replace("پیشخوان24", "")
+        .replace("با پیشخوان", "")
+        .replace("پیشخوان", "")
+        .trim()

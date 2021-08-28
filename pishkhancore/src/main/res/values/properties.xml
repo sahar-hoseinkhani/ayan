@@ -2,7 +2,7 @@
 <resources>
 
     <string name="applicationNameForPishkhan">applicationNameForPishkhan</string>
-    <string name="applicationNameForVersionControl">applicationNameForVersionControl</string>
+    <string name="applicationName">applicationName</string>
     <string name="applicationType">android</string>
 
 </resources>

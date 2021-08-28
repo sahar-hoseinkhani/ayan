@@ -8,7 +8,9 @@ import ir.ayantech.ayannetworking.api.OnFailure
 import ir.ayantech.ayannetworking.api.SimpleCallback
 import ir.ayantech.ayannetworking.ayanModel.LogLevel
 import ir.ayantech.pishkhancore.model.AppConfigAdvertisementOutput
+import ir.ayantech.pishkhancore.model.AppConfigBasicInformationOutput
 import ir.ayantech.pishkhancore.model.AppExtraInfo
+import ir.ayantech.pishkhancore.model.InquiryHistory
 import ir.ayantech.pishkhancore.ui.bottomSheet.AyanCheckStatusBottomSheet
 import ir.ayantech.pishkhancore.ui.fragment.AyanHistoryFragment
 import ir.ayantech.pushsdk.core.AyanNotification
@@ -87,7 +89,7 @@ object PishkhanCore {
         product: String,
         changeStatus: OnChangeStatus,
         failure: OnFailure,
-        callBack: (List<ir.ayantech.pishkhancore.model.InquiryHistory>?) -> Unit
+        callBack: (List<InquiryHistory>?) -> Unit
     ) {
         AyanInquiryHistory.getInquiryHistoryList(product, changeStatus, failure) { list ->
             callBack.invoke(list)
@@ -107,5 +109,18 @@ object PishkhanCore {
         respCallback: (AppConfigAdvertisementOutput) -> Unit
     ) {
         AyanAppConfigAdvertisement.getAppConfigAdvertisement(respCallback)
+    }
+
+    fun getAppConfigBasicInformation(
+        changeStatus: OnChangeStatus,
+        failure: OnFailure,
+        callBack: (AppConfigBasicInformationOutput) -> Unit
+    ) {
+        AyanAppConfigBasicInformation.getAppConfigBasicInformation(
+            changeStatus,
+            failure
+        ) { output ->
+            callBack.invoke(output)
+        }
     }
 }

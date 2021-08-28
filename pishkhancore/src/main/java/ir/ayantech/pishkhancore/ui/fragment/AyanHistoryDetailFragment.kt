@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import ir.ayantech.pishkhancore.databinding.FragmentAyanHistoryDetailBinding
 import ir.ayantech.pishkhancore.helper.*
+import ir.ayantech.pishkhancore.model.NameShowName
 import ir.ayantech.pishkhancore.model.PaymentHistoryGetTransactionInfoOutput
 import ir.ayantech.pishkhancore.model.getProductIcon
 import ir.ayantech.pishkhancore.ui.adapter.HighlightedEvenRowsAdapter
@@ -13,12 +14,13 @@ import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.fragment.WhyGoogleFragment
 import ir.ayantech.whygoogle.helper.*
 
-class AyanHistoryDetailFragment : WhyGoogleFragment<FragmentAyanHistoryDetailBinding>() {
+open class AyanHistoryDetailFragment : WhyGoogleFragment<FragmentAyanHistoryDetailBinding>() {
 
     var transaction: PaymentHistoryGetTransactionInfoOutput? = null
 
     override fun onCreate() {
         super.onCreate()
+
         accessViews {
             transaction?.let { transaction ->
                 amountTv.text = transaction.Amount.formatAmount("")

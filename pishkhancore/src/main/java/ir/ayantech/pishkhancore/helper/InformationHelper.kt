@@ -8,8 +8,8 @@ internal class InformationHelper {
         fun getApplicationNameForPishkhan(context: Context) =
             context.resources.getString(R.string.applicationNameForPishkhan)
 
-        fun getApplicationNameForVersionControl(context: Context) =
-            context.resources.getString(R.string.applicationNameForVersionControl)
+        fun getApplicationName(context: Context) =
+            context.resources.getString(R.string.applicationName)
 
         fun getApplicationType(context: Context) =
             context.resources.getString(R.string.applicationType)
