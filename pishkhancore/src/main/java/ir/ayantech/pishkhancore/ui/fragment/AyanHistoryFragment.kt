@@ -19,6 +19,7 @@ open class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>()
 
     var dataset = arrayListOf<Any>()
     var showAds = false
+    var onDetailsClicked: ((PaymentHistoryGetTransactionInfoOutput) -> Unit)? = null
 
     override fun onCreate() {
         super.onCreate()
@@ -83,9 +84,10 @@ open class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>()
                                                         transaction.UniqueID
                                                     )
                                                 ) { resp ->
-                                                    start(AyanHistoryDetailFragment().also {
-                                                        it.transaction = resp
-                                                    })
+                                                    resp?.let { it1 -> onDetailsClicked?.invoke(it1) }
+//                                                    start(AyanHistoryDetailFragment().also {
+//                                                        it.transaction = resp
+//                                                    })
                                                 }
                                             }
                                         }
