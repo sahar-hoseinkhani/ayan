@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import ir.ayantech.pishkhancore.core.PishkhanCore
+import ir.ayantech.pishkhancore.ui.fragment.AyanHistoryFragment
 import ir.ayantech.pishkhansample.R
 import ir.ayantech.pishkhansample.databinding.ActivityMainBinding
 import ir.ayantech.whygoogle.activity.WhyGoogleActivity
@@ -18,9 +19,6 @@ class MainActivity : WhyGoogleActivity<ActivityMainBinding>() {
 
         login {
             Toast.makeText(this, PishkhanCore.getUserToken(this), Toast.LENGTH_SHORT).show()
-            PishkhanCore.startHistoryFragment(this){
-
-            }
             PishkhanCore.getAppConfigBasicInformation(changeStatus = {}, failure = {
             }) {
 

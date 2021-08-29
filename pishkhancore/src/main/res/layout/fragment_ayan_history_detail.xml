@@ -2,8 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:background="@color/ayanColorLightGray"
     android:layout_height="match_parent"
+    android:background="@color/ayanColorLightGray"
     android:orientation="vertical">
 
     <LinearLayout
@@ -85,6 +85,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
+        android:id="@+id/actionsLl"
         android:layout_width="match_parent"
         android:layout_height="@dimen/ayanButton"
         android:orientation="horizontal"
@@ -154,4 +155,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_end="@dimen/ayanButton" />
+
+    <RelativeLayout
+        android:id="@+id/bannerRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintTop_toBottomOf="@id/actionsLl"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

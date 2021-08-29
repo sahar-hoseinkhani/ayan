@@ -2,6 +2,8 @@ package ir.ayantech.pishkhancore.ui.fragment
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import ir.ayantech.advertisement.core.AdvertisementCore
+import ir.ayantech.pishkhancore.core.PishkhanCore
 import ir.ayantech.pishkhancore.databinding.FragmentAyanHistoryDetailBinding
 import ir.ayantech.pishkhancore.helper.*
 import ir.ayantech.pishkhancore.model.NameShowName
@@ -20,6 +22,13 @@ abstract class AyanHistoryDetailFragment : WhyGoogleFragment<FragmentAyanHistory
 
     override fun onCreate() {
         super.onCreate()
+
+        PishkhanCore.getAppConfigAdvertisement {
+            binding.bannerRl.changeVisibility(it.Active)
+            if (it.Active) {
+                AdvertisementCore.requestBannerAds(requireContext(), binding.bannerRl)
+            }
+        }
 
         accessViews {
             transaction?.let { transaction ->
