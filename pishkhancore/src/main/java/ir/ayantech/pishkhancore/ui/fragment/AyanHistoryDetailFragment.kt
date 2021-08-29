@@ -14,9 +14,9 @@ import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.fragment.WhyGoogleFragment
 import ir.ayantech.whygoogle.helper.*
 
-open class AyanHistoryDetailFragment : WhyGoogleFragment<FragmentAyanHistoryDetailBinding>() {
+abstract class AyanHistoryDetailFragment : WhyGoogleFragment<FragmentAyanHistoryDetailBinding>() {
 
-    var transaction: PaymentHistoryGetTransactionInfoOutput? = null
+    open var transaction: PaymentHistoryGetTransactionInfoOutput? = null
 
     override fun onCreate() {
         super.onCreate()
