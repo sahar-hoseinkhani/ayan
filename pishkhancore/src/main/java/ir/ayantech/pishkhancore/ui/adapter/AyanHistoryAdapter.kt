@@ -9,9 +9,12 @@ import ir.ayantech.pishkhancore.databinding.RowAyanHistoryBinding
 import ir.ayantech.pishkhancore.databinding.RowAyanHistoryNativeAdBinding
 import ir.ayantech.pishkhancore.model.Transaction
 import ir.ayantech.pishkhancore.model.getProductIcon
-import ir.ayantech.whygoogle.adapter.*
+import ir.ayantech.whygoogle.adapter.MultiViewTypeAdapter
+import ir.ayantech.whygoogle.adapter.MultiViewTypeViewHolder
+import ir.ayantech.whygoogle.adapter.OnItemClickListener
 import ir.ayantech.whygoogle.fragment.ViewBindingInflater
 import ir.ayantech.whygoogle.helper.formatAmount
+import ir.ayantech.whygoogle.helper.makeVisible
 
 class AyanHistoryAdapter(
     items: List<Any>,
@@ -36,11 +39,17 @@ class AyanHistoryAdapter(
     ): MultiViewTypeViewHolder<Any> {
         return super.onCreateViewHolder(parent, viewType).also {
             (it.viewBinding as? RowAyanHistoryNativeAdBinding)?.let { rowMainNativeAd ->
+                it.registerClickListener(rowMainNativeAd.nativeAdLl) { nativeAdLl ->
+                    nativeAdLl.findViewById<AppCompatButton>(R.id.adivery_call_to_action)
+                        .performClick()
+                }
                 rowMainNativeAd.nativeAdLl.addView(
                     AdvertisementCore.requestNativeAds(
                         parent.context,
                         R.layout.ayan_native_ad,
-                    )
+                    ) {
+                        rowMainNativeAd.nativeAdLl.makeVisible()
+                    }
                 )
             }
         }
@@ -51,14 +60,6 @@ class AyanHistoryAdapter(
     ) {
         super.onBindViewHolder(holder, position)
         when (getItemViewType(position)) {
-            AD -> {
-                (holder.viewBinding as? RowAyanHistoryNativeAdBinding)?.let { row ->
-                    row.nativeAdLl.setOnClickListener {
-                        row.nativeAdLl.findViewById<AppCompatButton>(R.id.adivery_call_to_action)
-                            ?.performClick()
-                    }
-                }
-            }
             CONTENT -> {
                 (holder.viewBinding as? RowAyanHistoryBinding)?.let {
                     (itemsToView[position] as Transaction).let { data ->

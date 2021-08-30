@@ -6,7 +6,6 @@ import ir.ayantech.advertisement.core.AdvertisementCore
 import ir.ayantech.pishkhancore.core.PishkhanCore
 import ir.ayantech.pishkhancore.databinding.FragmentAyanHistoryDetailBinding
 import ir.ayantech.pishkhancore.helper.*
-import ir.ayantech.pishkhancore.model.NameShowName
 import ir.ayantech.pishkhancore.model.PaymentHistoryGetTransactionInfoOutput
 import ir.ayantech.pishkhancore.model.getProductIcon
 import ir.ayantech.pishkhancore.ui.adapter.HighlightedEvenRowsAdapter
@@ -18,7 +17,7 @@ import ir.ayantech.whygoogle.helper.*
 
 abstract class AyanHistoryDetailFragment : WhyGoogleFragment<FragmentAyanHistoryDetailBinding>() {
 
-    open var transaction: PaymentHistoryGetTransactionInfoOutput? = null
+    abstract var transaction: PaymentHistoryGetTransactionInfoOutput?
 
     override fun onCreate() {
         super.onCreate()

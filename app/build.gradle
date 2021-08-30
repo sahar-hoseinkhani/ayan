@@ -12,7 +12,7 @@ android {
         applicationId "ir.ayantech.pishkhansample"
         minSdkVersion 17
         targetSdkVersion 30
-        versionCode 1
+        versionCode 19
         versionName "3.0.0"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

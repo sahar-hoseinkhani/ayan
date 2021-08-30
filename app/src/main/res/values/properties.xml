@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="applicationName">VasHookWaterBillInquiry</string>
-    <string name="applicationNameForPishkhan">PishkhanWaterBillInquiry</string>
+    <string name="applicationNameForPishkhan">PishkhanElectricityBillInquiry</string>
+    <string name="applicationName">VasHookElectricityBillInquiry</string>
 
 </resources>
