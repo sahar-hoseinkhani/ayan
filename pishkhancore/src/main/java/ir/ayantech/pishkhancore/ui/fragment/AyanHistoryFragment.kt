@@ -13,6 +13,7 @@ import ir.ayantech.pishkhancore.model.*
 import ir.ayantech.pishkhancore.ui.adapter.AyanHistoryAdapter
 import ir.ayantech.pishkhancore.ui.bottomSheet.AyanErrorBottomSheet
 import ir.ayantech.whygoogle.fragment.WhyGoogleFragment
+import ir.ayantech.whygoogle.fragment.WhyGoogleFragmentTransactionAnimation
 import ir.ayantech.whygoogle.helper.*
 
 open class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>() {
@@ -138,6 +139,15 @@ open class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>()
                 noItemTv.makeGone()
             }
         }
+    }
+
+    override fun getFragmentTransactionAnimation(): WhyGoogleFragmentTransactionAnimation? {
+        return WhyGoogleFragmentTransactionAnimation(
+            R.anim.h_fragment_enter,
+            R.anim.h_fragment_pop_exit,
+            R.anim.h_fragment_pop_enter,
+            R.anim.h_fragment_pop_exit
+        )
     }
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentAyanHistoryBinding

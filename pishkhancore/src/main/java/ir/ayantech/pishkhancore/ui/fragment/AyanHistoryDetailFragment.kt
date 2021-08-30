@@ -3,6 +3,7 @@ package ir.ayantech.pishkhancore.ui.fragment
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import ir.ayantech.advertisement.core.AdvertisementCore
+import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.core.PishkhanCore
 import ir.ayantech.pishkhancore.databinding.FragmentAyanHistoryDetailBinding
 import ir.ayantech.pishkhancore.helper.*
@@ -13,6 +14,7 @@ import ir.ayantech.pishkhancore.ui.adapter.TitleBasedExpandableAdapter
 import ir.ayantech.pishkhancore.ui.adapter.TitleBasedMultiTypeItem
 import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.fragment.WhyGoogleFragment
+import ir.ayantech.whygoogle.fragment.WhyGoogleFragmentTransactionAnimation
 import ir.ayantech.whygoogle.helper.*
 
 abstract class AyanHistoryDetailFragment : WhyGoogleFragment<FragmentAyanHistoryDetailBinding>() {
@@ -90,6 +92,15 @@ abstract class AyanHistoryDetailFragment : WhyGoogleFragment<FragmentAyanHistory
     override fun onBackPressed(): Boolean {
         pop()
         return true
+    }
+
+    override fun getFragmentTransactionAnimation(): WhyGoogleFragmentTransactionAnimation? {
+        return WhyGoogleFragmentTransactionAnimation(
+            R.anim.h_fragment_enter,
+            R.anim.h_fragment_pop_exit,
+            R.anim.h_fragment_pop_enter,
+            R.anim.h_fragment_pop_exit
+        )
     }
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentAyanHistoryDetailBinding

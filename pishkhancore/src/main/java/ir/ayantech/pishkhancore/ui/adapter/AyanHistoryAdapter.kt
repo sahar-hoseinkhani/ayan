@@ -47,9 +47,7 @@ class AyanHistoryAdapter(
                     AdvertisementCore.requestNativeAds(
                         parent.context,
                         R.layout.ayan_native_ad,
-                    ) {
-                        rowMainNativeAd.nativeAdLl.makeVisible()
-                    }
+                    )
                 )
             }
         }
