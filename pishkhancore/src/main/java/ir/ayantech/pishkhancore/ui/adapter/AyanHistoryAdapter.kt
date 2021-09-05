@@ -3,7 +3,7 @@ package ir.ayantech.pishkhancore.ui.adapter
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.appcompat.widget.AppCompatButton
-import ir.ayantech.advertisement.core.AdvertisementCore
+import com.adivery.sdk.AdiveryNativeAdView
 import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.databinding.RowAyanHistoryBinding
 import ir.ayantech.pishkhancore.databinding.RowAyanHistoryNativeAdBinding
@@ -14,11 +14,9 @@ import ir.ayantech.whygoogle.adapter.MultiViewTypeViewHolder
 import ir.ayantech.whygoogle.adapter.OnItemClickListener
 import ir.ayantech.whygoogle.fragment.ViewBindingInflater
 import ir.ayantech.whygoogle.helper.formatAmount
-import ir.ayantech.whygoogle.helper.makeVisible
 
 class AyanHistoryAdapter(
     items: List<Any>,
-    val showAds: Boolean,
     onItemClickListener: OnItemClickListener<Any>? = null
 ) : MultiViewTypeAdapter<Any>(items, onItemClickListener) {
 
@@ -26,11 +24,9 @@ class AyanHistoryAdapter(
     private val AD = 1
 
     override fun getItemViewType(position: Int): Int {
-        return if (showAds && position == 1) {
-            AD
-        } else {
+        return if (items[position] is Transaction)
             CONTENT
-        }
+        else AD
     }
 
     override fun onCreateViewHolder(
@@ -43,12 +39,6 @@ class AyanHistoryAdapter(
                     nativeAdLl.findViewById<AppCompatButton>(R.id.adivery_call_to_action)
                         .performClick()
                 }
-                rowMainNativeAd.nativeAdLl.addView(
-                    AdvertisementCore.requestNativeAds(
-                        parent.context,
-                        R.layout.ayan_native_ad,
-                    )
-                )
             }
         }
     }
@@ -58,6 +48,15 @@ class AyanHistoryAdapter(
     ) {
         super.onBindViewHolder(holder, position)
         when (getItemViewType(position)) {
+            AD -> {
+                (holder.viewBinding as? RowAyanHistoryNativeAdBinding)?.let {
+                    (itemsToView[position] as AdiveryNativeAdView).let { adView ->
+                        //The specified child already has a parent. You must call removeView() on the child's parent first
+                        it.nativeAdLl.removeAllViews()
+                        it.nativeAdLl.addView(adView)
+                    }
+                }
+            }
             CONTENT -> {
                 (holder.viewBinding as? RowAyanHistoryBinding)?.let {
                     (itemsToView[position] as Transaction).let { data ->
@@ -89,5 +88,11 @@ class AyanHistoryAdapter(
     override fun getViewInflaterForViewType(viewType: Int): ViewBindingInflater {
         return if (viewType == AD) RowAyanHistoryNativeAdBinding::inflate
         else RowAyanHistoryBinding::inflate
+    }
+
+    fun updateItems(items: List<Any>){
+        this.itemsToView = items
+        this.items = items
+        notifyDataSetChanged()
     }
 }
