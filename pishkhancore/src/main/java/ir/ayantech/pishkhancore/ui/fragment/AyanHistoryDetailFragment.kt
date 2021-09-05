@@ -97,7 +97,7 @@ abstract class AyanHistoryDetailFragment : WhyGoogleFragment<FragmentAyanHistory
     override fun getFragmentTransactionAnimation(): WhyGoogleFragmentTransactionAnimation? {
         return WhyGoogleFragmentTransactionAnimation(
             R.anim.h_fragment_enter,
-            R.anim.h_fragment_pop_exit,
+            R.anim.h_fragment_exit,
             R.anim.h_fragment_pop_enter,
             R.anim.h_fragment_pop_exit
         )
