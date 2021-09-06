@@ -11,7 +11,7 @@ android {
         minSdkVersion 17
         targetSdkVersion 30
         versionCode 1
-        versionName "0.0.21"
+        versionName "0.0.22"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -53,7 +53,7 @@ dependencies {
     //-----------------------------------Ayan-----------------------------------
     implementation 'com.github.shadowalker77:whygoogle:0.1.28'
     implementation 'com.coolerfall:android-http-download-manager:1.6.1'
-    compileOnly 'com.github.shadowalker77:wp7progressbar:1.0.5'
+    implementation 'com.github.shadowalker77:wp7progressbar:1.1.0'
     implementation 'com.github.shadowalker77:pushnotification:0.4.15'
     implementation 'com.github.sahar-hoseinkhani:advertisement:0.0.8'
     //--------------------------------------------------------------------------
