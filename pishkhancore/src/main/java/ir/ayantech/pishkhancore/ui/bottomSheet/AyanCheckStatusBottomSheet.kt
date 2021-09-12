@@ -43,7 +43,7 @@ class AyanCheckStatusBottomSheet(
     override fun onCreate() {
         super.onCreate()
 
-        versionControl.checkForNewVersion(getLastVersionCallback = { dismiss() }) { updateNotRequired ->
+        versionControl.checkForNewVersion { updateNotRequired ->
             when (updateNotRequired) {
                 true -> if (PishkhanUser.getSession(activity).isEmpty()) {
                     login(additionalData, mobileNumber, referenceToken)

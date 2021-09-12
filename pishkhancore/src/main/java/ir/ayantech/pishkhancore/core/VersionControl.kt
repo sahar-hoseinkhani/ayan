@@ -22,7 +22,6 @@ internal class VersionControl(
     var getLastVersion: WrappedPackage<*, GetLastVersionOutput>? = null
 
     fun checkForNewVersion(
-        getLastVersionCallback: SimpleCallback,
         callback: (updateStatus: Boolean) -> Unit
     ) {
         checkVersion = PishkhanCore.ayanApi?.ayanCall(
@@ -32,7 +31,7 @@ internal class VersionControl(
                         callback(true)
                         return@success
                     }
-                    getLastVersion(getLastVersionCallback, callback)
+                    getLastVersion(callback)
                 }
             },
             EndPoint.CheckVersion,
@@ -49,13 +48,11 @@ internal class VersionControl(
     }
 
     private fun getLastVersion(
-        getLastVersionCallback: SimpleCallback,
         callback: (updateStatus: Boolean) -> Unit
     ) {
         getLastVersion = PishkhanCore.ayanApi?.ayanCall(
             AyanCallStatus {
                 success {
-                    getLastVersionCallback.invoke()
                     AyanVersionControlDialog(
                         activity,
                         checkVersion?.response?.Parameters!!,
