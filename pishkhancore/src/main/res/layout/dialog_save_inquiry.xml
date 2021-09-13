@@ -55,7 +55,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/removeBtn"
-            style="@style/RedAppButton"
+            style="@style/AyanRedAppButton"
             android:layout_width="0dp"
             android:layout_height="@dimen/ayanButton"
             android:layout_marginRight="@dimen/ayanRclPadding"
@@ -65,7 +65,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/saveBtn"
-            style="@style/AyanAppButton"
+            style="@style/AyanGreenAppButton"
             android:layout_width="0dp"
             android:layout_height="@dimen/ayanButton"
             android:layout_marginBottom="@dimen/ayanRclPadding"

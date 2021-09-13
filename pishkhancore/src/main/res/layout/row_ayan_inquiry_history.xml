@@ -21,9 +21,9 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/moreIv"
-                android:layout_width="@dimen/ayanDoubleMainPadding"
-                android:layout_height="@dimen/ayanDoubleMainPadding"
-                android:background="?android:selectableItemBackground"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="?selectableItemBackgroundBorderless"
                 android:padding="@dimen/ayanCardPadding"
                 app:srcCompat="@drawable/ic_more_vert" />
 
@@ -58,13 +58,11 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/pinIv"
-                android:layout_width="@dimen/ayanTopIconSize"
-                android:layout_height="@dimen/ayanTopIconSize"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/ayanRclPadding"
-                android:layout_marginRight="@dimen/ayanCardPadding"
-                android:background="@drawable/back_oval_light_grey"
                 android:padding="@dimen/ayanCardPadding"
-                app:srcCompat="@drawable/ic_star" />
+                app:srcCompat="@drawable/ic_favorite" />
         </LinearLayout>
 
     </RelativeLayout>

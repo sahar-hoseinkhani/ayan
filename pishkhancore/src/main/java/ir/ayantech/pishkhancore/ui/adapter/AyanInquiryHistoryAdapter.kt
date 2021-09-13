@@ -3,6 +3,7 @@ package ir.ayantech.pishkhancore.ui.adapter
 import android.content.Context
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatButton
+import androidx.core.content.ContextCompat
 import com.adivery.sdk.AdiveryNativeAdView
 import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.core.PishkhanCore
@@ -97,9 +98,17 @@ class AyanInquiryHistoryAdapter(
                     (itemsToView[position] as InquiryHistory).let { data ->
                         it.inquiryHistoryNameTv.text = data.Note
                         it.inquiryHistoryValueTv.text = data.QueryValue
-                        it.pinIv.setBackgroundResource(
-                            if (data.Favorite) R.drawable.back_oval_color_accent
-                            else R.drawable.back_oval_light_grey
+                        it.pinIv.setColorFilter(
+                            if (data.Favorite)
+                                ContextCompat.getColor(
+                                mcontext,
+                                R.color.ayanColorAccent
+                            )
+                            else
+                                ContextCompat.getColor(
+                                    mcontext,
+                                    R.color.ayanEditTextColor
+                                )
                         )
                     }
                 }

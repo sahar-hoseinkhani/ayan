@@ -25,8 +25,12 @@
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
     </style>
 
-    <style name="RedAppButton" parent="AyanAppButton">
+    <style name="AyanRedAppButton" parent="AyanAppButton">
         <item name="android:background">@drawable/back_ayan_red_button</item>
+    </style>
+
+    <style name="AyanGreenAppButton" parent="AyanAppButton">
+        <item name="android:background">@drawable/back_ayan_green_button</item>
     </style>
 
     <style name="AyanAppEditText">
