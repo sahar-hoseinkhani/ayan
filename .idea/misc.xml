@@ -4,10 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/app/src/main/res/layout/activity_main.xml" value="0.36153846153846153" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/app/src/main/res/layout/fragment_history.xml" value="0.20625" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/app/src/main/res/layout/fragment_inquiry.xml" value="0.3671875" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/app/src/main/res/layout/fragment_inquiry_history.xml" value="0.3671875" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/app/src/main/res/layout/fragment_my.xml" value="0.20625" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/app/src/main/res/layout/fragment_test.xml" value="0.3671875" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/app/src/main/res/layout/fragmnet_test.xml" value="0.3671875" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/back_ayan_color_accent_button.xml" value="0.32407407407407407" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/back_ayan_edit_text_light_gray.xml" value="0.38333333333333336" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/back_ayan_red_button.xml" value="0.38333333333333336" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/back_oval_color_accent.xml" value="0.38333333333333336" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/back_oval_light_grey.xml" value="0.38333333333333336" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/back_round_primary_grey_stroke.xml" value="0.22239583333333332" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/gray_circle_border.xml" value="0.37743589743589745" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/ic_administrativejusticepostpackagestatus.xml" value="0.14629629629629629" />
@@ -18,6 +25,7 @@
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/ic_caridentificationcardpostpackagestatus.xml" value="0.14629629629629629" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/ic_caridentificationdocumentspostpackagestatus.xml" value="0.14629629629629629" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/ic_cheque.xml" value="0.14629629629629629" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/ic_close.xml" value="0.38333333333333336" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/ic_coin.xml" value="0.14629629629629629" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/ic_daftarche.xml" value="0.14629629629629629" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/ic_daller.xml" value="0.14629629629629629" />
@@ -56,6 +64,7 @@
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/ic_sheba.xml" value="0.14629629629629629" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/ic_simcard.xml" value="0.14629629629629629" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/ic_socialsecurityinsurancehistory.xml" value="0.14629629629629629" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/ic_star.xml" value="0.38333333333333336" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/ic_taxi.xml" value="0.14629629629629629" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/ic_technicalexaminationcertificate.xml" value="0.14629629629629629" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/ic_thirdpartyinsurance.xml" value="0.14629629629629629" />
@@ -70,6 +79,7 @@
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/bottom_sheet_error.xml" value="0.3671875" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/bottom_sheet_waiter.xml" value="0.3671875" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/dialog_ayan_verion_control.xml" value="0.22" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/dialog_save_inquiry.xml" value="0.3671875" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/fragment_ayan_history.xml" value="0.3671875" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/fragment_ayan_history_detail.xml" value="0.3671875" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/fragment_history.xml" value="0.3671875" />
@@ -77,6 +87,7 @@
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/row_ayan_bill_detail.xml" value="0.3671875" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/row_ayan_history.xml" value="0.3671875" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/row_ayan_history_native_ad.xml" value="0.36564102564102563" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/row_ayan_inquiry_history.xml" value="0.3671875" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/row_ayan_justice_shares.xml" value="0.3671875" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/row_ayan_multi_type.xml" value="0.3671875" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/row_ayan_recycler_view.xml" value="0.3671875" />

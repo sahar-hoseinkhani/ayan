@@ -25,5 +25,25 @@
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
     </style>
 
+    <style name="RedAppButton" parent="AyanAppButton">
+        <item name="android:background">@drawable/back_ayan_red_button</item>
+    </style>
+
+    <style name="AyanAppEditText">
+        <item name="android:textColor">@color/ayanTextColor</item>
+        <item name="android:textColorHint">@color/ayanGreyTextColor</item>
+        <item name="android:minHeight">@dimen/ayanButton</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:background">@drawable/back_ayan_edit_text</item>
+    </style>
+
+    <style name="AyanCardView">
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="cardCornerRadius">@dimen/ayanMainRadius</item>
+        <item name="cardElevation">2dp</item>
+        <item name="cardPreventCornerOverlap">false</item>
+        <item name="cardUseCompatPadding">true</item>
+    </style>
 
 </resources>

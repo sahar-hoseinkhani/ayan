@@ -9,5 +9,7 @@
     <color name="ayanIconAccent">#FF9800</color>
     <color name="ayanColorAccent">#2196F3</color>
     <color name="ayanColorPrimary">#072740</color>
+    <color name="ayanRedColor">#E36262</color>
+    <color name="ayanEditTextColor">#0D101010</color>
 
 </resources>

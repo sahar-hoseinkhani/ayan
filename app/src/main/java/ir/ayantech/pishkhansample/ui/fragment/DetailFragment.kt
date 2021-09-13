@@ -1,4 +1,4 @@
-package ir.ayantech.pishkhansample.ui.activity
+package ir.ayantech.pishkhansample.ui.fragment
 
 import ir.ayantech.pishkhancore.model.PaymentHistoryGetTransactionInfoOutput
 import ir.ayantech.pishkhancore.ui.fragment.AyanHistoryDetailFragment

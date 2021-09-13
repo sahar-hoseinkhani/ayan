@@ -39,13 +39,6 @@ open class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>()
                         it.Sources.first { it.Key == "adiveryBannerAdUnitID" }.Value,
                         it.Sources.first { it.Key == "adiveryNativeAdUnitID" }.Value
                     )
-//                    AdvertisementCore.initialize(
-//                        application,
-//                        "33999115-bdec-4ed8-b9ec-1e4ab872669e",
-//                        "cc12c56b-64ce-42b1-8330-5e50c2df1882",
-//                        "69a84172-20ad-4e61-b1bf-d8d8c631e113",
-//                        "5e842580-818d-465f-a79a-77a3b13a6bb1"
-//                    )
                 }
             }
         }

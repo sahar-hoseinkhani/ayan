@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/AyanCardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/rowLl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:foreground="?selectableItemBackground"
+            android:gravity="center"
+            android:minHeight="@dimen/ayanButton"
+            android:orientation="horizontal"
+            android:padding="@dimen/ayanCardPadding">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/moreIv"
+                android:layout_width="@dimen/ayanDoubleMainPadding"
+                android:layout_height="@dimen/ayanDoubleMainPadding"
+                android:background="?android:selectableItemBackground"
+                android:padding="@dimen/ayanCardPadding"
+                app:srcCompat="@drawable/ic_more_vert" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/inquiryHistoryNameTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:textColor="@color/ayanTextColor" />
+
+                <TextView
+                    android:id="@+id/inquiryHistoryValueTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ayanCardPadding"
+                    android:gravity="right"
+                    android:textColor="@color/ayanGreyTextColor" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/inquiryTypeIcon"
+                android:layout_width="@dimen/ayanDoubleMainPadding"
+                android:layout_height="@dimen/ayanDoubleMainPadding"
+                android:layout_marginLeft="@dimen/ayanRclPadding"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/pinIv"
+                android:layout_width="@dimen/ayanTopIconSize"
+                android:layout_height="@dimen/ayanTopIconSize"
+                android:layout_marginLeft="@dimen/ayanRclPadding"
+                android:layout_marginRight="@dimen/ayanCardPadding"
+                android:background="@drawable/back_oval_light_grey"
+                android:padding="@dimen/ayanCardPadding"
+                app:srcCompat="@drawable/ic_star" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

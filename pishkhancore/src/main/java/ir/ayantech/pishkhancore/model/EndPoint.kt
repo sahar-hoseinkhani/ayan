@@ -12,4 +12,5 @@ object EndPoint {
     const val InquiryDeleteRecentListItem = "InquiryDeleteRecentListItem"
     const val AppConfigAdvertisement = "AppConfigAdvertisement"
     const val AppConfigBasicInformation = "AppConfigBasicInformation"
+    const val InquiryBookmarkItem = "InquiryBookmarkItem"
 }
