@@ -38,7 +38,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="right"
-                    android:textColor="@color/ayanTextColor" />
+                    android:textColor="@color/ayanTextColor"
+                    android:textSize="@dimen/adButtonTextSize" />
 
                 <TextView
                     android:id="@+id/inquiryHistoryValueTv"
@@ -46,7 +47,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/ayanCardPadding"
                     android:gravity="right"
-                    android:textColor="@color/ayanGreyTextColor" />
+                    android:textColor="@color/ayanGreyTextColor"
+                    android:textSize="@dimen/adButtonTextSize" />
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatImageView
