@@ -18,6 +18,7 @@ import ir.ayantech.whygoogle.adapter.MultiViewTypeAdapter
 import ir.ayantech.whygoogle.adapter.MultiViewTypeViewHolder
 import ir.ayantech.whygoogle.adapter.OnItemClickListener
 import ir.ayantech.whygoogle.fragment.ViewBindingInflater
+import ir.ayantech.whygoogle.helper.trying
 
 class AyanInquiryHistoryAdapter(
     private val mcontext: Context,
@@ -87,8 +88,10 @@ class AyanInquiryHistoryAdapter(
                 (holder.viewBinding as? RowAyanHistoryNativeAdBinding)?.let {
                     (itemsToView[position] as AdiveryNativeAdView).let { adView ->
                         //The specified child already has a parent. You must call removeView() on the child's parent first
-                        it.nativeAdLl.removeAllViews()
-                        it.nativeAdLl.addView(adView)
+                       trying {
+                           it.nativeAdLl.removeAllViews()
+                           it.nativeAdLl.addView(adView)
+                       }
                     }
                 }
             }
