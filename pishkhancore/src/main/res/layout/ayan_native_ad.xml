@@ -34,7 +34,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/ayanCardPadding"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:textColor="@color/ayanTextColor" />
 
         <ImageView
             android:id="@id/adivery_icon"
