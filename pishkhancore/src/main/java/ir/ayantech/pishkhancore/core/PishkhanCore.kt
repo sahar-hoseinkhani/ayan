@@ -69,10 +69,14 @@ object PishkhanCore {
     fun startHistoryFragment(
         activity: WhyGoogleActivity<*>,
         fragment: AyanHistoryFragment,
+        changeStatus: OnChangeStatus,
+        failure: OnFailure,
         onDetailsClicked: (PaymentHistoryGetTransactionInfoOutput) -> Unit
     ) {
         activity.start(fragment.also {
             it.onDetailsClicked = onDetailsClicked
+            it.changeStatus = changeStatus
+            it.failure = failure
         })
     }
 

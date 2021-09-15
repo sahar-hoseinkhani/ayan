@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import ir.ayantech.pishkhancore.core.PishkhanCore
+import ir.ayantech.pishkhancore.ui.fragment.AyanHistoryFragment
 import ir.ayantech.pishkhansample.R
 import ir.ayantech.pishkhansample.databinding.ActivityMainBinding
+import ir.ayantech.pishkhansample.ui.fragment.DetailFragment
 import ir.ayantech.pishkhansample.ui.fragment.InquiryHistoryFragment
 import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.helper.SimpleCallBack
@@ -19,13 +21,17 @@ class MainActivity : WhyGoogleActivity<ActivityMainBinding>() {
 
         login {
             Toast.makeText(this, PishkhanCore.getUserToken(this), Toast.LENGTH_SHORT).show()
-//            PishkhanCore.startHistoryFragment(this, AyanHistoryFragment()) { transaction ->
-//                start(DetailFragment().also {
-//                    it.transaction = transaction
-//                })
-//            }
+            PishkhanCore.startHistoryFragment(this, AyanHistoryFragment(), changeStatus = {
 
-            start(InquiryHistoryFragment())
+            }, failure = {
+
+            }) { transaction ->
+                start(DetailFragment().also {
+                    it.transaction = transaction
+                })
+            }
+
+//            start(InquiryHistoryFragment())
         }
     }
 
