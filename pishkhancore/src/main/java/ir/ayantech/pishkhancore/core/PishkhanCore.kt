@@ -1,7 +1,9 @@
 package ir.ayantech.pishkhancore.core
 
+import PishkhanUser
 import android.app.Application
 import android.content.Context
+import androidx.appcompat.app.AppCompatActivity
 import ir.ayantech.ayannetworking.api.AyanApi
 import ir.ayantech.ayannetworking.api.OnChangeStatus
 import ir.ayantech.ayannetworking.api.OnFailure
@@ -11,8 +13,8 @@ import ir.ayantech.pishkhancore.model.*
 import ir.ayantech.pishkhancore.ui.bottomSheet.AyanCheckStatusBottomSheet
 import ir.ayantech.pishkhancore.ui.fragment.AyanHistoryFragment
 import ir.ayantech.pushsdk.core.AyanNotification
-import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.helper.BooleanCallBack
+import ir.ayantech.whygoogle.standard.WhyGoogleInterface
 
 object PishkhanCore {
     var applicationUniqueToken: String? = null
@@ -34,7 +36,7 @@ object PishkhanCore {
     }
 
     fun startPishkhanLogin(
-        activity: WhyGoogleActivity<*>,
+        activity:AppCompatActivity,
         additionalData: String? = null,
         mobileNumber: String? = null,
         referenceToken: String? = null,
@@ -67,7 +69,7 @@ object PishkhanCore {
     }
 
     fun startHistoryFragment(
-        activity: WhyGoogleActivity<*>,
+        activity: WhyGoogleInterface,
         fragment: AyanHistoryFragment,
         changeStatus: OnChangeStatus,
         failure: OnFailure,
@@ -83,11 +85,11 @@ object PishkhanCore {
     fun onlinePaymentBills(
         bills: List<String>,
         product: String,
-        activity: WhyGoogleActivity<*>,
+        context: Context,
         changeStatus: OnChangeStatus,
         failure: OnFailure
     ) {
-        AyanPayment.onlinePaymentBills(bills, product, activity, changeStatus, failure)
+        AyanPayment.onlinePaymentBills(bills, product, context, changeStatus, failure)
     }
 
     fun getInquiryHistory(

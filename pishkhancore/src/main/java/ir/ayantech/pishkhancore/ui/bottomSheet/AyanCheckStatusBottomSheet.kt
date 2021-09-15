@@ -2,6 +2,7 @@ package ir.ayantech.pishkhancore.ui.bottomSheet
 
 import PishkhanUser
 import android.view.LayoutInflater
+import androidx.appcompat.app.AppCompatActivity
 import ir.ayantech.ayannetworking.api.AyanCallStatus
 import ir.ayantech.ayannetworking.api.AyanCommonCallStatus
 import ir.ayantech.ayannetworking.ayanModel.Failure
@@ -12,13 +13,12 @@ import ir.ayantech.pishkhancore.helper.InformationHelper
 import ir.ayantech.pishkhancore.model.EndPoint
 import ir.ayantech.pishkhancore.model.LoginInput
 import ir.ayantech.pishkhancore.model.LoginOutput
-import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.helper.BooleanCallBack
 import ir.ayantech.whygoogle.helper.makeGone
 import ir.ayantech.whygoogle.helper.makeVisible
 
 class AyanCheckStatusBottomSheet(
-    private var activity: WhyGoogleActivity<*>,
+    private var activity: AppCompatActivity,
     applicationUniqueToken: String,
     private val additionalData: String? = null,
     private val mobileNumber: String? = null,

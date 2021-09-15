@@ -12,7 +12,6 @@ import ir.ayantech.pishkhancore.model.getProductIcon
 import ir.ayantech.pishkhancore.ui.adapter.HighlightedEvenRowsAdapter
 import ir.ayantech.pishkhancore.ui.adapter.TitleBasedExpandableAdapter
 import ir.ayantech.pishkhancore.ui.adapter.TitleBasedMultiTypeItem
-import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.fragment.WhyGoogleFragment
 import ir.ayantech.whygoogle.fragment.WhyGoogleFragmentTransactionAnimation
 import ir.ayantech.whygoogle.helper.*
@@ -73,7 +72,7 @@ abstract class AyanHistoryDetailFragment : WhyGoogleFragment<FragmentAyanHistory
                         iv1.loadFromString(it.Icon)
                         tv1.text = it.Title
                         printLl.setOnClickListener { _ ->
-                            it.Link.handlePishkhanLink(requireActivity() as WhyGoogleActivity<*>)
+                            it.Link.handlePishkhanLink(requireActivity())
                         }
                     }
                     buttons.safeGet(1)?.let {
@@ -81,7 +80,7 @@ abstract class AyanHistoryDetailFragment : WhyGoogleFragment<FragmentAyanHistory
                         iv2.loadFromString(it.Icon)
                         tv2.text = it.Title
                         followUpLl.setOnClickListener { _ ->
-                            it.Link.handlePishkhanLink(requireActivity() as WhyGoogleActivity<*>)
+                            it.Link.handlePishkhanLink(requireActivity())
                         }
                     }
                 }

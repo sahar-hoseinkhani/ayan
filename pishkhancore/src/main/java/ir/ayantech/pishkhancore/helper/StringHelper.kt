@@ -3,17 +3,16 @@ package ir.ayantech.pishkhancore.helper
 import android.content.Context
 import android.net.Uri
 import androidx.browser.customtabs.CustomTabsIntent
-import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.helper.openPhoneWithNumber
 import ir.ayantech.whygoogle.helper.openUrl
 
-fun String.handlePishkhanLink(activity: WhyGoogleActivity<*>?) {
+fun String.handlePishkhanLink(context: Context?) {
     when {
         this.startsWith("fragment:") -> {
 //            this.replace("fragment:", "").let {
 //                trying {
 //                    it.let {
-//                        activity?.start(
+//                        context?.start(
 //                            Class.forName(it).newInstance() as WhyGoogleFragment<*>
 //                        )
 //                    }
@@ -23,18 +22,18 @@ fun String.handlePishkhanLink(activity: WhyGoogleActivity<*>?) {
         this.startsWith("bottomSheet:") -> {
 //            trying {
 //                (Class.forName(this.replace("bottomSheet:", "")).constructors.firstOrNull()
-//                    ?.newInstance(activity, "") as BaseBottomSheet<*>).show()
+//                    ?.newInstance(context, "") as BaseBottomSheet<*>).show()
 //            }
         }
         this.startsWith("call:") -> {
             this.replace("call:", "").let {
-                it.openPhoneWithNumber(activity)
+                it.openPhoneWithNumber(context)
             }
         }
         this.startsWith("chromeCustomTabs:") -> {
-            this.replace("chromeCustomTabs:", "").openUrlViaChromeCustomTab(activity)
+            this.replace("chromeCustomTabs:", "").openUrlViaChromeCustomTab(context)
         }
-        else -> this.openUrl(activity)
+        else -> this.openUrl(context)
     }
 }
 

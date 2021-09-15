@@ -1,20 +1,19 @@
 package ir.ayantech.pishkhancore.core
 
-import android.app.Activity
+import PishkhanUser
 import android.content.Context
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ShareCompat
 import ir.ayantech.ayannetworking.api.AyanCallStatus
 import ir.ayantech.ayannetworking.api.AyanCommonCallStatus
-import ir.ayantech.ayannetworking.api.SimpleCallback
 import ir.ayantech.ayannetworking.api.WrappedPackage
 import ir.ayantech.pishkhancore.helper.InformationHelper
 import ir.ayantech.pishkhancore.model.*
 import ir.ayantech.pishkhancore.ui.dialog.AyanVersionControlDialog
-import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 
 internal class VersionControl(
-    private val activity: WhyGoogleActivity<*>,
+    private val activity: AppCompatActivity,
     private val applicationUniqueToken: String,
     private val ayanCommonCallStatus: AyanCommonCallStatus
 ) {
@@ -138,7 +137,7 @@ internal class VersionControl(
         }
 
         private fun share(context: Context, shareBody: String) {
-            ShareCompat.IntentBuilder.from(context as Activity)
+            ShareCompat.IntentBuilder.from(context as AppCompatActivity)
                 .setText(shareBody)
                 .setType("text/plain")
                 .setChooserTitle("به اشتراک گذاری از طریق:")

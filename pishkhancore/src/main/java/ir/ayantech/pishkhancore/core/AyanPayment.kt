@@ -1,10 +1,10 @@
 package ir.ayantech.pishkhancore.core
 
+import android.content.Context
 import ir.ayantech.ayannetworking.api.AyanCallStatus
 import ir.ayantech.ayannetworking.api.OnChangeStatus
 import ir.ayantech.ayannetworking.api.OnFailure
 import ir.ayantech.pishkhancore.model.*
-import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.helper.LongCallBack
 import ir.ayantech.whygoogle.helper.openUrl
 
@@ -13,7 +13,7 @@ object AyanPayment {
     fun onlinePaymentBills(
         bills: List<String>,
         product: String,
-        activity: WhyGoogleActivity<*>,
+        context: Context,
         changeStatus: OnChangeStatus,
         failure: OnFailure
     ) {
@@ -22,7 +22,7 @@ object AyanPayment {
                 EndPoint.BillsPaymentGetLink,
                 BillsPaymentGetLinkInput(bills, ipgId)
             ) {
-                it?.PaymentLink?.openUrl(activity)
+                it?.PaymentLink?.openUrl(context)
             }
         }
     }

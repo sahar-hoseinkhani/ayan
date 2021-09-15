@@ -9,6 +9,7 @@ import android.os.Environment
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import com.coolerfall.download.*
 import ir.ayantech.pishkhancore.databinding.DialogAyanVerionControlBinding
@@ -16,14 +17,13 @@ import ir.ayantech.pishkhancore.model.CheckVersionOutput
 import ir.ayantech.pishkhancore.model.GetLastVersionOutput
 import ir.ayantech.pishkhancore.model.VersionControlLinkType
 import ir.ayantech.pishkhancore.model.VersionControlUpdateStatus
-import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.helper.makeVisible
 import java.io.File
 import java.util.*
 import java.util.concurrent.TimeUnit
 
 class AyanVersionControlDialog(
-    activity: WhyGoogleActivity<*>,
+    activity: AppCompatActivity,
     private val checkVersion: CheckVersionOutput,
     private val getLastVersion: GetLastVersionOutput,
     private val callback: (updateStatus: Boolean) -> Unit
