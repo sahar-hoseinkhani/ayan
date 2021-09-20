@@ -90,9 +90,9 @@ class AyanHistoryAdapter(
         else RowAyanHistoryBinding::inflate
     }
 
-    fun updateItems(items: List<Any>){
+    fun updateItems(items: List<Any>) {
         this.itemsToView = items
         this.items = items
-        notifyDataSetChanged()
+        notifyItemInserted(1)
     }
 }

@@ -88,10 +88,10 @@ class AyanInquiryHistoryAdapter(
                 (holder.viewBinding as? RowAyanHistoryNativeAdBinding)?.let {
                     (itemsToView[position] as AdiveryNativeAdView).let { adView ->
                         //The specified child already has a parent. You must call removeView() on the child's parent first
-                       trying {
-                           it.nativeAdLl.removeAllViews()
-                           it.nativeAdLl.addView(adView)
-                       }
+                        trying {
+                            it.nativeAdLl.removeAllViews()
+                            it.nativeAdLl.addView(adView)
+                        }
                     }
                 }
             }
@@ -104,9 +104,9 @@ class AyanInquiryHistoryAdapter(
                         it.pinIv.setColorFilter(
                             if (data.Favorite)
                                 ContextCompat.getColor(
-                                mcontext,
-                                R.color.ayanColorAccent
-                            )
+                                    mcontext,
+                                    R.color.ayanColorAccent
+                                )
                             else
                                 ContextCompat.getColor(
                                     mcontext,
@@ -128,6 +128,6 @@ class AyanInquiryHistoryAdapter(
     fun updateItems(items: List<Any>) {
         this.itemsToView = items
         this.items = items
-        notifyDataSetChanged()
+        notifyItemInserted(1)
     }
 }

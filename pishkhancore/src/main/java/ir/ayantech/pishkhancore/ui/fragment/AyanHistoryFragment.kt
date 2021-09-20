@@ -3,6 +3,7 @@ package ir.ayantech.pishkhancore.ui.fragment
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import com.adivery.sdk.Adivery
 import com.adivery.sdk.AdiveryNativeAdView
 import ir.ayantech.advertisement.core.AdvertisementCore
 import ir.ayantech.ayannetworking.api.AyanCallStatus
