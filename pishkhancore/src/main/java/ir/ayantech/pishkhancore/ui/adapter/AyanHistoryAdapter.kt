@@ -93,6 +93,6 @@ class AyanHistoryAdapter(
     fun updateItems(items: List<Any>) {
         this.itemsToView = items
         this.items = items
-        notifyItemInserted(1)
+        notifyDataSetChanged()
     }
 }

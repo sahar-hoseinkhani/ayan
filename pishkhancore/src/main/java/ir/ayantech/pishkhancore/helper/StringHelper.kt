@@ -45,7 +45,7 @@ fun String.openUrlViaChromeCustomTab(context: Context?, color: String? = null) {
 }
 
 fun String.removePishkhanFromString() =
-    this.replace("با پشیخوان 24", "")
+    this.replace("با پیشخوان 24", "")
         .replace("پیشخوان 24", "")
         .replace("با پیشخوان24", "")
         .replace("پیشخوان24", "")
