@@ -31,7 +31,7 @@ open class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>()
     override fun onCreate() {
         super.onCreate()
 
-        PishkhanCore.getAppConfigAdvertisement {
+        PishkhanCore.getAppConfigAdvertisement(requireContext()) {
             showAds = it.Active
             if (it.Active) {
                 activity?.application?.let { application ->
