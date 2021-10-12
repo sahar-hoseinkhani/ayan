@@ -8,9 +8,14 @@ import ir.ayantech.whygoogle.helper.SimpleCallBack
 class AyanErrorBottomSheet(
     context: Context,
     private val message: String,
-    private val onErrorBottomSheetCancelled: SimpleCallBack? = null,
+//    private val onErrorBottomSheetCancelled: SimpleCallBack? = null,
     private val retry: SimpleCallBack
 ) : AyanBaseBottomSheet<BottomSheetAyanErrorBinding>(context) {
+
+    init {
+        setCancelable(false)
+        setCanceledOnTouchOutside(false)
+    }
 
     override fun onCreate() {
         super.onCreate()
@@ -20,9 +25,9 @@ class AyanErrorBottomSheet(
             retry()
         }
 
-        setOnCancelListener {
-            onErrorBottomSheetCancelled?.invoke()
-        }
+//        setOnCancelListener {
+//            onErrorBottomSheetCancelled?.invoke()
+//        }
     }
 
     override val binder: (LayoutInflater) -> BottomSheetAyanErrorBinding
