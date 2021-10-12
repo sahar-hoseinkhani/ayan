@@ -23,7 +23,7 @@ abstract class AyanHistoryDetailFragment : WhyGoogleFragment<FragmentAyanHistory
     override fun onCreate() {
         super.onCreate()
 
-        PishkhanCore.getAppConfigAdvertisement {
+        PishkhanCore.getAppConfigAdvertisement(requireContext()) {
             binding.bannerRl.changeVisibility(it.Active)
             if (it.Active) {
                 AdvertisementCore.requestBannerAds(requireContext(), binding.bannerRl)

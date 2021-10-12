@@ -36,7 +36,7 @@ object PishkhanCore {
     }
 
     fun startPishkhanLogin(
-        activity:AppCompatActivity,
+        activity: AppCompatActivity,
         additionalData: String? = null,
         mobileNumber: String? = null,
         referenceToken: String? = null,
@@ -113,9 +113,10 @@ object PishkhanCore {
     }
 
     fun getAppConfigAdvertisement(
+        context: Context,
         respCallback: (AppConfigAdvertisementOutput) -> Unit
     ) {
-        AyanAppConfigAdvertisement.getAppConfigAdvertisement(respCallback)
+        AyanAppConfigAdvertisement.getAppConfigAdvertisement(context, respCallback)
     }
 
     fun getAppConfigBasicInformation(
