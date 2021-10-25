@@ -20,12 +20,18 @@ object AyanPayment {
         failure: OnFailure
     ) {
         getBillIPGs(bills, product, changeStatus, failure) { ipgId ->
-            PishkhanCore.ayanApi?.simpleCall<BillsPaymentGetLinkOutput>(
-                EndPoint.BillsPaymentGetLink,
+            PishkhanCore.ayanApi?.ayanCall<BillsPaymentGetLinkOutput>(
+                AyanCallStatus {
+                    success {
+                        it.response?.Parameters?.let { output ->
+                            output.PaymentLink.openUrl(context)
+                        }
+                    }
+                    changeStatus(changeStatus)
+                    failure(failure)
+                }, EndPoint.BillsPaymentGetLink,
                 BillsPaymentGetLinkInput(bills, ipgId, mobilePhone)
-            ) {
-                it?.PaymentLink?.openUrl(context)
-            }
+            )
         }
     }
 
