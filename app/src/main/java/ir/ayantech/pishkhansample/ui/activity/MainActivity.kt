@@ -31,6 +31,8 @@ class MainActivity : WhyGoogleActivity<ActivityMainBinding>() {
                 })
             }
 
+//            PishkhanCore.onlinePaymentBills(listOf(), "", this, failure = {}, changeStatus = {})
+
 //            start(InquiryHistoryFragment())
         }
     }

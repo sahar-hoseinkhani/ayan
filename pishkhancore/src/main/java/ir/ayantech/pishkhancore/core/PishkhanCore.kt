@@ -85,10 +85,10 @@ object PishkhanCore {
     fun onlinePaymentBills(
         bills: List<String>,
         product: String,
-        mobilePhone: String? = null,
         context: Context,
         changeStatus: OnChangeStatus,
-        failure: OnFailure
+        failure: OnFailure,
+        mobilePhone: String? = null
     ) {
         AyanPayment.onlinePaymentBills(bills, product, mobilePhone, context, changeStatus, failure)
     }
