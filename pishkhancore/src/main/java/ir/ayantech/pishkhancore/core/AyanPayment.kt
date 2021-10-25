@@ -7,12 +7,14 @@ import ir.ayantech.ayannetworking.api.OnFailure
 import ir.ayantech.pishkhancore.model.*
 import ir.ayantech.whygoogle.helper.LongCallBack
 import ir.ayantech.whygoogle.helper.openUrl
+import kotlin.Result.Companion.success
 
 object AyanPayment {
 
     fun onlinePaymentBills(
         bills: List<String>,
         product: String,
+        mobilePhone: String?,
         context: Context,
         changeStatus: OnChangeStatus,
         failure: OnFailure
@@ -20,7 +22,7 @@ object AyanPayment {
         getBillIPGs(bills, product, changeStatus, failure) { ipgId ->
             PishkhanCore.ayanApi?.simpleCall<BillsPaymentGetLinkOutput>(
                 EndPoint.BillsPaymentGetLink,
-                BillsPaymentGetLinkInput(bills, ipgId)
+                BillsPaymentGetLinkInput(bills, ipgId, mobilePhone)
             ) {
                 it?.PaymentLink?.openUrl(context)
             }

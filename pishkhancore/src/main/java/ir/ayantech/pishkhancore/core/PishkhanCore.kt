@@ -85,11 +85,12 @@ object PishkhanCore {
     fun onlinePaymentBills(
         bills: List<String>,
         product: String,
+        mobilePhone: String? = null,
         context: Context,
         changeStatus: OnChangeStatus,
         failure: OnFailure
     ) {
-        AyanPayment.onlinePaymentBills(bills, product, context, changeStatus, failure)
+        AyanPayment.onlinePaymentBills(bills, product, mobilePhone, context, changeStatus, failure)
     }
 
     fun getInquiryHistory(
