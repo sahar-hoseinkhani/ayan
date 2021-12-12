@@ -5,13 +5,13 @@ plugins {
 
 android {
     flavorDimensions("default")
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "ir.ayantech.pishkhansample"
         minSdkVersion 17
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 19
         versionName "3.0.0"
         multiDexEnabled true
