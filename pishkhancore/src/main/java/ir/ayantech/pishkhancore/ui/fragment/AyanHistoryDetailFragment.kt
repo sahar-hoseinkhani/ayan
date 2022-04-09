@@ -7,6 +7,8 @@ import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.core.PishkhanCore
 import ir.ayantech.pishkhancore.databinding.FragmentAyanHistoryDetailBinding
 import ir.ayantech.pishkhancore.helper.*
+import ir.ayantech.pishkhancore.helper.safeGet
+import ir.ayantech.pishkhancore.helper.setHtmlText
 import ir.ayantech.pishkhancore.model.PaymentHistoryGetTransactionInfoOutput
 import ir.ayantech.pishkhancore.model.getProductIcon
 import ir.ayantech.pishkhancore.ui.adapter.HighlightedEvenRowsAdapter
