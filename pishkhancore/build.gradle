@@ -11,8 +11,8 @@ android {
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 30
-        versionCode 5
-        versionName "0.1.10"
+        versionCode 6
+        versionName "0.1.11"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -66,7 +66,7 @@ afterEvaluate {
             release(MavenPublication){
                 from components.release
                 groupId = "com.github.sahar-hoseinkhani"
-                artifactId = "pishkhancore"
+                artifactId = "ayan"
                 version = "0.1.10"
             }
         }
