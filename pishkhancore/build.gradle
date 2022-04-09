@@ -10,8 +10,8 @@ android {
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 31
-        versionCode 2
-        versionName "0.1.6"
+        versionCode 3
+        versionName "0.1.7"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -51,10 +51,10 @@ dependencies {
     //--------------------------------Networking--------------------------------
     implementation 'com.github.shadowalker77:networking:0.11.0'
     //-----------------------------------Ayan-----------------------------------
-    implementation 'com.github.shadowalker77:whygoogle:0.3.11'
+    implementation 'com.github.shadowalker77:whygoogle:0.5.2'
     implementation 'com.coolerfall:android-http-download-manager:1.6.1'
     implementation 'com.github.shadowalker77:wp7progressbar:1.1.0'
     implementation 'com.github.shadowalker77:pushnotification:0.4.15'
-    implementation 'com.github.sahar-hoseinkhani:advertisement:0.0.8'
+    implementation 'com.github.sahar-hoseinkhani:advertisement:0.1.0'
     //--------------------------------------------------------------------------
 }
