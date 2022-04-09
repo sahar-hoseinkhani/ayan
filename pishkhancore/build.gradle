@@ -12,7 +12,7 @@ android {
         minSdkVersion 17
         targetSdkVersion 30
         versionCode 5
-        versionName "0.1.9"
+        versionName "0.1.10"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -58,4 +58,17 @@ dependencies {
     implementation 'com.github.shadowalker77:pushnotification:0.4.15'
     implementation 'com.github.sahar-hoseinkhani:advertisement:0.1.0'
     //--------------------------------------------------------------------------
+}
+
+afterEvaluate {
+    publishing{
+        publications{
+            release(MavenPublication){
+                from components.release
+                groupId = "com.github.sahar-hoseinkhani"
+                artifactId = "pishkhancore"
+                version = "0.1.10"
+            }
+        }
+    }
 }
