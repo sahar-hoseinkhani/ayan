@@ -11,8 +11,8 @@ android {
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 30
-        versionCode 7
-        versionName "0.1.12"
+        versionCode 8
+        versionName "0.1.13"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -50,9 +50,9 @@ dependencies {
     implementation 'com.adivery:sdk:4.0.8'
 
     //--------------------------------Networking--------------------------------
-    implementation 'com.github.shadowalker77:networking:0.11.0'
+    implementation 'com.github.shadowalker77:networking:0.13.0'
     //-----------------------------------Ayan-----------------------------------
-    implementation 'com.github.shadowalker77:whygoogle:0.5.2'
+    implementation 'com.github.shadowalker77:whygoogle:0.5.10'
     implementation 'com.coolerfall:android-http-download-manager:1.6.1'
     implementation 'com.github.shadowalker77:wp7progressbar:1.1.0'
     implementation 'com.github.shadowalker77:pushnotification:0.4.20'
@@ -67,7 +67,7 @@ afterEvaluate {
                 from components.release
                 groupId = "com.github.sahar-hoseinkhani"
                 artifactId = "ayan"
-                version = "0.1.12"
+                version = "0.1.13"
             }
         }
     }
