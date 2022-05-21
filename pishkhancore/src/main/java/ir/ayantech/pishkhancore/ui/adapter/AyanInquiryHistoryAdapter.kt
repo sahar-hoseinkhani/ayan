@@ -86,7 +86,7 @@ class AyanInquiryHistoryAdapter(
         when (getItemViewType(position)) {
             AD -> {
                 (holder.viewBinding as? RowAyanHistoryNativeAdBinding)?.let {
-                    (itemsToView[position] as AdiveryNativeAdView).let { adView ->
+                    (itemsToView[position] as ViewGroup).let { adView ->
                         //The specified child already has a parent. You must call removeView() on the child's parent first
                         trying {
                             it.nativeAdLl.removeAllViews()

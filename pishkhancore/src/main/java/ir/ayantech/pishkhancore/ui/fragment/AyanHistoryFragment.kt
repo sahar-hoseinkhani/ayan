@@ -27,6 +27,7 @@ open class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>()
     private var adView: AdiveryNativeAdView? = null
     var changeStatus: OnChangeStatus? = null
     var failure: OnFailure? = null
+    var onGetHistoryResult: SimpleCallBack? = null
 
     override fun onCreate() {
         super.onCreate()
@@ -103,17 +104,19 @@ open class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>()
                                         }
                                     }
 
-                                if (!dataset.isNullOrEmpty() && showAds) {
-                                    adView = AdvertisementCore.requestNativeAds(
-                                        requireContext(),
-                                        R.layout.ayan_native_ad
-                                    ) {
-                                        adView?.let { dataset.add(1, it) }
-                                        (historyRv.adapter as AyanHistoryAdapter).updateItems(
-                                            dataset
-                                        )
-                                    }
-                                }
+                                onGetHistoryResult?.invoke()
+
+//                                if (!dataset.isNullOrEmpty() && showAds) {
+//                                    adView = AdvertisementCore.requestNativeAds(
+//                                        requireContext(),
+//                                        R.layout.ayan_native_ad
+//                                    ) {
+//                                        adView?.let { dataset.add(1, it) }
+//                                        (historyRv.adapter as AyanHistoryAdapter).updateItems(
+//                                            dataset
+//                                        )
+//                                    }
+//                                }
                                 handleNoItemTv()
                             }
                         }
