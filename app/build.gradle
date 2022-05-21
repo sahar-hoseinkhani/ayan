@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "ir.ayantech.pishkhansample"
-        minSdkVersion 17
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 19
         versionName "3.0.0"
