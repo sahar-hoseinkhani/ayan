@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/ayan_native_ad.xml" value="0.3671875" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/bottom_sheet_ayan_check_status.xml" value="0.3671875" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/bottom_sheet_ayan_error.xml" value="0.3671875" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/dialog_ayan_verion_control.xml" value="0.3671875" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/dialog_save_inquiry.xml" value="0.3671875" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/fragment_ayan_history.xml" value="0.3671875" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/fragment_ayan_history_detail.xml" value="0.3671875" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/row_ayan_bill_detail.xml" value="0.3671875" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/row_ayan_history.xml" value="0.3671875" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/row_ayan_history_native_ad.xml" value="0.3671875" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/row_ayan_inquiry_history.xml" value="0.3671875" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/row_ayan_justice_shares.xml" value="0.3671875" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/row_ayan_multi_type.xml" value="0.3671875" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/row_ayan_recycler_view.xml" value="0.3671875" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

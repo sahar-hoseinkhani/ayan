@@ -57,18 +57,19 @@
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/negativeTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/ayanColorAccent"
-                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/positiveTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/ayanMainPadding"
+                android:layout_marginEnd="@dimen/ayanMainPadding"
+                android:textColor="@color/ayanColorAccent"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/negativeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:textColor="@color/ayanColorAccent"
                 android:textSize="16sp" />
         </LinearLayout>

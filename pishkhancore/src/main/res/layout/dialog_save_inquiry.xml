@@ -5,15 +5,15 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/ayanRclPadding"
+    android:paddingStart="@dimen/ayanRclPadding"
     android:paddingTop="@dimen/ayanRclPadding"
-    android:paddingRight="@dimen/ayanRclPadding">
+    android:paddingEnd="@dimen/ayanRclPadding">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/closeIv"
         android:layout_width="@dimen/ayanTopIconSize"
         android:layout_height="@dimen/ayanTopIconSize"
-        android:layout_gravity="right"
+        android:layout_gravity="start"
         android:tint="@color/ayanTextColor"
         app:srcCompat="@drawable/ic_close" />
 
@@ -34,9 +34,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
+        android:layout_gravity="start"
         android:layout_marginTop="@dimen/ayanRclPadding"
-        android:text="نام قبض"
+        android:text="@string/bill_name"
         android:textColor="@color/ayanTextColor" />
 
     <EditText
@@ -45,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/ayanCardPadding"
-        android:hint="نام مورد نظر برای ذخیره" />
+        android:hint="@string/name_to_save" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,22 +54,23 @@
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/removeBtn"
-            style="@style/AyanRedAppButton"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/ayanButton"
-            android:layout_marginRight="@dimen/ayanRclPadding"
-            android:layout_marginBottom="@dimen/ayanRclPadding"
-            android:layout_weight="2"
-            android:text="حذف" />
-
-        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/saveBtn"
             style="@style/AyanGreenAppButton"
             android:layout_width="0dp"
             android:layout_height="@dimen/ayanButton"
             android:layout_marginBottom="@dimen/ayanRclPadding"
             android:layout_weight="3"
-            android:text="ذخیره اطلاعات" />
+            android:text="@string/save" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/removeBtn"
+            style="@style/AyanRedAppButton"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/ayanButton"
+            android:layout_marginStart="@dimen/ayanRclPadding"
+            android:layout_marginBottom="@dimen/ayanRclPadding"
+            android:layout_weight="2"
+            android:text="@string/remove" />
+
     </LinearLayout>
 </LinearLayout>

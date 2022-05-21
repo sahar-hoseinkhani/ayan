@@ -8,6 +8,7 @@ import androidx.core.app.ShareCompat
 import ir.ayantech.ayannetworking.api.AyanCallStatus
 import ir.ayantech.ayannetworking.api.AyanCommonCallStatus
 import ir.ayantech.ayannetworking.api.WrappedPackage
+import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.helper.InformationHelper
 import ir.ayantech.pishkhancore.model.*
 import ir.ayantech.pishkhancore.ui.dialog.AyanVersionControlDialog
@@ -95,7 +96,7 @@ internal class VersionControl(
                     failure {
                         Toast.makeText(
                             context,
-                            "لطفا اتصال اینترنت خود را بررسی کرده و دوباره تلاش نمایید.",
+                            context.resources.getString(R.string.please_check_your_internet_connection_try_again),
                             Toast.LENGTH_LONG
                         ).show()
                     }
@@ -127,7 +128,7 @@ internal class VersionControl(
                     failure {
                         Toast.makeText(
                             context,
-                            "لطفا اتصال اینترنت خود را بررسی کرده و دوباره تلاش نمایید.",
+                            context.resources.getString(R.string.please_check_your_internet_connection_try_again),
                             Toast.LENGTH_LONG
                         ).show()
                     }
@@ -140,7 +141,7 @@ internal class VersionControl(
             ShareCompat.IntentBuilder.from(context as AppCompatActivity)
                 .setText(shareBody)
                 .setType("text/plain")
-                .setChooserTitle("به اشتراک گذاری از طریق:")
+                .setChooserTitle(context.resources.getString(R.string.share_via))
                 .startChooser()
         }
     }

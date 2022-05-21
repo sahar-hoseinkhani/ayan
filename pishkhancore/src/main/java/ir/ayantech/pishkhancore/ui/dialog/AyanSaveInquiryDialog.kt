@@ -3,6 +3,7 @@ package ir.ayantech.pishkhancore.ui.dialog
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
+import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.core.PishkhanCore
 import ir.ayantech.pishkhancore.databinding.DialogSaveInquiryBinding
 import ir.ayantech.pishkhancore.helper.InquiryHistoryCallBack
@@ -20,8 +21,7 @@ class AyanSaveInquiryDialog(
 
         binding.apply {
             productIv.setImageResource(inquiryHistory.Type.Name.getProductIcon())
-            valueTv.text =
-                inquiryHistory.Type.Name.getProductShowName() + " - " + inquiryHistory.QueryValue
+            valueTv.text = inquiryHistory.QueryValue
 
             closeIv.setOnClickListener {
                 dismiss()
@@ -32,7 +32,7 @@ class AyanSaveInquiryDialog(
 
             saveBtn.setOnClickListener {
                 if (saveNameEt.text.toString().isEmpty()) {
-                    saveNameEt.error = "نام انتخابی نباید خالی باشد"
+                    saveNameEt.error = context.resources.getString(R.string.chosen_name_should_not_be_empty)
                     return@setOnClickListener
                 }
                 PishkhanCore.ayanApi?.simpleCall<InquiryHistory>(

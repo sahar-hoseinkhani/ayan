@@ -20,12 +20,19 @@
             android:padding="@dimen/ayanCardPadding">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/moreIv"
+                android:id="@+id/pinIv"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="?selectableItemBackgroundBorderless"
+                android:layout_marginEnd="@dimen/ayanRclPadding"
                 android:padding="@dimen/ayanCardPadding"
-                app:srcCompat="@drawable/ic_more_vert" />
+                app:srcCompat="@drawable/ic_favorite" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/inquiryTypeIcon"
+                android:layout_width="@dimen/ayanDoubleMainPadding"
+                android:layout_height="@dimen/ayanDoubleMainPadding"
+                android:layout_marginEnd="@dimen/ayanRclPadding"
+                android:visibility="gone" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -37,7 +44,7 @@
                     android:id="@+id/inquiryHistoryNameTv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="right"
+                    android:gravity="start"
                     android:textColor="@color/ayanTextColor"
                     android:textSize="@dimen/adButtonTextSize" />
 
@@ -46,25 +53,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/ayanCardPadding"
-                    android:gravity="right"
+                    android:gravity="start"
                     android:textColor="@color/ayanGreyTextColor"
                     android:textSize="@dimen/adButtonTextSize" />
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/inquiryTypeIcon"
-                android:layout_width="@dimen/ayanDoubleMainPadding"
-                android:layout_height="@dimen/ayanDoubleMainPadding"
-                android:layout_marginLeft="@dimen/ayanRclPadding"
-                android:visibility="gone" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/pinIv"
+                android:id="@+id/moreIv"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/ayanRclPadding"
+                android:background="?selectableItemBackgroundBorderless"
                 android:padding="@dimen/ayanCardPadding"
-                app:srcCompat="@drawable/ic_favorite" />
+                app:srcCompat="@drawable/ic_more_vert" />
+
         </LinearLayout>
 
     </RelativeLayout>

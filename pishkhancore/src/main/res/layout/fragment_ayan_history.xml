@@ -34,56 +34,6 @@
                     android:gravity="center"
                     android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:orientation="horizontal"
-                        android:paddingLeft="@dimen/ayanCardPadding"
-                        android:paddingRight="@dimen/ayanCardPadding">
-
-                        <TextView
-                            android:id="@+id/rialTv"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/ayanMainPadding"
-                            android:text="ریال"
-                            android:textColor="@color/white" />
-
-                        <TextView
-                            android:id="@+id/totalAmountTv"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/ayanCardPadding"
-                            android:gravity="center"
-                            android:text="0"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/text_x_large"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/ayanRclPadding"
-                        android:gravity="center"
-                        android:text="مبلغ کل پرداختی"
-                        android:textColor="@color/white" />
-                </LinearLayout>
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="@color/white" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
                     <TextView
                         android:id="@+id/totalBillsCountTv"
                         android:layout_width="match_parent"
@@ -99,7 +49,57 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/ayanRclPadding"
                         android:gravity="center"
-                        android:text="تعداد تراکنش"
+                        android:text="@string/transactions_count"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/ayanCardPadding"
+                        android:paddingEnd="@dimen/ayanCardPadding">
+
+                        <TextView
+                            android:id="@+id/totalAmountTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/ayanCardPadding"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_x_large"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/rialTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/ayanMainPadding"
+                            android:text="@string/rials"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/ayanRclPadding"
+                        android:gravity="center"
+                        android:text="@string/total_payment_amount"
                         android:textColor="@color/white" />
                 </LinearLayout>
 
@@ -142,14 +142,14 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="@dimen/ayanMainPadding"
-                    android:text="آیتمی جهت نمایش وجود ندارد."
+                    android:text="@string/nothing_to_show"
                     android:textColor="@color/ayanTextColor"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/historyRv"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clipToPadding="false"
                 android:paddingTop="@dimen/ayanMainPadding"
@@ -161,7 +161,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/ayanToolbarHeight"
                 android:gravity="center"
-                android:text="شما تاکنون پرداختی نداشته‌اید."
+                android:text="@string/you_have_not_paid_yet"
                 android:textColor="@color/ayanGreyTextColor"
                 android:textStyle="bold"
                 android:visibility="gone" />

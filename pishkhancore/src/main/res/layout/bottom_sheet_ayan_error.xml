@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -7,12 +7,13 @@
     android:paddingBottom="@dimen/main_padding">
 
     <TextView
+        android:id="@+id/errorTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/main_padding"
-        android:layout_marginRight="@dimen/main_padding"
-        android:gravity="right"
-        android:text="خطا"
+        android:layout_marginStart="@dimen/main_padding"
+        android:layout_marginEnd="@dimen/main_padding"
+        android:gravity="start"
+        android:text="@string/error"
         android:textColor="@color/ayanColorAccent"
         android:textStyle="bold" />
 
@@ -20,10 +21,11 @@
         android:id="@+id/messageTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/main_padding"
+        android:layout_below="@id/errorTv"
+        android:layout_marginStart="@dimen/main_padding"
         android:layout_marginTop="@dimen/ayanHalfPadding"
-        android:layout_marginRight="@dimen/main_padding"
-        android:gravity="right"
+        android:layout_marginEnd="@dimen/main_padding"
+        android:gravity="start"
         android:justificationMode="inter_word"
         android:textColor="@color/ayanTextColor" />
 
@@ -31,8 +33,11 @@
         android:id="@+id/retryTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/messageTv"
+        android:layout_alignParentEnd="true"
         android:padding="@dimen/main_padding"
-        android:text="تلاش مجدد"
+        android:text="@string/retry"
         android:textColor="@color/ayanColorAccent"
         android:textStyle="bold" />
-</LinearLayout>
+
+</RelativeLayout>

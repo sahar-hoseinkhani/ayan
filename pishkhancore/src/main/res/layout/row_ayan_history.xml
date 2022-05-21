@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:foreground="?android:attr/selectableItemBackground"
-    android:paddingLeft="@dimen/main_padding"
-    android:paddingRight="@dimen/main_padding">
+    android:paddingEnd="@dimen/main_padding"
+    android:paddingStart="@dimen/main_padding">
 
     <View
         android:id="@+id/divider"
@@ -20,7 +20,7 @@
         android:id="@+id/inquiryTypeIcon"
         android:layout_width="@dimen/ayanButton"
         android:layout_height="@dimen/ayanButton"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
         android:padding="@dimen/ayanCardPadding" />
 
@@ -35,13 +35,13 @@
         android:id="@+id/inquiryDescriptionTv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/ayanDoubleMainPadding"
+        android:layout_marginEnd="@dimen/ayanDoubleMainPadding"
         android:layout_marginTop="@dimen/ayanHalfPadding"
-        android:layout_marginRight="@dimen/ayanHalfPadding"
-        android:layout_toLeftOf="@+id/inquiryTypeIcon"
-        android:layout_toRightOf="@+id/divider"
+        android:layout_marginStart="@dimen/ayanHalfPadding"
+        android:layout_toEndOf="@+id/inquiryTypeIcon"
+        android:layout_toStartOf="@+id/divider"
         android:ellipsize="end"
-        android:gravity="right"
+        android:gravity="start"
         android:maxLines="1"
         android:textColor="@color/ayanTextColor" />
 
@@ -50,37 +50,37 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/inquiryDescriptionTv"
-        android:layout_marginLeft="@dimen/ayanDoubleMainPadding"
+        android:layout_marginEnd="@dimen/ayanDoubleMainPadding"
         android:layout_marginTop="@dimen/ayanCardPadding"
-        android:layout_marginRight="@dimen/ayanHalfPadding"
+        android:layout_marginStart="@dimen/ayanHalfPadding"
         android:layout_marginBottom="@dimen/ayanHalfPadding"
-        android:layout_toLeftOf="@+id/inquiryTypeIcon"
-        android:layout_toRightOf="@+id/divider"
-        android:gravity="right"
+        android:layout_toEndOf="@+id/inquiryTypeIcon"
+        android:layout_toStartOf="@+id/divider"
+        android:gravity="start"
         android:textColor="@color/ayanColorAccent" />
 
     <TextView
         android:id="@+id/dateTv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginTop="@dimen/ayanHalfPadding"
-        android:layout_marginRight="@dimen/ayanDoubleMainPadding"
-        android:layout_toLeftOf="@+id/divider"
-        android:gravity="right"
+        android:layout_marginStart="@dimen/ayanDoubleMainPadding"
+        android:layout_toEndOf="@+id/divider"
+        android:gravity="start"
         android:textColor="@color/ayanTextColor" />
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dateTv"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginTop="@dimen/ayanCardPadding"
-        android:layout_marginRight="@dimen/ayanDoubleMainPadding"
+        android:layout_marginStart="@dimen/ayanDoubleMainPadding"
         android:layout_marginBottom="@dimen/ayanHalfPadding"
-        android:layout_toLeftOf="@+id/divider"
-        android:gravity="right"
-        android:text="جزئیات"
+        android:layout_toEndOf="@+id/divider"
+        android:gravity="start"
+        android:text="@string/details"
         android:textColor="@color/ayanColorAccent"
         android:textStyle="bold" />
 

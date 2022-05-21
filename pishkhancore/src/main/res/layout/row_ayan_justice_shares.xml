@@ -6,32 +6,17 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="horizontal"
-    android:paddingLeft="@dimen/ayanHalfPadding"
+    android:paddingStart="@dimen/ayanHalfPadding"
     android:paddingTop="@dimen/ayanHalfPadding"
-    android:paddingRight="@dimen/ayanHalfPadding"
+    android:paddingEnd="@dimen/ayanHalfPadding"
     android:paddingBottom="@dimen/ayanHalfPadding">
 
-    <LinearLayout
-        android:id="@+id/expandCollapseLl"
+    <TextView
+        android:id="@+id/yearTv"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:splitMotionEvents="false">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/main_padding"
-            android:layout_height="@dimen/main_padding"
-            android:tint="@color/ayanColorAccent"
-            app:srcCompat="@drawable/ic_keyboard_arrow_down_black_24dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/ayanCardPadding"
-            android:text="جزئیات"
-            android:textColor="@color/ayanColorAccent" />
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:textColor="@color/ayanTextColor"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -43,10 +28,10 @@
             android:id="@+id/itemTitleTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/ayanHalfPadding"
-            android:layout_marginRight="@dimen/ayanHalfPadding"
+            android:layout_marginStart="@dimen/ayanHalfPadding"
+            android:layout_marginEnd="@dimen/ayanHalfPadding"
             android:ellipsize="end"
-            android:gravity="right"
+            android:gravity="start"
             android:maxLines="1"
             android:textColor="@color/ayanTextColor"
             android:textStyle="bold" />
@@ -55,21 +40,39 @@
             android:id="@+id/itemDescriptionTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/ayanHalfPadding"
+            android:layout_marginStart="@dimen/ayanHalfPadding"
             android:layout_marginTop="@dimen/ayanCardPadding"
-            android:layout_marginRight="@dimen/ayanHalfPadding"
+            android:layout_marginEnd="@dimen/ayanHalfPadding"
             android:ellipsize="end"
-            android:gravity="right"
+            android:gravity="start"
             android:maxLines="1"
             android:textColor="@color/ayanGreyTextColor"
             android:textStyle="bold"
             android:visibility="gone" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/yearTv"
+
+    <LinearLayout
+        android:id="@+id/expandCollapseLl"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/ayanTextColor"
-        android:textStyle="bold" />
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:splitMotionEvents="false">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/ayanCardPadding"
+            android:text="@string/details"
+            android:textColor="@color/ayanColorAccent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/main_padding"
+            android:layout_height="@dimen/main_padding"
+            android:tint="@color/ayanColorAccent"
+            app:srcCompat="@drawable/ic_keyboard_arrow_down_black_24dp" />
+
+    </LinearLayout>
+
 </LinearLayout>

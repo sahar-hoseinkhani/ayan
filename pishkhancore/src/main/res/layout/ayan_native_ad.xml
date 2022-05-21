@@ -2,8 +2,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/main_padding"
-    android:paddingRight="@dimen/main_padding">
+    android:paddingEnd="@dimen/main_padding"
+    android:paddingStart="@dimen/main_padding">
 
     <com.adivery.sdk.AdiveryNativeAdMediaView
         android:id="@+id/adivery_image"
@@ -20,14 +20,11 @@
         android:orientation="horizontal"
         android:padding="@dimen/ayanCardPadding">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/adivery_call_to_action"
-            style="@style/AyanAppButton"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/ayanButton"
-            android:layout_marginTop="@dimen/ayanCardPadding"
-            android:layout_marginRight="@dimen/ayanCardPadding"
-            android:layout_marginBottom="@dimen/ayanCardPadding" />
+        <ImageView
+            android:id="@id/adivery_icon"
+            android:layout_width="@dimen/ayanDoubleMainPadding"
+            android:layout_height="@dimen/ayanDoubleMainPadding"
+            android:layout_margin="@dimen/ayanCardPadding" />
 
         <TextView
             android:id="@+id/adivery_headline"
@@ -37,11 +34,14 @@
             android:layout_weight="1"
             android:textColor="@color/ayanTextColor" />
 
-        <ImageView
-            android:id="@id/adivery_icon"
-            android:layout_width="@dimen/ayanDoubleMainPadding"
-            android:layout_height="@dimen/ayanDoubleMainPadding"
-            android:layout_margin="@dimen/ayanCardPadding" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/adivery_call_to_action"
+            style="@style/AyanAppButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/ayanButton"
+            android:layout_marginTop="@dimen/ayanCardPadding"
+            android:layout_marginStart="@dimen/ayanCardPadding"
+            android:layout_marginBottom="@dimen/ayanCardPadding" />
 
     </LinearLayout>
 

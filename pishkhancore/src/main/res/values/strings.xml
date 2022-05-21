@@ -1,0 +1,25 @@
+<resources>
+    <string name="please_wait">Please wait</string>
+    <string name="getting_info_from_server">Receiving information from the server...</string>
+    <string name="server_cannot_reached">Server cannot reached.</string>
+    <string name="retry">Retry</string>
+    <string name="error">Error</string>
+    <string name="details">Details</string>
+    <string name="rials">Rials</string>
+    <string name="view_receipt">View receipt</string>
+    <string name="transactions_count">Transactions count</string>
+    <string name="total_payment_amount">Total Payment amount</string>
+    <string name="you_have_not_paid_yet">You have not paid yet</string>
+    <string name="nothing_to_show">Nothing to show.</string>
+    <string name="bill_name">Bill name</string>
+    <string name="name_to_save">Name to save</string>
+    <string name="remove">Remove</string>
+    <string name="save">Save</string>
+    <string name="please_check_your_internet_connection_try_again">Please check your Internet connection and try again.</string>
+    <string name="share_via">Share via:</string>
+    <string name="saved_to_clipboared">Saved to Clipboard</string>
+    <string name="bill_id">Bill ID</string>
+    <string name="payment_id">Payment ID</string>
+    <string name="chosen_name_should_not_be_empty">Chosen name should not be empty</string>
+
+</resources>

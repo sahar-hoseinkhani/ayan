@@ -9,10 +9,10 @@
         android:id="@+id/waitTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/main_padding"
-        android:layout_marginRight="@dimen/main_padding"
-        android:gravity="center|right"
-        android:text="لطفا صبر کنید"
+        android:layout_marginStart="@dimen/main_padding"
+        android:layout_marginEnd="@dimen/main_padding"
+        android:gravity="center|start"
+        android:text="@string/please_wait"
         android:textColor="@color/ayanTextColor"
         android:textStyle="bold" />
 
@@ -21,11 +21,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/waitTv"
-        android:layout_marginLeft="@dimen/main_padding"
+        android:layout_marginStart="@dimen/main_padding"
         android:layout_marginTop="@dimen/ayanCardPadding"
-        android:layout_marginRight="@dimen/main_padding"
-        android:gravity="center|right"
-        android:text="در حال دریافت اطلاعات از سرور..."
+        android:layout_marginEnd="@dimen/main_padding"
+        android:gravity="center|start"
+        android:text="@string/getting_info_from_server"
         android:textColor="@color/ayanTextColor" />
 
     <RelativeLayout
@@ -39,10 +39,10 @@
             android:id="@+id/titleTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/main_padding"
-            android:layout_marginRight="@dimen/main_padding"
-            android:gravity="center|right"
-            android:text="خطا"
+            android:layout_marginStart="@dimen/main_padding"
+            android:layout_marginEnd="@dimen/main_padding"
+            android:gravity="center|start"
+            android:text="@string/error"
             android:textColor="@color/ayanColorAccent"
             android:textStyle="bold" />
 
@@ -51,11 +51,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/titleTv"
-            android:layout_marginLeft="@dimen/main_padding"
+            android:layout_marginStart="@dimen/main_padding"
             android:layout_marginTop="@dimen/ayanCardPadding"
-            android:layout_marginRight="@dimen/main_padding"
-            android:gravity="center|right"
-            android:text="ارتباط با سرور برقرار نشد."
+            android:layout_marginEnd="@dimen/main_padding"
+            android:gravity="center|start"
+            android:text="@string/server_cannot_reached"
             android:textColor="@color/ayanTextColor" />
 
         <TextView
@@ -63,9 +63,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/errorTv"
-            android:gravity="center|right"
+            android:gravity="center|start"
             android:padding="@dimen/main_padding"
-            android:text="تلاش مجدد"
+            android:text="@string/retry"
             android:textColor="@color/ayanColorAccent"
             android:textStyle="bold" />
 
