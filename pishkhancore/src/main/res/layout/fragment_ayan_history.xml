@@ -88,7 +88,6 @@
                             android:id="@+id/rialTv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/ayanMainPadding"
                             android:text="@string/rials"
                             android:textColor="@color/white" />
 
@@ -149,7 +148,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/historyRv"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clipToPadding="false"
                 android:paddingTop="@dimen/ayanMainPadding"
