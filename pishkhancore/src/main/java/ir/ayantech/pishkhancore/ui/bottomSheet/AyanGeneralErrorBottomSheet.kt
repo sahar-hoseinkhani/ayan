@@ -10,12 +10,13 @@ class AyanGeneralErrorBottomSheet(
     private val title: String,
     private val message: String,
     private val buttonText: String,
-    private val retry: SimpleCallBack
+    private val setCancelable: Boolean = false,
+    private val retry: SimpleCallBack = {}
 ) : AyanBaseBottomSheet<BottomSheetAyanErrorBinding>(context) {
 
     init {
-        setCancelable(false)
-        setCanceledOnTouchOutside(false)
+        setCancelable(setCancelable)
+        setCanceledOnTouchOutside(setCancelable)
     }
 
     override fun onCreate() {
