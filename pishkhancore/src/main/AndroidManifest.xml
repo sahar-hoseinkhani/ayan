@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="ir.ayantech.pishkhancore">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ir.ayantech.pishkhancore">
+
+    <application android:supportsRtl="true" />
 
 </manifest>

@@ -2,10 +2,10 @@ package ir.ayantech.pishkhancore.core
 
 import android.content.Context
 import ir.ayantech.ayannetworking.api.AyanCallStatus
-import ir.ayantech.ayannetworking.api.OnFailure
+import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.model.AppConfigAdvertisementOutput
 import ir.ayantech.pishkhancore.model.EndPoint
-import ir.ayantech.pishkhancore.ui.bottomSheet.AyanErrorBottomSheet
+import ir.ayantech.pishkhancore.ui.bottomSheet.AyanGeneralErrorBottomSheet
 
 object AyanAppConfigAdvertisement {
 
@@ -22,7 +22,12 @@ object AyanAppConfigAdvertisement {
                 }
                 changeStatus { }
                 failure {
-                    AyanErrorBottomSheet(context, it.failureMessage) {
+                    AyanGeneralErrorBottomSheet(
+                        context = context,
+                        title = context.resources.getString(R.string.error),
+                        message = it.failureMessage,
+                        buttonText = context.resources.getString(R.string.retry)
+                    ) {
                         it.reCallApi()
                     }.show()
                 }

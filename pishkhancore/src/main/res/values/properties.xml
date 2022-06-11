@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="applicationNameForPishkhan">applicationNameForPishkhan</string>
-    <string name="applicationName">applicationName</string>
+    <string name="applicationNameForPishkhan">aeelectricitybillinquiry</string>
+    <string name="applicationName">aeelectricitybillinquiry</string>
     <string name="applicationType">android</string>
 
 </resources>

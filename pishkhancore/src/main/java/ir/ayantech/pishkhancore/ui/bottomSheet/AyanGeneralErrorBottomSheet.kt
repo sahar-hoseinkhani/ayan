@@ -5,10 +5,11 @@ import android.view.LayoutInflater
 import ir.ayantech.pishkhancore.databinding.BottomSheetAyanErrorBinding
 import ir.ayantech.whygoogle.helper.SimpleCallBack
 
-class AyanErrorBottomSheet(
+class AyanGeneralErrorBottomSheet(
     context: Context,
+    private val title: String,
     private val message: String,
-//    private val onErrorBottomSheetCancelled: SimpleCallBack? = null,
+    private val buttonText: String,
     private val retry: SimpleCallBack
 ) : AyanBaseBottomSheet<BottomSheetAyanErrorBinding>(context) {
 
@@ -19,7 +20,9 @@ class AyanErrorBottomSheet(
 
     override fun onCreate() {
         super.onCreate()
+        binding.errorTv.text = title
         binding.messageTv.text = message
+        binding.retryTv.text = buttonText
         binding.retryTv.setOnClickListener {
             dismiss()
             retry()

@@ -3,15 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/drawable/back_bottom_sheet.xml" value="0.2785" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/ayan_native_ad.xml" value="0.3671875" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/bottom_sheet_ayan_check_status.xml" value="0.3671875" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/bottom_sheet_ayan_error.xml" value="0.3671875" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/bottom_sheet_error.xml" value="0.3671875" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/dialog_ayan_verion_control.xml" value="0.3671875" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/dialog_save_inquiry.xml" value="0.3671875" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/fragment_ayan_history.xml" value="0.33" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/fragment_ayan_history_detail.xml" value="0.3671875" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/row_ayan_bill_detail.xml" value="0.3671875" />
-        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/row_ayan_history.xml" value="0.13" />
+        <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/row_ayan_history.xml" value="0.33" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/row_ayan_history_native_ad.xml" value="0.3671875" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/row_ayan_inquiry_history.xml" value="0.3671875" />
         <entry key="..\:/Users/ayan/AndroidStudioProjects/ayan/PishkhanSample/pishkhancore/src/main/res/layout/row_ayan_justice_shares.xml" value="0.3671875" />

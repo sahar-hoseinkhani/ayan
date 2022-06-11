@@ -21,5 +21,6 @@
     <string name="bill_id">شناسه قبض</string>
     <string name="payment_id">شناسه پرداخت</string>
     <string name="chosen_name_should_not_be_empty">نام انتخابی نباید خالی باشد</string>
+    <string name="followup_from_the_bank">پیگیری از بانک</string>
 
 </resources>
