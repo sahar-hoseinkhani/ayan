@@ -32,7 +32,7 @@ open class HighlightedEvenRowsAdapter(
                 ShareHelper.copyToClipBoard(parent.context, it.item?.Value)
                 Toast.makeText(
                     parent.context,
-                    "${it.item?.Key}" + parent.context.resources.getString(R.string.saved_to_clipboared),
+                    "${it.item?.Key}" + " " + parent.context.resources.getString(R.string.saved_to_clipboared),
                     Toast.LENGTH_LONG
                 ).show()
             }
