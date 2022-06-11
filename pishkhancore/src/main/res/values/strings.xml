@@ -9,7 +9,7 @@
     <string name="view_receipt">View receipt</string>
     <string name="transactions_count">Transactions count</string>
     <string name="total_payment_amount">Total Payment amount</string>
-    <string name="you_have_not_paid_yet">You have not paid yet</string>
+    <string name="you_have_not_paid_yet">You have not paid yet.\n If you have just paid the bill, it may take a while to be added to your history.</string>
     <string name="nothing_to_show">Nothing to show.</string>
     <string name="bill_name">Bill name</string>
     <string name="name_to_save">Name to save</string>

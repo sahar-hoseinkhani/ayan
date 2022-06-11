@@ -9,7 +9,7 @@
     <string name="view_receipt">مشاهده رسید</string>
     <string name="transactions_count">تعداد تراکنش</string>
     <string name="total_payment_amount">مبلغ کل پرداختی</string>
-    <string name="you_have_not_paid_yet">شما تاکنون پرداختی نداشته‌اید.</string>
+    <string name="you_have_not_paid_yet">شما تاکنون پرداختی نداشته‌اید.\nدر صورتی که قبضی را به تازگی پرداخت کرده‌اید ممکن است با کمی تاخیر به لیست سوابق شما اضافه شود.</string>
     <string name="nothing_to_show">آیتمی جهت نمایش وجود ندارد.</string>
     <string name="bill_name">نام قبض</string>
     <string name="name_to_save">نام مورد نظر برای ذخیره</string>
