@@ -61,7 +61,7 @@ class AyanHistoryAdapter(
                 (holder.viewBinding as? RowAyanHistoryBinding)?.let {
                     (itemsToView[position] as Transaction).let { data ->
                         it.inquiryDescriptionTv.text = data.Title
-                        it.billAmountTv.text = data.Amount.formatAmount()
+                        it.billAmountTv.text = attachedContext.resources.getString(R.string.custom_unit, data.Amount)
                         it.dateTv.text =
                             data.DateTime.Persian.DateFormatted + " | " + data.DateTime.Time
 

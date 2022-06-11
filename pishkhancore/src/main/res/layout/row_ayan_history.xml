@@ -34,12 +34,14 @@
     <TextView
         android:id="@+id/inquiryDescriptionTv"
         android:layout_width="0dp"
+
+        android:textAlignment="viewStart"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/ayanDoubleMainPadding"
-        android:layout_marginTop="@dimen/ayanHalfPadding"
         android:layout_marginStart="@dimen/ayanHalfPadding"
-        android:layout_toEndOf="@+id/inquiryTypeIcon"
+        android:layout_marginTop="@dimen/ayanHalfPadding"
+        android:layout_marginEnd="@dimen/ayanDoubleMainPadding"
         android:layout_toStartOf="@+id/divider"
+        android:layout_toEndOf="@+id/inquiryTypeIcon"
         android:ellipsize="end"
         android:gravity="start"
         android:maxLines="1"

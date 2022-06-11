@@ -21,6 +21,7 @@
     <string name="bill_id">Bill ID</string>
     <string name="payment_id">Payment ID</string>
     <string name="chosen_name_should_not_be_empty">Chosen name should not be empty</string>
-    <string name="followup_from_the_bank">Follow up from the bank</string>
+    <string name="followup_from_the_bank">Follow up</string>
+    <string name="custom_unit">%d Rials</string>
 
 </resources>
