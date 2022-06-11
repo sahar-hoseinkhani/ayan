@@ -141,7 +141,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="@dimen/ayanMainPadding"
-                    android:text="@string/nothing_to_show"
+                    android:text="@string/you_have_not_paid_yet"
                     android:textColor="@color/ayanTextColor"
                     android:textStyle="bold" />
             </LinearLayout>
