@@ -64,6 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/errorTv"
             android:gravity="center|start"
+            android:layout_alignParentEnd="true"
             android:padding="@dimen/main_padding"
             android:text="@string/retry"
             android:textColor="@color/ayanColorAccent"
