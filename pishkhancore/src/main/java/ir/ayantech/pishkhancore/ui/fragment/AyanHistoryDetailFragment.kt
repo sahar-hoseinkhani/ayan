@@ -21,16 +21,19 @@ import ir.ayantech.whygoogle.helper.*
 abstract class AyanHistoryDetailFragment : WhyGoogleFragment<FragmentAyanHistoryDetailBinding>() {
 
     abstract var transaction: PaymentHistoryGetTransactionInfoOutput?
+    var onGetHistoryDetails: ((ViewGroup)-> Unit)? = null
 
     override fun onCreate() {
         super.onCreate()
 
-        PishkhanCore.getAppConfigAdvertisement(requireContext()) {
-            binding.bannerRl.changeVisibility(it.Active)
-            if (it.Active) {
-                AdvertisementCore.requestBannerAds(requireContext(), binding.bannerRl)
-            }
-        }
+        onGetHistoryDetails?.invoke(binding.bannerRl)
+
+//        PishkhanCore.getAppConfigAdvertisement(requireContext()) {
+//            binding.bannerRl.changeVisibility(it.Active)
+//            if (it.Active) {
+//                AdvertisementCore.requestBannerAds(requireContext(), binding.bannerRl)
+//            }
+//        }
 
         accessViews {
             transaction?.let { transaction ->
