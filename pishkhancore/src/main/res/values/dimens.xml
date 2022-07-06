@@ -11,6 +11,7 @@
     <dimen name="ayanThinLineHeight">0.5dp</dimen>
     <dimen name="ayanLineHeight">1dp</dimen>
     <dimen name="ayanToolbarHeight">56dp</dimen>
+    <dimen name="ayan_default_divider_margin">10dp</dimen>
 
 
     <dimen name="adButtonTextSize">12sp</dimen>

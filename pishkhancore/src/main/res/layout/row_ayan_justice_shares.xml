@@ -33,6 +33,7 @@
             android:ellipsize="end"
             android:gravity="start"
             android:maxLines="1"
+            android:textAlignment="viewStart"
             android:textColor="@color/ayanTextColor"
             android:textStyle="bold" />
 
@@ -46,6 +47,7 @@
             android:ellipsize="end"
             android:gravity="start"
             android:maxLines="1"
+            android:textAlignment="viewStart"
             android:textColor="@color/ayanGreyTextColor"
             android:textStyle="bold"
             android:visibility="gone" />

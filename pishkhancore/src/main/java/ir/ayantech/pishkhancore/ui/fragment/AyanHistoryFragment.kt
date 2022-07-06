@@ -24,7 +24,6 @@ open class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>()
     var dataset = arrayListOf<Any>()
     var showAds = false
     var onDetailsClicked: ((PaymentHistoryGetTransactionInfoOutput) -> Unit)? = null
-    private var adView: AdiveryNativeAdView? = null
     var changeStatus: OnChangeStatus? = null
     var failure: OnFailure? = null
     var onGetHistoryResult: SimpleCallBack? = null

@@ -1,0 +1,10 @@
+<vector android:height="16.480812dp" android:viewportHeight="33.82"
+    android:viewportWidth="49.25" android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="@color/ayanIconAccent" android:pathData="M22.75,25h-7.4V21h0l1.6,0.7 1.2,-1.8 0.5,0.4a27.18,27.18 0,0 0,2.5 1.1c1,0.4 1.5,0.8 1.5,1.8Z"/>
+    <path android:fillColor="@color/ayanIconAccent" android:pathData="M14.65,21v4H7.25v-1.8c0,-1 0.5,-1.4 1.5,-1.8a18.89,18.89 0,0 0,2.5 -1.1l0.6,-0.4 1.2,1.7 1.6,-0.6Z"/>
+    <path android:fillColor="@color/ayanIconAccent" android:pathData="M10.47,15v-0.5c-0.6,-6.7 7.3,-5.5 7.6,-5.5a1.36,1.36 0,0 0,-0.7 1.8h0.2a1.78,1.78 0,0 1,1.9 1.6h0v0.1a6.7,6.7 0,0 1,0 2L19.47,15c0,2.9 -2.8,5.3 -4.5,5.3S10.47,17.85 10.47,15ZM17.47,10.9h0Z"/>
+    <path android:fillColor="@color/ayanTextColor" android:pathData="M43,33.82H6.21A6.22,6.22 0,0 1,0 27.61V6.21A6.22,6.22 0,0 1,6.21 0H43a6.22,6.22 0,0 1,6.21 6.21v21.4A6.22,6.22 0,0 1,43 33.82ZM6.21,2.5A3.71,3.71 0,0 0,2.5 6.21v21.4a3.72,3.72 0,0 0,3.71 3.71H43a3.72,3.72 0,0 0,3.71 -3.71V6.21A3.71,3.71 0,0 0,43 2.5Z"/>
+    <path android:fillColor="@color/ayanTextColor" android:pathData="M34.74,14H29.38a1.25,1.25 0,0 1,0 -2.5h5.36a1.25,1.25 0,0 1,0 2.5Z"/>
+    <path android:fillColor="@color/ayanTextColor" android:pathData="M42.49,19.58H29.38a1.25,1.25 0,1 1,0 -2.5H42.49a1.25,1.25 0,0 1,0 2.5Z"/>
+    <path android:fillColor="@color/ayanTextColor" android:pathData="M42.49,25.2H29.38a1.25,1.25 0,0 1,0 -2.5H42.49a1.25,1.25 0,0 1,0 2.5Z"/>
+</vector>

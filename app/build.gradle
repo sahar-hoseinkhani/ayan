@@ -12,7 +12,7 @@ android {
         applicationId "ir.ayantech.pishkhansample"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 19
+        versionCode 1
         versionName "1.0.0"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -52,8 +52,8 @@ dependencies {
 
     implementation 'com.android.support:multidex:1.0.3'
     //-----------------------------------Ayan-----------------------------------
-    implementation 'com.github.shadowalker77:whygoogle:0.1.28'
-    implementation 'com.adivery:sdk:4.0.8'
+    implementation 'com.github.shadowalker77:whygoogle:0.5.11'
+    implementation 'com.adivery:sdk:4.3.6'
 
 //    implementation 'com.github.sahar-hoseinkhani:ayan:0.0.3'
 }

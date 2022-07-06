@@ -44,7 +44,7 @@ abstract class AyanHistoryDetailFragment : WhyGoogleFragment<FragmentAyanHistory
                     (transaction.DateTime.Persian.DateFormatted + " | " + transaction.DateTime.Time).trim()
                 detailsRv.verticalSetup()
                 if (transaction.Details != null) {
-                    detailsRv.addDivider()
+                    detailsRv.addDivider(R.drawable.divider)
                     detailsRv.adapter = TitleBasedExpandableAdapter(
                         transaction.Details.map {
                             TitleBasedMultiTypeItem(
@@ -60,6 +60,7 @@ abstract class AyanHistoryDetailFragment : WhyGoogleFragment<FragmentAyanHistory
                     }
                 }
                 descriptionTv.setHtmlText(transaction.Description)
+                printLl.changeVisibility(transaction.ReceiptUrl != null)
                 printLl.setOnClickListener {
                     transaction.ReceiptUrl?.openUrl(requireContext())
                 }

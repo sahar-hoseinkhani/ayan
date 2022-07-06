@@ -12,5 +12,6 @@
     <color name="ayanRedColor">#E36262</color>
     <color name="ayanGreenColor">#66BB6A</color>
     <color name="ayanEditTextColor">#E0E0E0</color>
+    <color name="ayanDividerColor">@color/ayanColorLightGray</color>
 
 </resources>

@@ -1,0 +1,16 @@
+<vector android:height="24dp" android:viewportHeight="32"
+    android:viewportWidth="32" android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="@color/ayanTextColor" android:pathData="M2.77,7.907a0.8,0.8 0,0 1,-0.8 -0.8v-4a0.8,0.8 0,0 1,0.8 -0.8L6.962,2.307a0.8,0.8 0,1 1,0 1.6L3.57,3.907L3.57,7.107A0.8,0.8 0,0 1,2.77 7.907Z"/>
+    <path android:fillColor="@color/ayanTextColor" android:pathData="M28.992,7.907a0.8,0.8 0,0 1,-0.8 -0.8v-3.2L24.801,3.907a0.8,0.8 0,0 1,0 -1.6h4.193a0.8,0.8 0,0 1,0.8 0.8v4A0.8,0.8 0,0 1,28.992 7.907Z"/>
+    <path android:fillColor="@color/ayanTextColor" android:pathData="M6.962,29.148L2.77,29.148a0.8,0.8 0,0 1,-0.8 -0.8v-4a0.8,0.8 0,0 1,1.6 0v3.2L6.962,27.548a0.8,0.8 0,0 1,0 1.6Z"/>
+    <path android:fillColor="@color/ayanTextColor" android:pathData="M28.992,29.148L24.801,29.148a0.8,0.8 0,0 1,0 -1.6h3.393v-3.2a0.8,0.8 0,0 1,1.6 0v4A0.8,0.8 0,0 1,28.992 29.148Z"/>
+    <path android:fillColor="@color/ayanTextColor" android:pathData="M7.77,6.814L9.242,6.814A1.7,1.7 0,0 1,10.942 8.514L10.942,14.022A1.7,1.7 0,0 1,9.242 15.722L7.77,15.722A1.7,1.7 0,0 1,6.07 14.022L6.07,8.514A1.7,1.7 0,0 1,7.77 6.814z"/>
+    <path android:fillColor="@color/ayanTextColor" android:pathData="M18.345,6.814L19.817,6.814A1.7,1.7 0,0 1,21.517 8.514L21.517,14.022A1.7,1.7 0,0 1,19.817 15.722L18.345,15.722A1.7,1.7 0,0 1,16.645 14.022L16.645,8.514A1.7,1.7 0,0 1,18.345 6.814z"/>
+    <path android:fillColor="@color/ayanTextColor" android:pathData="M13.85,6.814L13.85,6.814A0.944,0.944 0,0 1,14.794 7.758L14.794,14.778A0.944,0.944 0,0 1,13.85 15.722L13.85,15.722A0.944,0.944 0,0 1,12.906 14.778L12.906,7.758A0.944,0.944 0,0 1,13.85 6.814z"/>
+    <path android:fillColor="@color/ayanTextColor" android:pathData="M24.425,6.814L24.425,6.814A0.944,0.944 0,0 1,25.369 7.758L25.369,14.778A0.944,0.944 0,0 1,24.425 15.722L24.425,15.722A0.944,0.944 0,0 1,23.481 14.778L23.481,7.758A0.944,0.944 0,0 1,24.425 6.814z"/>
+    <path android:fillColor="@color/ayanIconAccent" android:pathData="M7.483,18.561L9.529,18.561A1.413,1.413 0,0 1,10.942 19.974L10.942,23.302A1.413,1.413 0,0 1,9.529 24.715L7.483,24.715A1.413,1.413 0,0 1,6.07 23.302L6.07,19.974A1.413,1.413 0,0 1,7.483 18.561z"/>
+    <path android:fillColor="@color/ayanIconAccent" android:pathData="M18.058,18.561L20.104,18.561A1.413,1.413 0,0 1,21.517 19.974L21.517,23.302A1.413,1.413 0,0 1,20.104 24.715L18.058,24.715A1.413,1.413 0,0 1,16.645 23.302L16.645,19.974A1.413,1.413 0,0 1,18.058 18.561z"/>
+    <path android:fillColor="@color/ayanIconAccent" android:pathData="M13.85,18.561L13.85,18.561A0.944,0.944 0,0 1,14.794 19.505L14.794,23.771A0.944,0.944 0,0 1,13.85 24.715L13.85,24.715A0.944,0.944 0,0 1,12.906 23.771L12.906,19.505A0.944,0.944 0,0 1,13.85 18.561z"/>
+    <path android:fillColor="@color/ayanIconAccent" android:pathData="M24.425,18.561L24.425,18.561A0.944,0.944 0,0 1,25.369 19.505L25.369,23.771A0.944,0.944 0,0 1,24.425 24.715L24.425,24.715A0.944,0.944 0,0 1,23.481 23.771L23.481,19.505A0.944,0.944 0,0 1,24.425 18.561z"/>
+    <path android:fillColor="@color/ayanTextColor" android:pathData="M28.992,16.16L2.77,16.16a0.8,0.8 0,1 1,0 -1.6L28.992,14.56a0.8,0.8 0,1 1,0 1.6Z"/>
+</vector>
