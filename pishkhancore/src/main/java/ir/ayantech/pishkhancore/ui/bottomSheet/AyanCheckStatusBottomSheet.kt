@@ -84,7 +84,7 @@ class AyanCheckStatusBottomSheet(
                 referenceToken,
                 InformationHelper.getApplicationVersion(activity)
             ), commonCallStatus = ayanCommonCallingStatus,
-            baseUrl = "https://application.monshiplus.ayantech.ir/WebServices/Services.svc/",
+            baseUrl = PishkhanCore.serviceBaseUrl!!,
             hasIdentity = false
         )
     }

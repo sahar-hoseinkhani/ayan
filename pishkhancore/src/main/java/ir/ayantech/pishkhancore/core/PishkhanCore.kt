@@ -13,26 +13,39 @@ import ir.ayantech.pishkhancore.model.*
 import ir.ayantech.pishkhancore.ui.bottomSheet.AyanCheckStatusBottomSheet
 import ir.ayantech.pishkhancore.ui.fragment.AyanHistoryFragment
 import ir.ayantech.pushsdk.core.AyanNotification
+import ir.ayantech.pushsdk.networking.PushNotificationNetworking
 import ir.ayantech.whygoogle.helper.BooleanCallBack
 import ir.ayantech.whygoogle.standard.WhyGoogleInterface
 
 object PishkhanCore {
     var applicationUniqueToken: String? = null
+    var baseUrl: String? = null
+    var serviceBaseUrl: String? = null
+    var versionControllingBaseUrl: String? = null
     var ayanApi: AyanApi? = null
 
     fun initialize(
         application: Application,
         applicationUniqueToken: String,
-    ) {
+        baseUrl: String,
+        serviceBaseUrl: String,
+        versionControllingBaseUrl: String,
+        pushNotificationUrl: String
+    ): AyanApi {
         this.applicationUniqueToken = applicationUniqueToken
+        this.baseUrl = baseUrl
+        this.serviceBaseUrl = serviceBaseUrl
+        this.versionControllingBaseUrl = versionControllingBaseUrl
         AyanNotification.initialize(application)
+        PushNotificationNetworking.ayanApi.defaultBaseUrl  = pushNotificationUrl
         AyanNotification.reportExtraInfo(AppExtraInfo(PishkhanUser.getSession(application)))
         this.ayanApi = AyanApi(
             application,
             { PishkhanUser.getSession(application) },
-            "https://application.monshiplus.ayantech.ir/WebServices/App.svc/",
+            baseUrl,
             logLevel = LogLevel.LOG_ALL
         )
+        return this.ayanApi as AyanApi
     }
 
     fun startPishkhanLogin(

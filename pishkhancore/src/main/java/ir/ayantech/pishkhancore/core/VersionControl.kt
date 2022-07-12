@@ -42,7 +42,7 @@ internal class VersionControl(
                 InformationHelper.getApplicationVersion(activity),
                 AppExtraInfo(PishkhanUser.getSession(activity))
             ), commonCallStatus = ayanCommonCallStatus,
-            baseUrl = defaultBaseUrl,
+            baseUrl = PishkhanCore.versionControllingBaseUrl!!,
             hasIdentity = false
         )
     }
@@ -69,7 +69,7 @@ internal class VersionControl(
                 InformationHelper.getApplicationVersion(activity),
                 AppExtraInfo(PishkhanUser.getSession(activity))
             ), commonCallStatus = ayanCommonCallStatus,
-            baseUrl = defaultBaseUrl,
+            baseUrl = PishkhanCore.versionControllingBaseUrl!!,
             hasIdentity = false
         )
     }
@@ -77,6 +77,7 @@ internal class VersionControl(
     companion object {
 
         const val defaultBaseUrl = "https://versioncontrol.infra.ayantech.ir/WebServices/App.svc/"
+
 
         fun shareApp(context: Context, applicationUniqueToken: String) {
             PishkhanCore.ayanApi?.ayanCall<GetLastVersionOutput>(
@@ -100,7 +101,7 @@ internal class VersionControl(
                             Toast.LENGTH_LONG
                         ).show()
                     }
-                }, baseUrl = defaultBaseUrl,
+                }, baseUrl = PishkhanCore.versionControllingBaseUrl!!,
                 hasIdentity = false
             )
 
