@@ -10,7 +10,11 @@ class PishkhanSampleApplication : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()
-        PishkhanCore.initialize(this, category)
+        PishkhanCore.initialize(this, category,
+            baseUrl =  "https://application.monshiplus.ayantech.ir/WebServices/App.svc/",
+            serviceBaseUrl = "https://application.monshiplus.ayantech.ir/WebServices/Services.svc/",
+            versionControllingBaseUrl = "https://versioncontrol.infra.ayantech.ir/WebServices/App.svc/",
+            pushNotificationUrl = "https://pushnotification.infra.ayantech.ir/WebServices/App.svc/")
     }
 
     override fun attachBaseContext(base: Context?) {

@@ -31,7 +31,7 @@ object PishkhanCore {
         serviceBaseUrl: String,
         versionControllingBaseUrl: String,
         pushNotificationUrl: String
-    ): AyanApi {
+    ){
         this.applicationUniqueToken = applicationUniqueToken
         this.baseUrl = baseUrl
         this.serviceBaseUrl = serviceBaseUrl
@@ -45,7 +45,6 @@ object PishkhanCore {
             baseUrl,
             logLevel = LogLevel.LOG_ALL
         )
-        return this.ayanApi as AyanApi
     }
 
     fun startPishkhanLogin(
