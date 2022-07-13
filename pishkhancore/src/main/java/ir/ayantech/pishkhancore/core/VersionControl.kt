@@ -13,7 +13,7 @@ import ir.ayantech.pishkhancore.helper.InformationHelper
 import ir.ayantech.pishkhancore.model.*
 import ir.ayantech.pishkhancore.ui.dialog.AyanVersionControlDialog
 
-internal class VersionControl(
+open class VersionControl(
     private val activity: AppCompatActivity,
     private val applicationUniqueToken: String,
     private val ayanCommonCallStatus: AyanCommonCallStatus
@@ -76,7 +76,7 @@ internal class VersionControl(
 
     companion object {
 
-        const val defaultBaseUrl = "https://versioncontrol.infra.ayantech.ir/WebServices/App.svc/"
+//        const val defaultBaseUrl = "https://versioncontrol.infra.ayantech.ir/WebServices/App.svc/"
 
 
         fun shareApp(context: Context, applicationUniqueToken: String) {
@@ -133,7 +133,7 @@ internal class VersionControl(
                             Toast.LENGTH_LONG
                         ).show()
                     }
-                }, baseUrl = defaultBaseUrl,
+                }, baseUrl = PishkhanCore.versionControllingBaseUrl!!,
                 hasIdentity = false
             )
         }
