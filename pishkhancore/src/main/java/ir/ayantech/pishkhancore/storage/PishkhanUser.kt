@@ -1,20 +1,20 @@
-import android.annotation.SuppressLint
 import android.content.Context
-import ir.ayantech.whygoogle.helper.PreferencesManager
+import android.provider.Settings
+import ir.ayantech.pishkhancore.storage.PreferencesManager
+import java.util.*
 
-@SuppressLint("StaticFieldLeak")
-object PishkhanUser {
-    private lateinit var context: Context
+internal class PishkhanUser {
+    companion object {
+        const val PISHKHAN_USER_SESSION = "pishkhanUserSession"
 
-    const val PISHKHAN_USER_SESSION = "pishkhanUserSession"
+        internal fun saveSession(context: Context, session: String) {
+            PreferencesManager.getInstance(context)
+                .saveToSharedPreferences(PISHKHAN_USER_SESSION, session)
+        }
 
-    var session: String
-        get() = PreferencesManager.getInstance(context).read(fieldName = PISHKHAN_USER_SESSION)
-        set(value) = PreferencesManager.getInstance(context)
-            .save(fieldName = PISHKHAN_USER_SESSION, value = value)
-
-
-    fun init(context: Context) {
-        PishkhanUser.context = context
+        internal fun getSession(context: Context): String {
+            return PreferencesManager.getInstance(context)
+                .readStringFromSharedPreferences(PISHKHAN_USER_SESSION)
+        }
     }
 }

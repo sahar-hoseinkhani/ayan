@@ -31,17 +31,17 @@ object PishkhanCore {
         serviceBaseUrl: String,
         versionControllingBaseUrl: String,
         pushNotificationUrl: String
-    ){
+    ) {
         this.applicationUniqueToken = applicationUniqueToken
         this.baseUrl = baseUrl
         this.serviceBaseUrl = serviceBaseUrl
         this.versionControllingBaseUrl = versionControllingBaseUrl
         AyanNotification.initialize(application)
-        PushNotificationNetworking.ayanApi.defaultBaseUrl  = pushNotificationUrl
-        AyanNotification.reportExtraInfo(AppExtraInfo(PishkhanUser.session))
+        PushNotificationNetworking.ayanApi.defaultBaseUrl = pushNotificationUrl
+        AyanNotification.reportExtraInfo(AppExtraInfo(PishkhanUser.getSession(application)))
         this.ayanApi = AyanApi(
             application,
-            { PishkhanUser.session },
+            { PishkhanUser.getSession(application) },
             baseUrl,
             logLevel = LogLevel.LOG_ALL
         )
@@ -66,7 +66,7 @@ object PishkhanCore {
         }
     }
 
-    fun getUserToken(context: Context): String = PishkhanUser.session
+    fun getUserToken(context: Context): String = PishkhanUser.getSession(context)
 
     fun shareApp(context: Context) {
         applicationUniqueToken?.let { VersionControl.shareApp(context, it) }
@@ -77,8 +77,7 @@ object PishkhanCore {
     }
 
     fun logout(context: Context) {
-//        PishkhanUser.saveSession(context, "")
-        PishkhanUser.session = ""
+        PishkhanUser.saveSession(context, "")
     }
 
     fun startHistoryFragment(
