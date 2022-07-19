@@ -45,6 +45,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="start"
+                    android:textAlignment="viewStart"
                     android:textColor="@color/ayanTextColor"
                     android:textSize="@dimen/adButtonTextSize" />
 
@@ -54,6 +55,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/ayanCardPadding"
                     android:gravity="start"
+                    android:textAlignment="viewStart"
                     android:textColor="@color/ayanGreyTextColor"
                     android:textSize="@dimen/adButtonTextSize" />
             </LinearLayout>
