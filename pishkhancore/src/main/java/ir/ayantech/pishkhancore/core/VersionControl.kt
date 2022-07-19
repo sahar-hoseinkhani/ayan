@@ -40,7 +40,7 @@ open class VersionControl(
                 InformationHelper.getApplicationType(activity),
                 InformationHelper.getApplicationCategory(applicationUniqueToken),
                 InformationHelper.getApplicationVersion(activity),
-                AppExtraInfo(PishkhanUser.getSession(activity))
+                AppExtraInfo(PishkhanUser.session)
             ), commonCallStatus = ayanCommonCallStatus,
             baseUrl = PishkhanCore.versionControllingBaseUrl!!,
             hasIdentity = false
@@ -67,7 +67,7 @@ open class VersionControl(
                 InformationHelper.getApplicationType(activity),
                 InformationHelper.getApplicationCategory(applicationUniqueToken),
                 InformationHelper.getApplicationVersion(activity),
-                AppExtraInfo(PishkhanUser.getSession(activity))
+                AppExtraInfo(PishkhanUser.session)
             ), commonCallStatus = ayanCommonCallStatus,
             baseUrl = PishkhanCore.versionControllingBaseUrl!!,
             hasIdentity = false
@@ -92,7 +92,7 @@ open class VersionControl(
                     InformationHelper.getApplicationType(context),
                     InformationHelper.getApplicationCategory(applicationUniqueToken),
                     InformationHelper.getApplicationVersion(context),
-                    AppExtraInfo(PishkhanUser.getSession(context))
+                    AppExtraInfo(PishkhanUser.session)
                 ), commonCallStatus = AyanCommonCallStatus {
                     failure {
                         Toast.makeText(
@@ -124,7 +124,7 @@ open class VersionControl(
                     InformationHelper.getApplicationType(context),
                     InformationHelper.getApplicationCategory(applicationUniqueToken),
                     InformationHelper.getApplicationVersion(context),
-                    AppExtraInfo(PishkhanUser.getSession(context))
+                    AppExtraInfo(PishkhanUser.session)
                 ), commonCallStatus = AyanCommonCallStatus {
                     failure {
                         Toast.makeText(
