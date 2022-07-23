@@ -51,5 +51,5 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
     //-----------------------------------Ayan-----------------------------------
     implementation 'com.github.shadowalker77:whygoogle:0.5.12'
-    implementation 'com.adivery:sdk:4.3.6'
+//    implementation 'com.adivery:sdk:4.3.6'
 }
