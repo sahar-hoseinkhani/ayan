@@ -52,6 +52,4 @@ dependencies {
     //-----------------------------------Ayan-----------------------------------
     implementation 'com.github.shadowalker77:whygoogle:0.5.12'
     implementation 'com.adivery:sdk:4.3.6'
-
-//    implementation 'com.github.sahar-hoseinkhani:ayan:0.0.3'
 }
