@@ -47,6 +47,7 @@ open class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>()
         }
 
         accessViews {
+            swipeRefreshLayout.setColorSchemeResources(R.color.ayanColorAccent)
             inquiryHistoryWp10?.showProgressBar()
             historyRv.verticalSetup()
             delayed {
