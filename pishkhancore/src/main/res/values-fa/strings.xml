@@ -23,5 +23,6 @@
     <string name="chosen_name_should_not_be_empty">نام انتخابی نباید خالی باشد</string>
     <string name="followup_from_the_bank">پیگیری از بانک</string>
     <string name="custom_unit">%d ریال</string>
+    <string name="custom_error_message">پاسخی از سرور دریافت نشد. لطفا دوباره تلاش نمایید.</string>
 
 </resources>

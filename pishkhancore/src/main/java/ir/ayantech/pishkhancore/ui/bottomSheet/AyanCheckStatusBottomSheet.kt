@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import ir.ayantech.ayannetworking.api.AyanCallStatus
 import ir.ayantech.ayannetworking.api.AyanCommonCallStatus
 import ir.ayantech.ayannetworking.ayanModel.Failure
+import ir.ayantech.ayannetworking.ayanModel.FailureType
+import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.core.PishkhanCore
 import ir.ayantech.pishkhancore.core.VersionControl
 import ir.ayantech.pishkhancore.databinding.BottomSheetAyanCheckStatusBinding
@@ -94,7 +96,11 @@ class AyanCheckStatusBottomSheet(
             descriptionTv.makeGone()
             waitTv.makeGone()
             retryRl.makeVisible()
-            errorTv.text = failure.failureMessage
+            errorTv.text =
+                if (failure.failureType == FailureType.CANCELED)
+                    activity.resources.getString(R.string.custom_error_message)
+                else
+                    failure.failureMessage
             retryTv.setOnClickListener {
                 descriptionTv.makeVisible()
                 waitTv.makeVisible()
