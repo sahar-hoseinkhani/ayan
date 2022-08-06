@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import ir.ayantech.pishkhancore.core.PishkhanCore
 import ir.ayantech.pishkhancore.ui.fragment.AyanHistoryFragment
 import ir.ayantech.pishkhansample.R
@@ -14,6 +15,7 @@ import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.helper.SimpleCallBack
 
 class MainActivity : WhyGoogleActivity<ActivityMainBinding>() {
+    var bsheet: BottomSheetDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,12 +40,20 @@ class MainActivity : WhyGoogleActivity<ActivityMainBinding>() {
     }
 
     private fun login(callback: SimpleCallBack? = null) {
-        PishkhanCore.startPishkhanLogin(this) { success ->
+        bsheet = PishkhanCore.startPishkhanLogin(this) { success ->
             if (success) {
                 callback?.invoke()
             } else {
                 finish()
             }
+        }
+        bsheet?.show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if (bsheet != null && (bsheet as BottomSheetDialog).isShowing) {
+            ((bsheet as BottomSheetDialog)).dismiss()
         }
     }
 

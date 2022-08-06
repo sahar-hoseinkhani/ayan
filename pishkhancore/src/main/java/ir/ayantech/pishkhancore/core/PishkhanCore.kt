@@ -4,6 +4,7 @@ import PishkhanUser
 import android.app.Application
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import ir.ayantech.ayannetworking.api.AyanApi
 import ir.ayantech.ayannetworking.api.OnChangeStatus
 import ir.ayantech.ayannetworking.api.OnFailure
@@ -53,17 +54,19 @@ object PishkhanCore {
         mobileNumber: String? = null,
         referenceToken: String? = null,
         callback: BooleanCallBack
-    ) {
+    ): BottomSheetDialog? {
+        var bsheet: BottomSheetDialog? = null
         applicationUniqueToken?.let {
-            AyanCheckStatusBottomSheet(
+            bsheet = AyanCheckStatusBottomSheet(
                 activity,
                 it,
                 additionalData,
                 mobileNumber,
                 referenceToken,
                 callback
-            ).show()
+            )
         }
+        return bsheet
     }
 
     fun getUserToken(context: Context): String = PishkhanUser.getSession(context)
