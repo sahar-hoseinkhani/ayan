@@ -13,7 +13,7 @@ import ir.ayantech.whygoogle.fragment.WhyGoogleFragmentTransactionAnimation
 import ir.ayantech.whygoogle.helper.openPhoneWithNumber
 import ir.ayantech.whygoogle.helper.verticalSetup
 
-class RulesFragment : WhyGoogleFragment<FragmentRulesBinding>() {
+open class AyanRulesFragment : WhyGoogleFragment<FragmentRulesBinding>() {
     var changeStatus: OnChangeStatus? = null
     var failure: OnFailure? = null
 

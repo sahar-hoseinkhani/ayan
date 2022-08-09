@@ -13,7 +13,7 @@ import ir.ayantech.ayannetworking.ayanModel.LogLevel
 import ir.ayantech.pishkhancore.model.*
 import ir.ayantech.pishkhancore.ui.bottomSheet.AyanCheckStatusBottomSheet
 import ir.ayantech.pishkhancore.ui.fragment.AyanHistoryFragment
-import ir.ayantech.pishkhancore.ui.fragment.RulesFragment
+import ir.ayantech.pishkhancore.ui.fragment.AyanRulesFragment
 import ir.ayantech.pushsdk.core.AyanNotification
 import ir.ayantech.pushsdk.networking.PushNotificationNetworking
 import ir.ayantech.whygoogle.helper.BooleanCallBack
@@ -32,7 +32,8 @@ object PishkhanCore {
         baseUrl: String,
         serviceBaseUrl: String,
         versionControllingBaseUrl: String,
-        pushNotificationUrl: String
+        pushNotificationUrl: String,
+        headers: HashMap<String, String> = hashMapOf()
     ) {
         this.applicationUniqueToken = applicationUniqueToken
         this.baseUrl = baseUrl
@@ -45,7 +46,8 @@ object PishkhanCore {
             application,
             { PishkhanUser.getSession(application) },
             baseUrl,
-            logLevel = LogLevel.LOG_ALL
+            logLevel = LogLevel.LOG_ALL,
+            headers = headers
         )
     }
 
@@ -100,7 +102,7 @@ object PishkhanCore {
 
     fun startRulesFragment(
         activity: WhyGoogleInterface,
-        fragment: AyanHistoryFragment,
+        fragment: AyanRulesFragment,
         changeStatus: OnChangeStatus,
         failure: OnFailure
     ) {
