@@ -64,6 +64,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/contactSupportBtn"
         style="@style/AyanAppButton"
+        android:text="تماس با پشتیبانی"
         android:layout_width="match_parent"
         android:layout_height="@dimen/ayanButton"
         android:layout_alignParentBottom="true"
