@@ -4,10 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import ir.ayantech.ayannetworking.api.OnChangeStatus
 import ir.ayantech.ayannetworking.api.OnFailure
+import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.core.PishkhanCore
 import ir.ayantech.pishkhancore.databinding.FragmentRulesBinding
 import ir.ayantech.pishkhancore.ui.adapter.AyanRulesAdapter
 import ir.ayantech.whygoogle.fragment.WhyGoogleFragment
+import ir.ayantech.whygoogle.fragment.WhyGoogleFragmentTransactionAnimation
 import ir.ayantech.whygoogle.helper.openPhoneWithNumber
 import ir.ayantech.whygoogle.helper.verticalSetup
 
@@ -43,4 +45,12 @@ class RulesFragment : WhyGoogleFragment<FragmentRulesBinding>() {
         }
     }
 
+    override fun getFragmentTransactionAnimation(): WhyGoogleFragmentTransactionAnimation? {
+        return WhyGoogleFragmentTransactionAnimation(
+            R.anim.h_fragment_enter,
+            R.anim.h_fragment_exit,
+            R.anim.h_fragment_pop_enter,
+            R.anim.h_fragment_pop_exit
+        )
+    }
 }

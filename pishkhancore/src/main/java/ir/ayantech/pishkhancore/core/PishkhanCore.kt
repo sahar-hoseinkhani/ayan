@@ -100,10 +100,11 @@ object PishkhanCore {
 
     fun startRulesFragment(
         activity: WhyGoogleInterface,
+        fragment: AyanHistoryFragment,
         changeStatus: OnChangeStatus,
         failure: OnFailure
     ) {
-        activity.start(RulesFragment().also {
+        activity.start(fragment.also {
             it.changeStatus = changeStatus
             it.failure = failure
         })
