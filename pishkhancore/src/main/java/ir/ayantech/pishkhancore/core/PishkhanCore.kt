@@ -13,6 +13,7 @@ import ir.ayantech.ayannetworking.ayanModel.LogLevel
 import ir.ayantech.pishkhancore.model.*
 import ir.ayantech.pishkhancore.ui.bottomSheet.AyanCheckStatusBottomSheet
 import ir.ayantech.pishkhancore.ui.fragment.AyanHistoryFragment
+import ir.ayantech.pishkhancore.ui.fragment.RulesFragment
 import ir.ayantech.pushsdk.core.AyanNotification
 import ir.ayantech.pushsdk.networking.PushNotificationNetworking
 import ir.ayantech.whygoogle.helper.BooleanCallBack
@@ -92,6 +93,17 @@ object PishkhanCore {
     ) {
         activity.start(fragment.also {
             it.onDetailsClicked = onDetailsClicked
+            it.changeStatus = changeStatus
+            it.failure = failure
+        })
+    }
+
+    fun startRulesFragment(
+        activity: WhyGoogleInterface,
+        changeStatus: OnChangeStatus,
+        failure: OnFailure
+    ) {
+        activity.start(RulesFragment().also {
             it.changeStatus = changeStatus
             it.failure = failure
         })

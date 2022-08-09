@@ -36,8 +36,10 @@
         <entry key="..\:/Users/shk/StudioProjects/ayan/pishkhancore/src/main/res/drawable/ic_traffc_fines_by_plate.xml" value="0.1" />
         <entry key="..\:/Users/shk/StudioProjects/ayan/pishkhancore/src/main/res/drawable/ic_traffic_fines_by_barcode.xml" value="0.1" />
         <entry key="..\:/Users/shk/StudioProjects/ayan/pishkhancore/src/main/res/layout/fragment_ayan_history.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/shk/StudioProjects/ayan/pishkhancore/src/main/res/layout/fragment_rules.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/shk/StudioProjects/ayan/pishkhancore/src/main/res/layout/row_ayan_inquiry_history.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/shk/StudioProjects/ayan/pishkhancore/src/main/res/layout/row_ayan_justice_shares.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/shk/StudioProjects/ayan/pishkhancore/src/main/res/layout/row_rule.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

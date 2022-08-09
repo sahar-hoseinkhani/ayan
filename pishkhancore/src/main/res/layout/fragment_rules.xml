@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- <androidx.core.widget.NestedScrollView
+         android:id="@+id/rulesNst"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_above="@id/contactSupportBtn">
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical"
+             android:padding="@dimen/margin_16">
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="@string/rules"
+                 android:textAppearance="?textAppearanceBody1"
+                 android:textColor="@color/colorPrimaryApp"
+                 android:textStyle="bold" />
+
+             <TextView
+                 android:id="@+id/rulesTv"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="@dimen/margin_8"
+                 android:justificationMode="inter_word"
+                 android:textAppearance="?textAppearanceBody1" />
+
+             <androidx.appcompat.widget.AppCompatTextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="@dimen/margin_16"
+                 android:text="@string/payment_methods"
+                 android:textAppearance="?textAppearanceBody1"
+                 android:textColor="@color/colorPrimaryApp"
+                 android:textStyle="bold" />
+
+             <androidx.appcompat.widget.AppCompatTextView
+                 android:id="@+id/payDescriptionTv"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="@dimen/margin_8"
+                 android:justificationMode="inter_word"
+                 android:textAppearance="?textAppearanceBody1" />
+
+         </LinearLayout>
+
+     </androidx.core.widget.NestedScrollView>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rulesRV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/contactSupportBtn"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:padding="@dimen/ayanMainPadding" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/contactSupportBtn"
+        style="@style/AyanAppButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ayanButton"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/ayanMainPadding"
+        android:layout_marginTop="@dimen/ayanMainPadding"
+        android:layout_marginEnd="@dimen/ayanMainPadding"
+        android:layout_marginBottom="@dimen/ayanMainPadding" />
+
+</RelativeLayout>
