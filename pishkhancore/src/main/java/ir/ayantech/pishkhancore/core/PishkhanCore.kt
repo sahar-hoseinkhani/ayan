@@ -46,7 +46,7 @@ object PishkhanCore {
             application,
             { PishkhanUser.getSession(application) },
             baseUrl,
-            logLevel = LogLevel.LOG_ALL,
+            logLevel = LogLevel.DO_NOT_LOG,
             headers = headers
         )
     }
