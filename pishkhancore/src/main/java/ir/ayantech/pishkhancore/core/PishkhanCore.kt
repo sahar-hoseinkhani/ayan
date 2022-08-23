@@ -10,6 +10,7 @@ import ir.ayantech.ayannetworking.api.OnChangeStatus
 import ir.ayantech.ayannetworking.api.OnFailure
 import ir.ayantech.ayannetworking.api.SimpleCallback
 import ir.ayantech.ayannetworking.ayanModel.LogLevel
+import ir.ayantech.pishkhancore.BuildConfig
 import ir.ayantech.pishkhancore.model.*
 import ir.ayantech.pishkhancore.ui.bottomSheet.AyanCheckStatusBottomSheet
 import ir.ayantech.pishkhancore.ui.fragment.AyanHistoryFragment
@@ -46,7 +47,7 @@ object PishkhanCore {
             application,
             { PishkhanUser.getSession(application) },
             baseUrl,
-            logLevel = LogLevel.DO_NOT_LOG,
+            logLevel = if (BuildConfig.BUILD_TYPE == "debug") LogLevel.LOG_ALL else LogLevel.DO_NOT_LOG,
             headers = headers
         )
     }
