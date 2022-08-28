@@ -5,9 +5,7 @@ import android.content.Context
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ShareCompat
-import ir.ayantech.ayannetworking.api.AyanCallStatus
-import ir.ayantech.ayannetworking.api.AyanCommonCallStatus
-import ir.ayantech.ayannetworking.api.WrappedPackage
+import ir.ayantech.ayannetworking.api.*
 import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.helper.InformationHelper
 import ir.ayantech.pishkhancore.model.*
@@ -16,13 +14,15 @@ import ir.ayantech.pishkhancore.ui.dialog.AyanVersionControlDialog
 open class VersionControl(
     private val activity: AppCompatActivity,
     private val applicationUniqueToken: String,
-    private val ayanCommonCallStatus: AyanCommonCallStatus
+    private val ayanCommonCallStatus: AyanCommonCallStatus? = null,
+    private val changeStatus: OnChangeStatus? = null,
+    private val failure: OnFailure? = null
 ) {
     var checkVersion: WrappedPackage<*, CheckVersionOutput>? = null
     var getLastVersion: WrappedPackage<*, GetLastVersionOutput>? = null
 
     fun checkForNewVersion(
-        callback: (updateStatus: Boolean) -> Unit
+        callback: (updateStatus: Boolean) -> Unit,
     ) {
         checkVersion = PishkhanCore.ayanApi?.ayanCall(
             AyanCallStatus {
@@ -33,6 +33,8 @@ open class VersionControl(
                     }
                     getLastVersion(callback)
                 }
+                changeStatus?.let { changeStatus(it) }
+                failure?.let { failure(it) }
             },
             EndPoint.CheckVersion,
             CheckVersionInput(
@@ -60,6 +62,8 @@ open class VersionControl(
                         callback
                     ).show()
                 }
+                changeStatus?.let { changeStatus(it) }
+                failure?.let { failure(it) }
             },
             EndPoint.GetLastVersion,
             GetLastVersionInput(

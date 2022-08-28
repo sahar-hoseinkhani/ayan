@@ -73,6 +73,40 @@ object PishkhanCore {
         return bsheet
     }
 
+    fun loginPishkhan(
+        activity: AppCompatActivity,
+        additionalData: String? = null,
+        mobileNumber: String? = null,
+        referenceToken: String? = null,
+        changeStatus: OnChangeStatus,
+        failure: OnFailure,
+        callback: BooleanCallBack
+    ) {
+        applicationUniqueToken?.let {
+            val versionControl =
+                VersionControl(activity, it, changeStatus = changeStatus, failure = failure)
+            versionControl.checkForNewVersion { updateNotRequired ->
+                when (updateNotRequired) {
+                    true -> if (PishkhanUser.getSession(activity).isEmpty()) {
+                        AyanLogin.login(
+                            activity,
+                            additionalData,
+                            mobileNumber,
+                            referenceToken,
+                            changeStatus,
+                            failure
+                        ){
+                            callback.invoke(it)
+                        }
+                    } else {
+                        callback.invoke(true)
+                    }
+                    else -> activity.finish()
+                }
+            }
+        }
+    }
+
     fun getUserToken(context: Context): String = PishkhanUser.getSession(context)
 
     fun shareApp(context: Context) {
