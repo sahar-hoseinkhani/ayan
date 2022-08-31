@@ -22,7 +22,6 @@ import ir.ayantech.whygoogle.helper.*
 open class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>() {
 
     var dataset = arrayListOf<Any>()
-    var showAds = false
     var onDetailsClicked: ((PaymentHistoryGetTransactionInfoOutput) -> Unit)? = null
     var changeStatus: OnChangeStatus? = null
     var failure: OnFailure? = null
@@ -30,21 +29,6 @@ open class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>()
 
     override fun onCreate() {
         super.onCreate()
-
-        PishkhanCore.getAppConfigAdvertisement(requireContext()) {
-            showAds = it.Active
-            if (it.Active) {
-                activity?.application?.let { application ->
-                    AdvertisementCore.initialize(
-                        application,
-                        it.Sources.first { it.Key == "appKey" }.Value,
-                        it.Sources.first { it.Key == "adiveryInterstitialAdUnitID" }.Value,
-                        it.Sources.first { it.Key == "adiveryBannerAdUnitID" }.Value,
-                        it.Sources.first { it.Key == "adiveryNativeAdUnitID" }.Value
-                    )
-                }
-            }
-        }
 
         accessViews {
             swipeRefreshLayout.setColorSchemeResources(R.color.ayanColorAccent)
