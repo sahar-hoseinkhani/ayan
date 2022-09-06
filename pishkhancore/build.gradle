@@ -12,7 +12,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 26
-        versionName "0.3.2"
+        versionName "0.3.3"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -70,7 +70,7 @@ afterEvaluate {
                 from components.release
                 groupId = "com.github.sahar-hoseinkhani"
                 artifactId = "ayan"
-                version = "0.3.2"
+                version = "0.3.3"
             }
         }
     }
