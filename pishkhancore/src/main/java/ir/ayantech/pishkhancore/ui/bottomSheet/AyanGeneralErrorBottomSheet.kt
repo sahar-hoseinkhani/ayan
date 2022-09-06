@@ -1,26 +1,25 @@
 package ir.ayantech.pishkhancore.ui.bottomSheet
 
-import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import ir.ayantech.pishkhancore.databinding.BottomSheetAyanErrorBinding
 import ir.ayantech.whygoogle.helper.SimpleCallBack
 
 class AyanGeneralErrorBottomSheet(
-    context: Context,
     private val title: String,
     private val message: String,
     private val buttonText: String,
     private val setCancelable: Boolean = false,
     private val retry: SimpleCallBack = {}
-) : AyanBaseBottomSheet<BottomSheetAyanErrorBinding>(context) {
+) : AyanBaseBottomSheet<BottomSheetAyanErrorBinding>() {
 
     init {
-        setCancelable(setCancelable)
-        setCanceledOnTouchOutside(setCancelable)
+        isCancelable = setCancelable
     }
 
-    override fun onCreate() {
-        super.onCreate()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         binding.errorTv.text = title
         binding.messageTv.text = message
         binding.retryTv.text = buttonText
@@ -28,10 +27,6 @@ class AyanGeneralErrorBottomSheet(
             dismiss()
             retry()
         }
-
-//        setOnCancelListener {
-//            onErrorBottomSheetCancelled?.invoke()
-//        }
     }
 
     override val binder: (LayoutInflater) -> BottomSheetAyanErrorBinding

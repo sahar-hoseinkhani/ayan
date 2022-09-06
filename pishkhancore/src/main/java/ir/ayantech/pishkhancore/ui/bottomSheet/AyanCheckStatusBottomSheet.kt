@@ -1,6 +1,7 @@
 package ir.ayantech.pishkhancore.ui.bottomSheet
 
 import PishkhanUser
+import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import ir.ayantech.ayannetworking.api.AyanCallStatus
@@ -26,11 +27,10 @@ class AyanCheckStatusBottomSheet(
     private val mobileNumber: String? = null,
     private val referenceToken: String? = null,
     private val callBack: BooleanCallBack
-) : AyanBaseBottomSheet<BottomSheetAyanCheckStatusBinding>(activity) {
+) : AyanBaseBottomSheet<BottomSheetAyanCheckStatusBinding>() {
 
     init {
-        setCancelable(false)
-        setCanceledOnTouchOutside(false)
+        isCancelable = false
     }
 
     private val ayanCommonCallingStatus = AyanCommonCallStatus {
@@ -42,9 +42,8 @@ class AyanCheckStatusBottomSheet(
     private val versionControl =
         VersionControl(activity, applicationUniqueToken, ayanCommonCallingStatus)
 
-    override fun onCreate() {
-        super.onCreate()
-
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         versionControl.checkForNewVersion { updateNotRequired ->
             when (updateNotRequired) {
                 true -> if (PishkhanUser.getSession(activity).isEmpty()) {

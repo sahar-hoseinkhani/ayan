@@ -5,6 +5,7 @@ import android.app.Application
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import ir.ayantech.ayannetworking.api.AyanApi
 import ir.ayantech.ayannetworking.api.OnChangeStatus
 import ir.ayantech.ayannetworking.api.OnFailure
@@ -17,6 +18,7 @@ import ir.ayantech.pishkhancore.ui.fragment.AyanHistoryFragment
 import ir.ayantech.pishkhancore.ui.fragment.AyanRulesFragment
 import ir.ayantech.pushsdk.core.AyanNotification
 import ir.ayantech.pushsdk.networking.PushNotificationNetworking
+import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.helper.BooleanCallBack
 import ir.ayantech.whygoogle.standard.WhyGoogleInterface
 
@@ -58,8 +60,8 @@ object PishkhanCore {
         mobileNumber: String? = null,
         referenceToken: String? = null,
         callback: BooleanCallBack
-    ): BottomSheetDialog? {
-        var bsheet: BottomSheetDialog? = null
+    ): BottomSheetDialogFragment? {
+        var bsheet: BottomSheetDialogFragment? = null
         applicationUniqueToken?.let {
             bsheet = AyanCheckStatusBottomSheet(
                 activity,
@@ -95,7 +97,7 @@ object PishkhanCore {
                             referenceToken,
                             changeStatus,
                             failure
-                        ){
+                        ) {
                             callback.invoke(it)
                         }
                     } else {
@@ -179,10 +181,10 @@ object PishkhanCore {
     }
 
     fun getAppConfigAdvertisement(
-        context: Context,
+        activity: WhyGoogleActivity<*>,
         respCallback: (AppConfigAdvertisementOutput) -> Unit
     ) {
-        AyanAppConfigAdvertisement.getAppConfigAdvertisement(context, respCallback)
+        AyanAppConfigAdvertisement.getAppConfigAdvertisement(activity, respCallback)
     }
 
     fun getAppConfigBasicInformation(

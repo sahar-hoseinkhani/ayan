@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import ir.ayantech.pishkhancore.core.PishkhanCore
 import ir.ayantech.pishkhancore.ui.fragment.AyanHistoryFragment
 import ir.ayantech.pishkhansample.R
@@ -15,7 +16,7 @@ import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.helper.SimpleCallBack
 
 class MainActivity : WhyGoogleActivity<ActivityMainBinding>() {
-    var bsheet: BottomSheetDialog? = null
+    var bsheet: BottomSheetDialogFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +48,7 @@ class MainActivity : WhyGoogleActivity<ActivityMainBinding>() {
                 finish()
             }
         }
-        bsheet?.show()
+        bsheet?.show(supportFragmentManager, "")
     }
 
     override fun onDestroy() {

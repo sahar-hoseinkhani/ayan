@@ -1,16 +1,16 @@
 package ir.ayantech.pishkhancore.core
 
-import android.content.Context
 import ir.ayantech.ayannetworking.api.AyanCallStatus
 import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.model.AppConfigAdvertisementOutput
 import ir.ayantech.pishkhancore.model.EndPoint
 import ir.ayantech.pishkhancore.ui.bottomSheet.AyanGeneralErrorBottomSheet
+import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 
 object AyanAppConfigAdvertisement {
 
     fun getAppConfigAdvertisement(
-        context: Context,
+        activity: WhyGoogleActivity<*>,
         callBack: (AppConfigAdvertisementOutput) -> Unit
     ) {
         PishkhanCore.ayanApi?.ayanCall<AppConfigAdvertisementOutput>(
@@ -23,13 +23,12 @@ object AyanAppConfigAdvertisement {
                 changeStatus { }
                 failure {
                     AyanGeneralErrorBottomSheet(
-                        context = context,
-                        title = context.resources.getString(R.string.error),
+                        title = activity.resources.getString(R.string.error),
                         message = it.failureMessage,
-                        buttonText = context.resources.getString(R.string.retry)
+                        buttonText = activity.resources.getString(R.string.retry)
                     ) {
                         it.reCallApi()
-                    }.show()
+                    }.show(activity.supportFragmentManager, "AyanGeneralErrorBottomSheet")
                 }
             },
             EndPoint.AppConfigAdvertisement
