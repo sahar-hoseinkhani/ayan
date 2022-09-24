@@ -36,7 +36,8 @@ object PishkhanCore {
         serviceBaseUrl: String,
         versionControllingBaseUrl: String,
         pushNotificationUrl: String,
-        headers: HashMap<String, String> = hashMapOf()
+        headers: HashMap<String, String> = hashMapOf(),
+        showLogs: Boolean = false,
     ) {
         this.applicationUniqueToken = applicationUniqueToken
         this.baseUrl = baseUrl
@@ -49,7 +50,7 @@ object PishkhanCore {
             application,
             { PishkhanUser.getSession(application) },
             baseUrl,
-            logLevel = if (BuildConfig.BUILD_TYPE == "debug") LogLevel.LOG_ALL else LogLevel.DO_NOT_LOG,
+            logLevel = if (showLogs) LogLevel.LOG_ALL else LogLevel.DO_NOT_LOG,
             headers = headers
         )
     }
