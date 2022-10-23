@@ -4,14 +4,14 @@ import PishkhanUser
 import android.app.Application
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
+import com.coolerfall.download.BuildConfig.VERSION_NAME
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import ir.ayantech.ayannetworking.api.AyanApi
-import ir.ayantech.ayannetworking.api.OnChangeStatus
-import ir.ayantech.ayannetworking.api.OnFailure
-import ir.ayantech.ayannetworking.api.SimpleCallback
+import ir.ayantech.ayannetworking.api.*
 import ir.ayantech.ayannetworking.ayanModel.LogLevel
 import ir.ayantech.pishkhancore.BuildConfig
+import ir.ayantech.pishkhancore.R
+import ir.ayantech.pishkhancore.core.PishkhanCore.applicationUniqueToken
 import ir.ayantech.pishkhancore.model.*
 import ir.ayantech.pishkhancore.ui.bottomSheet.AyanCheckStatusBottomSheet
 import ir.ayantech.pishkhancore.ui.fragment.AyanHistoryFragment
@@ -108,6 +108,58 @@ object PishkhanCore {
                 }
             }
         }
+    }
+
+    fun loginPishkhanWithUpdatedToken(
+        activity: AppCompatActivity,
+        userSubscriptionGetInfoInput: UserSubscriptionGetInfoInput,
+        additionalData: String? = null,
+        mobileNumber: String? = null,
+        referenceToken: String? = null,
+        changeStatus: OnChangeStatus,
+        failure: OnFailure,
+        initAdvertisement: () -> Unit,
+    ) {
+        loginPishkhan(
+            activity = activity,
+            additionalData = additionalData,
+            mobileNumber = mobileNumber,
+            referenceToken = referenceToken,
+            changeStatus = changeStatus,
+            failure = failure,
+            callback = { loginStatus ->
+                activity.updateToken(
+                    userSubscriptionGetInfoInput = userSubscriptionGetInfoInput,
+                    loginStatus = loginStatus,
+                    initAdvertisement = initAdvertisement,
+                    changeStatus = changeStatus,
+                    failure = failure
+                )
+            }
+        )
+    }
+
+    private fun AppCompatActivity.updateToken(
+        userSubscriptionGetInfoInput: UserSubscriptionGetInfoInput,
+        loginStatus: Boolean,
+        initAdvertisement: () -> Unit,
+        changeStatus: OnChangeStatus,
+        failure: OnFailure,
+    ) {
+        ayanApi?.ayanCall<Unit>(
+            endPoint = EndPoint.UserSubscriptionGetInfo,
+            input = userSubscriptionGetInfoInput,
+            ayanCallStatus = AyanCallStatus {
+                success {
+                    if (loginStatus)
+                        initAdvertisement()
+                    else
+                        finish()
+                }
+                changeStatus(changeStatus)
+                failure(failure)
+            }
+        )
     }
 
     fun getUserToken(context: Context): String = PishkhanUser.getSession(context)
