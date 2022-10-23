@@ -61,20 +61,6 @@ dependencies {
     //--------------------------------------------------------------------------
 }
 
-/*
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components . release
-                        groupId = "com.github.sahar-hoseinkhani"
-                artifactId = "ayan"
-                version = "0.3.4"
-            }
-        }
-    }
-}*/
-
 
 afterEvaluate {
     publishing {
@@ -95,7 +81,7 @@ afterEvaluate {
                 artifactId = "ayan"
 
                 // Version Library Name (Example : "1.0.0")
-                version = "0.3.5"
+                version = "0.3.6"
             }
         }
     }
