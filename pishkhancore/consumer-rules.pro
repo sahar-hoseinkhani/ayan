@@ -60,6 +60,13 @@
 
 # Top-level functions that can only be used by Kotlin.
 -dontwarn retrofit2.-KotlinExtensions
+
+
+# Retain generic signatures of TypeToken and its subclasses with R8 version 3.0 and higher.
+#this Is Very Important Rules For Conveting String To Json and visa versa
+-keep,allowobfuscation,allowshrinking class com.google.gson.reflect.TypeToken
+-keep,allowobfuscation,allowshrinking class * extends com.google.gson.reflect.TypeToken
+
 ##---------------End: proguard configuration for Retrofit  ----------
 
 ##---------------Begin: proguard configuration for okhttp3  ----------
@@ -81,10 +88,5 @@
 # Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
 -dontwarn org.codehaus.mojo.animal_sniffer.*
 ##---------------End: proguard configuration for okio  ----------
-
--keep class com.batch. { *; }
--keep class com.google.android.gms. { *; }
--keep class android.support.v7.app. { *; }
--keep class android.support.v4. { *; }
 -dontwarn com.batch.android.mediation.**
 -dontwarn com.batch.android.BatchPushService
