@@ -47,6 +47,8 @@
     <string name="tv_post_package_tracking_detail">جزئیات رهگیری مرسوله</string>
     <string name="tv_date_time">تاریخ و ساعت</string>
     <string name="tv_place">محل</string>
+    <string name="et_postal_code_hint">کد پستی</string>
+    <string name="tv_post_inquiry_title">برای استعلام رایگان وضعیت پستی خود، بارکد پستی آن را وارد نمایید.</string>
 
 
 </resources>

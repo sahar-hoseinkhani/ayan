@@ -47,6 +47,9 @@
     <string name="tv_post_package_tracking_detail">post package tracking detail</string>
     <string name="tv_date_time">date time</string>
     <string name="tv_place">place</string>
+    <string name="et_postal_code_hint">postal code</string>
+    <string name="tv_post_inquiry_title">To inquire about your postal status for free, enter its postal barcode.</string>
+
 
 
 </resources>

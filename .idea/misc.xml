@@ -5,9 +5,12 @@
       <map>
         <entry key="..\:/workspace/Ayan/Pishkhan Core/pishkhancore/src/main/res/drawable/back_bottom_sheet.xml" value="0.2855" />
         <entry key="..\:/workspace/Ayan/Pishkhan Core/pishkhancore/src/main/res/drawable/back_round_primary_dark.xml" value="0.1615" />
+        <entry key="..\:/workspace/Ayan/Pishkhan Core/pishkhancore/src/main/res/layout/bottom_sheet_post_inquiry.xml" value="0.33" />
         <entry key="..\:/workspace/Ayan/Pishkhan Core/pishkhancore/src/main/res/layout/dialog_save_inquiry.xml" value="0.2682291666666667" />
+        <entry key="..\:/workspace/Ayan/Pishkhan Core/pishkhancore/src/main/res/layout/fragment_ayan_history.xml" value="0.2682291666666667" />
         <entry key="..\:/workspace/Ayan/Pishkhan Core/pishkhancore/src/main/res/layout/fragment_ayan_history_detail.xml" value="0.33" />
         <entry key="..\:/workspace/Ayan/Pishkhan Core/pishkhancore/src/main/res/layout/fragment_post_tracking_result.xml" value="0.25" />
+        <entry key="..\:/workspace/Ayan/Pishkhan Core/pishkhancore/src/main/res/layout/fragment_rules.xml" value="0.2682291666666667" />
         <entry key="..\:/workspace/Ayan/Pishkhan Core/pishkhancore/src/main/res/layout/row_ayan_bill_detail.xml" value="0.2682291666666667" />
         <entry key="..\:/workspace/Ayan/Pishkhan Core/pishkhancore/src/main/res/layout/row_bill_detail.xml" value="0.2682291666666667" />
       </map>

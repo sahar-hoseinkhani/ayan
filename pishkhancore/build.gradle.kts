@@ -59,6 +59,11 @@ dependencies {
     implementation("com.github.shadowalker77:pushnotification:1.1.7")
     implementation("com.github.sahar-hoseinkhani:advertisement:0.1.3")
     //--------------------------------------------------------------------------
+
+    //-----------------------------------Material Dialogs---------------------------------------
+    api(MaterialDialogs.materialDialogsCore)
+    api(MaterialDialogs.materialDialogsBottomSheet)
+    api(MaterialDialogs.materialDialogsLifecycle)
 }
 
 
@@ -81,7 +86,7 @@ afterEvaluate {
                 artifactId = "ayan"
 
                 // Version Library Name (Example : "1.0.0")
-                version = "0.3.6"
+                version = "0.3.7"
             }
         }
     }
