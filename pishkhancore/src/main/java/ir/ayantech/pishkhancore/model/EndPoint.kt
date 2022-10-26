@@ -14,5 +14,7 @@ object EndPoint {
     const val AppConfigBasicInformation = "AppConfigBasicInformation"
     const val InquiryBookmarkItem = "InquiryBookmarkItem"
     const val UserSubscriptionGetInfo = "UserSubscriptionGetInfo"
+    const val InquiryPostPackageTracking = "InquiryPostPackageTracking"
+
 
 }

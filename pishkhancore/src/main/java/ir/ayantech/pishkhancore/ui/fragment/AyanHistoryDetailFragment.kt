@@ -2,15 +2,16 @@ package ir.ayantech.pishkhancore.ui.fragment
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import ir.ayantech.advertisement.core.AdvertisementCore
 import ir.ayantech.pishkhancore.R
-import ir.ayantech.pishkhancore.core.PishkhanCore
 import ir.ayantech.pishkhancore.databinding.FragmentAyanHistoryDetailBinding
-import ir.ayantech.pishkhancore.helper.*
+import ir.ayantech.pishkhancore.helper.delayedTransition
+import ir.ayantech.pishkhancore.helper.handlePishkhanLink
+import ir.ayantech.pishkhancore.helper.loadFromString
 import ir.ayantech.pishkhancore.helper.safeGet
 import ir.ayantech.pishkhancore.helper.setHtmlText
 import ir.ayantech.pishkhancore.model.PaymentHistoryGetTransactionInfoOutput
 import ir.ayantech.pishkhancore.model.getProductIcon
+import ir.ayantech.pishkhancore.model.postInquiryAbility
 import ir.ayantech.pishkhancore.ui.adapter.HighlightedEvenRowsAdapter
 import ir.ayantech.pishkhancore.ui.adapter.TitleBasedExpandableAdapter
 import ir.ayantech.pishkhancore.ui.adapter.TitleBasedMultiTypeItem
@@ -21,25 +22,20 @@ import ir.ayantech.whygoogle.helper.*
 abstract class AyanHistoryDetailFragment : WhyGoogleFragment<FragmentAyanHistoryDetailBinding>() {
 
     abstract var transaction: PaymentHistoryGetTransactionInfoOutput?
-    var onGetHistoryDetails: ((ViewGroup)-> Unit)? = null
+    var onGetHistoryDetails: ((ViewGroup) -> Unit)? = null
 
     override fun onCreate() {
         super.onCreate()
 
         onGetHistoryDetails?.invoke(binding.bannerRl)
 
-//        PishkhanCore.getAppConfigAdvertisement(requireContext()) {
-//            binding.bannerRl.changeVisibility(it.Active)
-//            if (it.Active) {
-//                AdvertisementCore.requestBannerAds(requireContext(), binding.bannerRl)
-//            }
-//        }
 
         accessViews {
             transaction?.let { transaction ->
                 amountTv.text = transaction.Amount.formatAmount("")
                 titleTv.text = transaction.Title
                 transaction.Icon?.Name?.getProductIcon()?.let { productIv.setImageResource(it) }
+                transaction.Icon?.Name?.postInquiryAbility()?.let { btnPostInquiry.visibility = it }
                 dateTimeTv.text =
                     (transaction.DateTime.Persian.DateFormatted + " | " + transaction.DateTime.Time).trim()
                 detailsRv.verticalSetup()

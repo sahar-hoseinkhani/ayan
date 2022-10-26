@@ -66,6 +66,7 @@ open class HighlightedEvenRowsAdapter(
         return when (keyValue.Key) {
             "شناسه قبض" -> true
             "شناسه پرداخت" -> true
+            "بارکد پستی" -> true
             else -> keyValue.canCopy
         }
     }

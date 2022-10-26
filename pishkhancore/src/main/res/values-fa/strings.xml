@@ -25,4 +25,28 @@
     <string name="custom_unit">%d ریال</string>
     <string name="custom_error_message">پاسخی از سرور دریافت نشد. لطفا دوباره تلاش نمایید.</string>
 
+
+    <!--Post Tracking Result -->
+    <string name="post_inquiry_btn">استعلام مرسوله پستی</string>
+    <string name="tv_post_package_number">شماره مرسوله</string>
+    <string name="tv_service_type">نوع سرویس</string>
+    <string name="tv_weight">وزن</string>
+    <string name="tv_insurance_amount">مبلغ بیمه</string>
+    <string name="tv_post_price">هزینه پستی</string>
+    <string name="tv_acceptance_date_time">تاریخ و ساعت قبول</string>
+    <string name="tv_post_tracking_status">آخرین وضعیت مرسوله</string>
+    <string name="tv_receiver_info">مشخصات گیرنده</string>
+    <string name="tv_receiver_name">نام گیرنده</string>
+    <string name="tv_receiver_postal_code">کدپستی گیرنده</string>
+    <string name="tv_destination">مقصد</string>
+    <string name="tv_sender_info">مشخصات فرستنده</string>
+    <string name="tv_sender_name">نام فرستنده</string>
+    <string name="tv_sender_postal_code">کدپستی فرستنده</string>
+    <string name="tv_origin">مبدا</string>
+    <string name="tv_post_office_origin">دفتر پستی مبدا</string>
+    <string name="tv_post_package_tracking_detail">جزئیات رهگیری مرسوله</string>
+    <string name="tv_date_time">تاریخ و ساعت</string>
+    <string name="tv_place">محل</string>
+
+
 </resources>

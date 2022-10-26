@@ -25,4 +25,28 @@
     <string name="custom_unit">%d Rials</string>
     <string name="custom_error_message">Connection timeout. Please try again.</string>
 
+
+    <!--Post Tracking Result -->
+    <string name="post_inquiry_btn">Postal inquiry</string>
+    <string name="tv_post_package_number">post package number</string>
+    <string name="tv_service_type">service type</string>
+    <string name="tv_weight">weight</string>
+    <string name="tv_insurance_amount">insurance amount</string>
+    <string name="tv_post_price">post price</string>
+    <string name="tv_acceptance_date_time">acceptance date time</string>
+    <string name="tv_post_tracking_status">last tracking status</string>
+    <string name="tv_receiver_info">receiver info</string>
+    <string name="tv_receiver_name">receiver name</string>
+    <string name="tv_receiver_postal_code">receiver postal code</string>
+    <string name="tv_destination">destination</string>
+    <string name="tv_sender_info">sender info</string>
+    <string name="tv_sender_name">sender name</string>
+    <string name="tv_sender_postal_code">sender postal code</string>
+    <string name="tv_origin">origin</string>
+    <string name="tv_post_office_origin">origin post office</string>
+    <string name="tv_post_package_tracking_detail">post package tracking detail</string>
+    <string name="tv_date_time">date time</string>
+    <string name="tv_place">place</string>
+
+
 </resources>
