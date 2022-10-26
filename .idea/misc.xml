@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/workspace/Ayan/Pishkhan Core/pishkhancore/src/main/res/drawable/back_ayan_color_accent_button.xml" value="0.1815" />
+        <entry key="..\:/workspace/Ayan/Pishkhan Core/pishkhancore/src/main/res/drawable/back_ayan_green_button.xml" value="0.2855" />
         <entry key="..\:/workspace/Ayan/Pishkhan Core/pishkhancore/src/main/res/drawable/back_bottom_sheet.xml" value="0.2855" />
         <entry key="..\:/workspace/Ayan/Pishkhan Core/pishkhancore/src/main/res/drawable/back_round_primary_dark.xml" value="0.1615" />
         <entry key="..\:/workspace/Ayan/Pishkhan Core/pishkhancore/src/main/res/layout/bottom_sheet_post_inquiry.xml" value="0.33" />

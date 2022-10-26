@@ -16,6 +16,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
 
+    <color name="colorDisableButton">#BDC3C7</color>
+
     <color name="post_tracking_header_color">#303F9F</color>
     <color name="post_tracking_bg">@color/ayanColorLightGray</color>
 
