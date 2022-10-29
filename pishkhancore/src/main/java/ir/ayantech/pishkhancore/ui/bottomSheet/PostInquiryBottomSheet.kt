@@ -26,7 +26,10 @@ fun MaterialDialog.postInquiryBottomSheet(navigateToPostResult: (InquiryPostPack
             postInquiryButton.setOnClickListener {
                 getPassportStatusFromPost(
                     packageNumber = postalCodeInput.text.toString(),
-                    navigateToPostResult = navigateToPostResult
+                    navigateToPostResult = {
+                        navigateToPostResult(it)
+                        dismiss()
+                    }
                 )
             }
         }
