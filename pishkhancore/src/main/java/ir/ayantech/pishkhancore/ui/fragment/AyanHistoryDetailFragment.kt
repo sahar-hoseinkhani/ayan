@@ -3,6 +3,7 @@ package ir.ayantech.pishkhancore.ui.fragment
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import ir.ayantech.pishkhancore.R
+import ir.ayantech.pishkhancore.core.getPassportStatusFromPost
 import ir.ayantech.pishkhancore.databinding.FragmentAyanHistoryDetailBinding
 import ir.ayantech.pishkhancore.helper.delayedTransition
 import ir.ayantech.pishkhancore.helper.handlePishkhanLink
@@ -57,6 +58,16 @@ abstract class AyanHistoryDetailFragment : WhyGoogleFragment<FragmentAyanHistory
                 }
                 descriptionTv.setHtmlText(transaction.Description)
                 printLl.changeVisibility(transaction.ReceiptUrl != null)
+                btnPostInquiry.setOnClickListener {
+                    getPassportStatusFromPost(packageNumber = transaction.Details?.map {
+                        it.firstOrNull { it.Key == "بارکد پستی" }
+                    }?.firstOrNull()?.Value ?: "",
+                        navigateToPostResult = { response ->
+                            start(PostTrackingResultFragment().also {
+                                it.output = response
+                            })
+                        })
+                }
                 printLl.setOnClickListener {
                     transaction.ReceiptUrl?.openUrl(requireContext())
                 }
