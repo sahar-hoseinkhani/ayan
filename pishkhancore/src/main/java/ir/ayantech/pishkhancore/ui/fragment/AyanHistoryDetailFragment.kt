@@ -59,9 +59,9 @@ abstract class AyanHistoryDetailFragment : WhyGoogleFragment<FragmentAyanHistory
                 descriptionTv.setHtmlText(transaction.Description)
                 printLl.changeVisibility(transaction.ReceiptUrl != null)
                 btnPostInquiry.setOnClickListener {
-                    getPassportStatusFromPost(packageNumber = transaction.Details?.map {
-                        it.firstOrNull { it.Key == "بارکد پستی" }
-                    }?.firstOrNull()?.Value ?: "",
+
+                    getPassportStatusFromPost(packageNumber = transaction.ExtraInfo?.firstOrNull { it.Key == "بارکد پستی" }?.Value
+                        ?: "",
                         navigateToPostResult = { response ->
                             start(PostTrackingResultFragment().also {
                                 it.output = response
