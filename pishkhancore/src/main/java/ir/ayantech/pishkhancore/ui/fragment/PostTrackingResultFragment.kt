@@ -14,7 +14,7 @@ import ir.ayantech.whygoogle.fragment.WhyGoogleFragment
 import ir.ayantech.whygoogle.helper.addDivider
 import ir.ayantech.whygoogle.helper.verticalSetup
 
-class PostTrackingResultFragment : WhyGoogleFragment<FragmentPostTrackingResultBinding>() {
+open class PostTrackingResultFragment : WhyGoogleFragment<FragmentPostTrackingResultBinding>() {
 
     var output: InquiryPostPackageTrackingOutput? = null
 
