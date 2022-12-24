@@ -19,6 +19,8 @@ import ir.ayantech.whygoogle.adapter.MultiViewTypeViewHolder
 import ir.ayantech.whygoogle.adapter.OnItemClickListener
 import ir.ayantech.whygoogle.fragment.ViewBindingInflater
 import ir.ayantech.whygoogle.helper.trying
+import ir.tafreshiali.whyoogle_ads.databinding.RowNativeAdInListPlaceHolderBinding
+import ir.tafreshiali.whyoogle_ads.extension.registerClickForNativeAdvertisement
 
 class AyanInquiryHistoryAdapter(
     private val mcontext: Context,
@@ -41,10 +43,10 @@ class AyanInquiryHistoryAdapter(
         viewType: Int
     ): MultiViewTypeViewHolder<Any> {
         return super.onCreateViewHolder(parent, viewType).also {
-            (it.viewBinding as? RowAyanHistoryNativeAdBinding)?.let { rowMainNativeAd ->
-                it.registerClickListener(rowMainNativeAd.nativeAdLl) { nativeAdLl ->
-                    nativeAdLl.findViewById<AppCompatButton>(R.id.adivery_call_to_action)
-                        .performClick()
+
+            (it.viewBinding as? RowNativeAdInListPlaceHolderBinding)?.let { rowMainNativeAd ->
+                it.registerClickForNativeAdvertisement {
+                    //TODO MAYBE WE WANT TO SEND ANALYTICS EVENT LATER ON
                 }
             }
 
@@ -85,13 +87,11 @@ class AyanInquiryHistoryAdapter(
         super.onBindViewHolder(holder, position)
         when (getItemViewType(position)) {
             AD -> {
-                (holder.viewBinding as? RowAyanHistoryNativeAdBinding)?.let {
+                (holder.viewBinding as? RowNativeAdInListPlaceHolderBinding)?.let {
                     (itemsToView[position] as ViewGroup).let { adView ->
                         //The specified child already has a parent. You must call removeView() on the child's parent first
-                        trying {
-                            it.nativeAdLl.removeAllViews()
-                            it.nativeAdLl.addView(adView)
-                        }
+                        it.nativeAdView.removeAllViews()
+                        it.nativeAdView.addView(adView)
                     }
                 }
             }

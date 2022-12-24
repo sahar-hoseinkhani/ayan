@@ -2,8 +2,6 @@ package ir.ayantech.pishkhancore.ui.adapter
 
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import androidx.appcompat.widget.AppCompatButton
-import com.adivery.sdk.AdiveryNativeAdView
 import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.databinding.RowAyanHistoryBinding
 import ir.ayantech.pishkhancore.databinding.RowAyanHistoryNativeAdBinding
@@ -13,7 +11,8 @@ import ir.ayantech.whygoogle.adapter.MultiViewTypeAdapter
 import ir.ayantech.whygoogle.adapter.MultiViewTypeViewHolder
 import ir.ayantech.whygoogle.adapter.OnItemClickListener
 import ir.ayantech.whygoogle.fragment.ViewBindingInflater
-import ir.ayantech.whygoogle.helper.formatAmount
+import ir.tafreshiali.whyoogle_ads.databinding.RowNativeAdInListPlaceHolderBinding
+import ir.tafreshiali.whyoogle_ads.extension.registerClickForNativeAdvertisement
 
 class AyanHistoryAdapter(
     items: List<Any>,
@@ -33,11 +32,12 @@ class AyanHistoryAdapter(
         parent: ViewGroup,
         viewType: Int
     ): MultiViewTypeViewHolder<Any> {
-        return super.onCreateViewHolder(parent, viewType).also {
-            (it.viewBinding as? RowAyanHistoryNativeAdBinding)?.let { rowMainNativeAd ->
-                it.registerClickListener(rowMainNativeAd.nativeAdLl) { nativeAdLl ->
-                    nativeAdLl.findViewById<AppCompatButton>(R.id.adivery_call_to_action)
-                        .performClick()
+        return super.onCreateViewHolder(parent, viewType).also { holder ->
+            when (holder.viewBinding) {
+                is RowNativeAdInListPlaceHolderBinding -> {
+                    holder.registerClickForNativeAdvertisement {
+                        //TODO MAYBE WE WANT TO SEND ANALYTICS EVENT LATER ON
+                    }
                 }
             }
         }
@@ -49,11 +49,11 @@ class AyanHistoryAdapter(
         super.onBindViewHolder(holder, position)
         when (getItemViewType(position)) {
             AD -> {
-                (holder.viewBinding as? RowAyanHistoryNativeAdBinding)?.let {
+                (holder.viewBinding as? RowNativeAdInListPlaceHolderBinding)?.let {
                     (itemsToView[position] as ViewGroup).let { adView ->
                         //The specified child already has a parent. You must call removeView() on the child's parent first
-                        it.nativeAdLl.removeAllViews()
-                        it.nativeAdLl.addView(adView)
+                        it.nativeAdView.removeAllViews()
+                        it.nativeAdView.addView(adView)
                     }
                 }
             }
@@ -61,7 +61,8 @@ class AyanHistoryAdapter(
                 (holder.viewBinding as? RowAyanHistoryBinding)?.let {
                     (itemsToView[position] as Transaction).let { data ->
                         it.inquiryDescriptionTv.text = data.Title
-                        it.billAmountTv.text = attachedContext.resources.getString(R.string.custom_unit, data.Amount)
+                        it.billAmountTv.text =
+                            attachedContext.resources.getString(R.string.custom_unit, data.Amount)
                         it.dateTv.text =
                             data.DateTime.Persian.DateFormatted + " | " + data.DateTime.Time
 

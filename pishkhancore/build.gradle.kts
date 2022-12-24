@@ -57,13 +57,17 @@ dependencies {
     implementation("com.coolerfall:android-http-download-manager:1.6.1")
     implementation("com.github.shadowalker77:wp7progressbar:1.1.0")
     implementation("com.github.shadowalker77:pushnotification:1.1.7")
-    implementation("com.github.sahar-hoseinkhani:advertisement:0.1.3")
+    //compileOnly("com.github.sahar-hoseinkhani:advertisement:0.1.3")
     //--------------------------------------------------------------------------
 
     //-----------------------------------Material Dialogs---------------------------------------
     api(MaterialDialogs.materialDialogsCore)
     api(MaterialDialogs.materialDialogsBottomSheet)
     api(MaterialDialogs.materialDialogsLifecycle)
+
+    //Advertisement
+    compileOnly(ayan.WhyGoogle.whyGoogleAdvertisement)
+
 }
 
 
@@ -86,7 +90,7 @@ afterEvaluate {
                 artifactId = "ayan"
 
                 // Version Library Name (Example : "1.0.0")
-                version = "1.0.3"
+                version = "1.0.4"
             }
         }
     }
