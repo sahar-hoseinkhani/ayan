@@ -87,7 +87,7 @@ class AyanHistoryAdapter(
     }
 
     override fun getViewInflaterForViewType(viewType: Int): ViewBindingInflater {
-        return if (viewType == AD) RowAyanHistoryNativeAdBinding::inflate
+        return if (viewType == AD) RowNativeAdInListPlaceHolderBinding::inflate
         else RowAyanHistoryBinding::inflate
     }
 
