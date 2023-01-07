@@ -12,6 +12,7 @@ import ir.ayantech.whygoogle.adapter.MultiViewTypeViewHolder
 import ir.ayantech.whygoogle.adapter.OnItemClickListener
 import ir.ayantech.whygoogle.fragment.ViewBindingInflater
 import ir.tafreshiali.whyoogle_ads.databinding.RowNativeAdInListPlaceHolderBinding
+import ir.tafreshiali.whyoogle_ads.extension.loadAdViewInAdapter
 import ir.tafreshiali.whyoogle_ads.extension.registerClickForNativeAdvertisement
 
 class AyanHistoryAdapter(
@@ -33,13 +34,7 @@ class AyanHistoryAdapter(
         viewType: Int
     ): MultiViewTypeViewHolder<Any> {
         return super.onCreateViewHolder(parent, viewType).also { holder ->
-            when (holder.viewBinding) {
-                is RowNativeAdInListPlaceHolderBinding -> {
-                    holder.registerClickForNativeAdvertisement {
-                        //TODO MAYBE WE WANT TO SEND ANALYTICS EVENT LATER ON
-                    }
-                }
-            }
+            holder.registerClickForNativeAdvertisement()
         }
     }
 
@@ -49,13 +44,7 @@ class AyanHistoryAdapter(
         super.onBindViewHolder(holder, position)
         when (getItemViewType(position)) {
             AD -> {
-                (holder.viewBinding as? RowNativeAdInListPlaceHolderBinding)?.let {
-                    (itemsToView[position] as ViewGroup).let { adView ->
-                        //The specified child already has a parent. You must call removeView() on the child's parent first
-                        it.nativeAdView.removeAllViews()
-                        it.nativeAdView.addView(adView)
-                    }
-                }
+                holder.loadAdViewInAdapter(advertisementItem = itemsToView[position])
             }
             CONTENT -> {
                 (holder.viewBinding as? RowAyanHistoryBinding)?.let {
