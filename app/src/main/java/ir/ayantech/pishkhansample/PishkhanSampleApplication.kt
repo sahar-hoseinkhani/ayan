@@ -4,13 +4,12 @@ import android.content.Context
 import androidx.multidex.MultiDex
 import androidx.multidex.MultiDexApplication
 import ir.ayantech.pishkhancore.core.PishkhanCore
-import ir.ayantech.pishkhansample.BuildConfig.category
 
 class PishkhanSampleApplication : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()
-        PishkhanCore.initialize(this, category,
+        PishkhanCore.initialize(this, "myket",
             baseUrl =  "https://application.monshiplus.ayantech.ir/WebServices/App.svc/",
             serviceBaseUrl = "https://application.monshiplus.ayantech.ir/WebServices/Services.svc/",
             versionControllingBaseUrl = "https://versioncontrol.infra.ayantech.ir/WebServices/App.svc/",

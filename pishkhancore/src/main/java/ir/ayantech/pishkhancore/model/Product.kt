@@ -1,5 +1,6 @@
 package ir.ayantech.pishkhancore.model
 
+import android.view.View
 import ir.ayantech.pishkhancore.R
 
 object Product {
@@ -178,3 +179,13 @@ fun String.getProductIcon() = when (this) {
     "select" -> R.drawable.ic_outline_add_box_24
     else -> R.drawable.ic_search_black_24dp
 }
+
+fun String.postInquiryAbility() = when (this) {
+
+    Product.InquiryNajaPassportStatus -> View.VISIBLE
+    Product.InquiryNajaDrivingLicenceStatus -> View.VISIBLE
+    Product.InquiryNajaCarIdentificationDocumentsStatus -> View.VISIBLE
+    else -> View.GONE
+}
+
+
