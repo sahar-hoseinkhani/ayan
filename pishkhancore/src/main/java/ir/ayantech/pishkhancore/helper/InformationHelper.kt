@@ -24,6 +24,7 @@ internal class InformationHelper {
                 "cafebazaar" -> "cafebazaar"
                 "myket" -> "myket"
                 "bulk" -> "bulk"
+                "galaxystore" -> "galaxystore"
                 else -> "socialmedia"
             }
     }
