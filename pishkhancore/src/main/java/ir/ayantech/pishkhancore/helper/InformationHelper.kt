@@ -25,6 +25,7 @@ internal class InformationHelper {
                 "myket" -> "myket"
                 "bulk" -> "bulk"
                 "galaxystore" -> "galaxystore"
+                "xiaomistore" -> "XiaomiStore"
                 else -> "socialmedia"
             }
     }
