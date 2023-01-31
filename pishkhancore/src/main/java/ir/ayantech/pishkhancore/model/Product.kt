@@ -183,8 +183,8 @@ fun String.getProductIcon() = when (this) {
 fun String.postInquiryAbility() = when (this) {
 
     Product.InquiryNajaPassportStatus -> View.VISIBLE
-    Product.InquiryNajaDrivingLicenceStatus -> View.VISIBLE
-    Product.InquiryNajaCarIdentificationDocumentsStatus -> View.VISIBLE
+//    Product.InquiryNajaDrivingLicenceStatus -> View.VISIBLE
+//    Product.InquiryNajaCarIdentificationDocumentsStatus -> View.VISIBLE
     else -> View.GONE
 }
 
