@@ -25,4 +25,5 @@
     <color name="rating_bottom_sheet_later_btn_background_color">@color/colorPrimary</color>
     <color name="rating_bottom_sheet_yes_btn_text_color">@color/white</color>
     <color name="rating_bottom_sheet_later_btn_text_color">@color/colorPrimary</color>
+    <color name="rating_bottom_sheet_message_tv_text_color">@color/ayanTextColor</color>
 </resources>

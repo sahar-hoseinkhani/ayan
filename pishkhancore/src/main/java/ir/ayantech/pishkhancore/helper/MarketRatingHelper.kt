@@ -6,13 +6,16 @@ import android.util.Log
 import ir.ayantech.pishkhancore.storage.MarketRating
 import ir.ayantech.pishkhancore.ui.bottomSheet.MarketRatingBottomSheet
 import ir.ayantech.whygoogle.activity.WhyGoogleActivity
+import ir.ayantech.whygoogle.helper.trying
 
 fun WhyGoogleActivity<*>.showRatingBottomSheet(applicationId: String) {
     if (!MarketRating.getUserHasRated(this)) {
-        MarketRatingBottomSheet(
-            activity = this,
-            applicationId = applicationId
-        ).show(this.supportFragmentManager, MarketRatingBottomSheet::class.java.simpleName)
+        trying {
+            MarketRatingBottomSheet(
+                activity = this,
+                applicationId = applicationId
+            ).show(this.supportFragmentManager, MarketRatingBottomSheet::class.java.simpleName)
+        }
     }
 }
 

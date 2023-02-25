@@ -15,7 +15,7 @@
         android:layout_marginEnd="@dimen/main_padding"
         android:gravity="start"
         android:text="@string/rating_bottom_sheet_message"
-        android:textColor="@color/ayanTextColor"
+        android:textColor="@color/rating_bottom_sheet_message_tv_text_color"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent" />
 

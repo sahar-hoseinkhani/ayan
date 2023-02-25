@@ -2,7 +2,7 @@ package ir.ayantech.pishkhancore.storage
 
 import android.content.Context
 
-internal class MarketRating {
+class MarketRating {
 
     companion object {
         private const val USER_HAS_RATED = "userHasRated"
@@ -12,7 +12,7 @@ internal class MarketRating {
                 .saveToSharedPreferences(USER_HAS_RATED, hasRated)
         }
 
-        internal fun getUserHasRated(context: Context) = PreferencesManager.getInstance(context)
+        fun getUserHasRated(context: Context) = PreferencesManager.getInstance(context)
                 .readBooleanFromSharedPreferences(USER_HAS_RATED)
     }
 }
