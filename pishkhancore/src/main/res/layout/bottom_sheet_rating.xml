@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/main_padding"
+    android:paddingBottom="@dimen/main_padding">
+
+    <TextView
+        android:id="@+id/messageTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/main_padding"
+        android:layout_marginEnd="@dimen/main_padding"
+        android:gravity="start"
+        android:text="@string/rating_bottom_sheet_message"
+        android:textColor="@color/ayanTextColor"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/main_padding"
+        app:layout_constraintTop_toBottomOf="@id/messageTv">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/yesBtn"
+            style="@style/AyanAppButton"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="@dimen/ayanHalfPadding"
+            android:layout_weight="1"
+            android:backgroundTint="@color/rating_bottom_sheet_yes_btn_background_color"
+            android:text="@string/rate"
+            android:textColor="@color/rating_bottom_sheet_yes_btn_text_color" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/laterBtn"
+            style="@style/AyanAppButton.Outline"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="@dimen/ayanHalfPadding"
+            android:layout_weight="1"
+            android:backgroundTint="@color/rating_bottom_sheet_later_btn_background_color"
+            android:text="@string/later"
+            android:textColor="@color/rating_bottom_sheet_later_btn_text_color" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

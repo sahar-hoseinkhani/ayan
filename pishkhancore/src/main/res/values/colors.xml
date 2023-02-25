@@ -21,4 +21,8 @@
     <color name="post_tracking_header_color">#303F9F</color>
     <color name="post_tracking_bg">@color/ayanColorLightGray</color>
 
+    <color name="rating_bottom_sheet_yes_btn_background_color">@color/colorPrimary</color>
+    <color name="rating_bottom_sheet_later_btn_background_color">@color/colorPrimary</color>
+    <color name="rating_bottom_sheet_yes_btn_text_color">@color/white</color>
+    <color name="rating_bottom_sheet_later_btn_text_color">@color/colorPrimary</color>
 </resources>

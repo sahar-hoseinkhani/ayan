@@ -50,5 +50,7 @@
     <string name="et_postal_code_hint">کد پستی</string>
     <string name="tv_post_inquiry_title">برای استعلام رایگان وضعیت پستی خود، بارکد پستی آن را وارد نمایید.</string>
 
-
+    <string name="rating_bottom_sheet_message">لطفا برای حمایت و بهبود عملکرد، به برنامه امتیاز دهید و نظر خود را با ما در میان بگذارید.</string>
+    <string name="rate">امتیاز میدم</string>
+    <string name="later">بعدا</string>
 </resources>

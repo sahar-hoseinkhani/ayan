@@ -51,5 +51,7 @@
     <string name="tv_post_inquiry_title">To inquire about your postal status for free, enter its postal barcode.</string>
 
 
-
+    <string name="rating_bottom_sheet_message">Please rate app for supporting us and help to improve.</string>
+    <string name="rate">rate</string>
+    <string name="later">later</string>
 </resources>
