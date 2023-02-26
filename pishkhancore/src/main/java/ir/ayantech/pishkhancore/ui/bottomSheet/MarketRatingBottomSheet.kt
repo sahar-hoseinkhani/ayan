@@ -1,5 +1,6 @@
 package ir.ayantech.pishkhancore.ui.bottomSheet
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +12,8 @@ import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 
 class MarketRatingBottomSheet(
     private val activity: WhyGoogleActivity<*>,
-    private val applicationId: String
+    private val applicationId: String,
+    private val onOptionsClicked: ((hasRated: Boolean) -> Unit)? = null
 ) : AyanBaseBottomSheet<BottomSheetRatingBinding>() {
 
     override val binder: (LayoutInflater) -> BottomSheetRatingBinding
@@ -23,18 +25,18 @@ class MarketRatingBottomSheet(
         binding.apply {
             yesBtn.setOnClickListener {
                 showRatingIntent()
-                saveUserHasRated(hasRated = true)
-                dismiss()
+                onButtonClicked(hasRated = true)
             }
             laterBtn.setOnClickListener {
-                saveUserHasRated(hasRated = false)
-                dismiss()
+                onButtonClicked(hasRated = false)
             }
         }
     }
 
-    private fun saveUserHasRated(hasRated: Boolean) {
+    private fun onButtonClicked(hasRated: Boolean) {
         MarketRating.saveUserHasRated(activity, hasRated = hasRated)
+        onOptionsClicked?.invoke(hasRated)
+        dismiss()
     }
 
     private fun showRatingIntent() {

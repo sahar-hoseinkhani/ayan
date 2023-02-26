@@ -8,14 +8,17 @@ import ir.ayantech.pishkhancore.ui.bottomSheet.MarketRatingBottomSheet
 import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.helper.trying
 
-fun WhyGoogleActivity<*>.showRatingBottomSheet(applicationId: String) {
+fun WhyGoogleActivity<*>.showRatingBottomSheet(applicationId: String, callback: ((hasRated: Boolean) -> Unit)? = null) {
     if (!MarketRating.getUserHasRated(this)) {
         trying {
             MarketRatingBottomSheet(
                 activity = this,
-                applicationId = applicationId
+                applicationId = applicationId,
+                onOptionsClicked = callback
             ).show(this.supportFragmentManager, MarketRatingBottomSheet::class.java.simpleName)
         }
+    } else {
+        callback?.invoke(true)
     }
 }
 
