@@ -56,7 +56,7 @@ dependencies {
     compileOnly(ayan.WhyGoogle.whyGoogle)
     implementation("com.coolerfall:android-http-download-manager:1.6.1")
     implementation("com.github.shadowalker77:wp7progressbar:1.1.0")
-    implementation("com.github.shadowalker77:pushnotification:1.1.7")
+    implementation("com.github.shadowalker77:pushnotification:1.1.8")
     //compileOnly("com.github.sahar-hoseinkhani:advertisement:0.1.3")
     //--------------------------------------------------------------------------
 
@@ -90,7 +90,7 @@ afterEvaluate {
                 artifactId = "ayan"
 
                 // Version Library Name (Example : "1.0.0")
-                version = "1.1.2"
+                version = "1.1.3"
             }
         }
     }
