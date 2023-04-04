@@ -260,7 +260,7 @@
     </style>
     <style name="FragmentAyanHistoryDetail.PrintIcon">
         <item name="android:tint">@color/FragmentAyanHistoryDetailPrintIconTint</item>
-        <item name="android:background">FragmentAyanHistoryDetailPrintIconBackground</item>
+        <item name="android:background">@color/FragmentAyanHistoryDetailPrintIconBackground</item>
     </style>
     <style name="FragmentAyanHistoryDetail.FollowUp" parent="FragmentAyanHistoryDetail.Actions"/>
     <style name="FragmentAyanHistoryDetail.TextView.FollowUp" parent="FragmentAyanHistoryDetail.TextView">
