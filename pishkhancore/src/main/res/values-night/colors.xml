@@ -136,8 +136,8 @@
     <color name="HighlightedEvenRowsAdapterItemBackgroundEven">@color/ayanColorHighlight</color>
     <color name="HighlightedEvenRowsAdapterItemBackgroundOdd">@color/white</color>
 
-    <color name="HighlightedEvenRowsAdapterItemBackgroundEven">@color/ayanColorHighlight</color>
-    <color name="HighlightedEvenRowsAdapterItemBackgroundOdd">@color/white</color>
+    <color name="HighlightedCascadeKeyValueAdapterItemBackgroundEven">@color/ayanColorHighlight</color>
+    <color name="HighlightedCascadeKeyValueAdapterItemBackgroundOdd">@color/white</color>
 
     <color name="AyanInquiryHistoryAdapterPinIvIsFavorite">@color/ayanColorAccent</color>
     <color name="AyanInquiryHistoryAdapterPinIvIsNotFavorite">@color/ayanEditTextColor</color>

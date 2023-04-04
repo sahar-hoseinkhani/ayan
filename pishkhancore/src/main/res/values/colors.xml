@@ -129,6 +129,24 @@
     <color name="RowRuleRootTitleTextColor">@color/ayanColorPrimary</color>
     <color name="RowRuleRootDescriptionTextColor">@color/ayanTextColor</color>
 
+    <color name="AyanHistoryAdapterItemBackgroundEven">@color/ayanColorLightGray</color>
+    <color name="AyanHistoryAdapterItemBackgroundOdd">@color/white</color>
+
+    <color name="HighlightedEvenRowsAdapterItemBackgroundEven">@color/ayanColorHighlight</color>
+    <color name="HighlightedEvenRowsAdapterItemBackgroundOdd">@color/white</color>
+
+    <color name="HighlightedCascadeKeyValueAdapterItemBackgroundEven">@color/ayanColorHighlight</color>
+    <color name="HighlightedCascadeKeyValueAdapterItemBackgroundOdd">@color/white</color>
+
+    <color name="AyanInquiryHistoryAdapterPinIvIsFavorite">@color/ayanColorAccent</color>
+    <color name="AyanInquiryHistoryAdapterPinIvIsNotFavorite">@color/ayanEditTextColor</color>
+
+    <color name="AyanHistoryFragmentSwipeRefreshColor">@color/ayanColorAccent</color>
+    <color name="AyanHistoryFragmentSwipeRefreshSchemeColor1">@color/colorPrimary</color>
+    <color name="AyanHistoryFragmentSwipeRefreshSchemeColor2">@color/colorAccent</color>
+
+    <color name="PostTrackingResultFragmentHeaderRvItemTextColor">@color/white</color>
+
 <!--    region Drawables-->
     <color name="back_ayan_color_accent_button_state_enabled">@color/ayanColorAccent</color>
     <color name="back_ayan_color_accent_button_state_disabled">@color/colorDisableButton</color>

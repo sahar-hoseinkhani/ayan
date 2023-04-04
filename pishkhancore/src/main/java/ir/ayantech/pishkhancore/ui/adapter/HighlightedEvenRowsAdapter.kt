@@ -89,8 +89,8 @@ class HighlightedCascadeKeyValueAdapter(
         holder.mainView.rootRv.adapter =
             HighlightedEvenRowsAdapter(itemsToView[position], -1)
         holder.itemView.setBackgroundResource(
-            if ((position) % 2 == 0) R.color.HighlightedEvenRowsAdapterItemBackgroundEven
-            else R.color.HighlightedEvenRowsAdapterItemBackgroundOdd
+            if ((position) % 2 == 0) R.color.HighlightedCascadeKeyValueAdapterItemBackgroundEven
+            else R.color.HighlightedCascadeKeyValueAdapterItemBackgroundOdd
         )
     }
 
