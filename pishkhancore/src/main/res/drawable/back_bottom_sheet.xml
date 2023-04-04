@@ -3,7 +3,7 @@
     <item>
         <shape android:shape="rectangle">
             <corners android:topLeftRadius="@dimen/ayanMainRadius" android:topRightRadius="@dimen/ayanMainRadius" />
-            <solid android:color="@color/ayanColorWhite" />
+            <solid android:color="@color/back_bottom_sheet_solid" />
         </shape>
     </item>
 </selector>

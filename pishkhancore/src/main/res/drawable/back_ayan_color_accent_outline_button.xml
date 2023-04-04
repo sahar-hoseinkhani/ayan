@@ -3,14 +3,14 @@
     <item android:state_enabled="true">
         <shape android:shape="rectangle">
             <corners android:radius="8dp" />
-            <solid android:color="@android:color/transparent" />
-            <stroke android:width="2dp" android:color="@color/ayanColorAccent"/>
+            <solid android:color="@color/back_ayan_color_accent_outline_button_state_enabled_solid" />
+            <stroke android:width="2dp" android:color="@color/back_ayan_color_accent_outline_button_state_enabled_stroke" />
         </shape>
     </item>
     <item android:state_enabled="false">
         <shape android:shape="rectangle">
             <corners android:radius="8dp" />
-            <solid android:color="@color/colorDisableButton" />
+            <solid android:color="@color/back_ayan_color_accent_outline_button_state_disabled" />
         </shape>
     </item>
 

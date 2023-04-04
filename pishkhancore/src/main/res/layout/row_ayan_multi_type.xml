@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/backCardCv"
+    style="@style/RowAyanMultiType"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/ayanColorWhite">
+    android:layout_height="wrap_content">
 
     <FrameLayout
         android:id="@+id/visiblePartFl"
@@ -12,9 +12,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/detailRcl"
+        style="@style/RowAyanMultiType.DetailsRv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/visiblePartFl"
-        android:background="@color/ayanColorLightGray"
         android:visibility="gone" />
 </RelativeLayout>

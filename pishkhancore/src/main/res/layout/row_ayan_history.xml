@@ -1,41 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/RowAyanHistory"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:foreground="?android:attr/selectableItemBackground"
-    android:paddingEnd="@dimen/main_padding"
-    android:paddingStart="@dimen/main_padding">
+    android:paddingStart="@dimen/main_padding"
+    android:paddingEnd="@dimen/main_padding">
 
     <View
         android:id="@+id/divider"
+        style="@style/RowAyanHistory.Divider"
         android:layout_width="@dimen/ayanThinLineHeight"
         android:layout_height="0dp"
         android:layout_alignBottom="@+id/guide"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="@color/ayanGreyTextColor" />
+        android:layout_centerHorizontal="true" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/inquiryTypeIcon"
+        style="@style/RowAyanHistory.InquiryTypeIcon"
         android:layout_width="@dimen/ayanButton"
         android:layout_height="@dimen/ayanButton"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:padding="@dimen/ayanCardPadding" />
+        android:padding="@dimen/ayanCardPadding"
+        tools:src="@drawable/ic_passport" />
 
     <View
+        style="@style/RowAyanHistory.DividerShape"
         android:layout_width="@dimen/main_padding"
         android:layout_height="@dimen/main_padding"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/gray_circle_border" />
+        android:layout_centerVertical="true" />
 
     <TextView
         android:id="@+id/inquiryDescriptionTv"
+        style="@style/RowAyanHistory.TextView.InquiryDescription"
         android:layout_width="0dp"
-
-        android:textAlignment="viewStart"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/ayanHalfPadding"
         android:layout_marginTop="@dimen/ayanHalfPadding"
@@ -45,45 +47,48 @@
         android:ellipsize="end"
         android:gravity="start"
         android:maxLines="1"
-        android:textColor="@color/ayanTextColor" />
+        android:textAlignment="viewStart"
+        tools:text="توضیحات" />
 
     <TextView
         android:id="@+id/billAmountTv"
+        style="@style/RowAyanHistory.TextView.BillAmount"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/inquiryDescriptionTv"
-        android:layout_marginEnd="@dimen/ayanDoubleMainPadding"
-        android:layout_marginTop="@dimen/ayanCardPadding"
         android:layout_marginStart="@dimen/ayanHalfPadding"
+        android:layout_marginTop="@dimen/ayanCardPadding"
+        android:layout_marginEnd="@dimen/ayanDoubleMainPadding"
         android:layout_marginBottom="@dimen/ayanHalfPadding"
-        android:layout_toEndOf="@+id/inquiryTypeIcon"
         android:layout_toStartOf="@+id/divider"
+        android:layout_toEndOf="@+id/inquiryTypeIcon"
         android:gravity="start"
-        android:textColor="@color/ayanColorAccent" />
+        tools:text="مقدار" />
 
     <TextView
         android:id="@+id/dateTv"
+        style="@style/RowAyanHistory.TextView.Date"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="@dimen/ayanHalfPadding"
         android:layout_marginStart="@dimen/ayanDoubleMainPadding"
+        android:layout_marginTop="@dimen/ayanHalfPadding"
         android:layout_toEndOf="@+id/divider"
         android:gravity="start"
-        android:textColor="@color/ayanTextColor" />
+        tools:text="تاریخ" />
 
     <TextView
+        style="@style/RowAyanHistory.TextView.Description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dateTv"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="@dimen/ayanCardPadding"
         android:layout_marginStart="@dimen/ayanDoubleMainPadding"
+        android:layout_marginTop="@dimen/ayanCardPadding"
         android:layout_marginBottom="@dimen/ayanHalfPadding"
         android:layout_toEndOf="@+id/divider"
         android:gravity="start"
         android:text="@string/details"
-        android:textColor="@color/ayanColorAccent"
         android:textStyle="bold" />
 
     <View

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/DialogSaveInquiry"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
@@ -11,37 +13,39 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/closeIv"
+        style="@style/DialogSaveInquiry.CloseIv"
         android:layout_width="@dimen/ayanTopIconSize"
         android:layout_height="@dimen/ayanTopIconSize"
         android:layout_gravity="start"
-        android:tint="@color/ayanTextColor"
         app:srcCompat="@drawable/ic_close" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/productIv"
+        style="@style/DialogSaveInquiry.ProductIv"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:padding="@dimen/main_padding" />
 
     <TextView
         android:id="@+id/valueTv"
+        style="@style/DialogSaveInquiry.TextView.Value"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/ayanCardPadding"
         android:gravity="center"
-        android:textColor="@color/ayanTextColor" />
+        tools:text="لورم ایپسوم" />
 
     <TextView
+        style="@style/DialogSaveInquiry.TextView.Bill"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginTop="@dimen/ayanRclPadding"
-        android:text="@string/bill_name"
-        android:textColor="@color/ayanTextColor" />
+        android:text="@string/bill_name" />
 
     <EditText
         android:id="@+id/saveNameEt"
-        style="@style/AyanAppEditText"
+        style="@style/DialogSaveInquiry.SaveName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/ayanCardPadding"
@@ -55,7 +59,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/saveBtn"
-            style="@style/AyanGreenAppButton"
+            style="@style/DialogSaveInquiry.SaveButton"
             android:layout_width="0dp"
             android:layout_height="@dimen/ayanButton"
             android:layout_marginBottom="@dimen/ayanRclPadding"
@@ -64,7 +68,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/removeBtn"
-            style="@style/AyanRedAppButton"
+            style="@style/DialogSaveInquiry.RemoveButton"
             android:layout_width="0dp"
             android:layout_height="@dimen/ayanButton"
             android:layout_marginStart="@dimen/ayanRclPadding"

@@ -2,20 +2,20 @@
 <resources>
 
     <color name="ayanColorLightGray">#f3f6ff</color>
-    <color name="ayanGreyTextColor">#9b9b9b</color>
+    <color name="ayanGreyTextColor">#D0CFCF</color>
     <color name="ayanColorHighlight">#1a9b9b9b</color>
-    <color name="ayanTextColor">#000000</color>
+    <color name="ayanTextColor">#ffffff</color>
     <color name="ayanColorWhite">#ffffff</color>
     <color name="ayanColorBlack">#000000</color>
-    <color name="ayanRootLayoutBackgroundColor">#ffffff</color>
-    <color name="ayanFragmentBackgroundColor">@color/ayanColorLightGray</color>
-    <color name="ayanRowBackgroundColor">@android:color/transparent</color>
+    <color name="ayanRootLayoutBackgroundColor">#141414</color>
+    <color name="ayanFragmentBackgroundColor">#141414</color>
+    <color name="ayanRowBackgroundColor">#000000</color>
     <color name="ayanIconAccent">#FF9800</color>
     <color name="ayanColorAccent">#2196F3</color>
     <color name="ayanColorPrimary">#072740</color>
     <color name="ayanRedColor">#E36262</color>
     <color name="ayanGreenColor">#66BB6A</color>
-    <color name="ayanEditTextColor">#E0E0E0</color>
+    <color name="ayanEditTextColor">#989898</color>
     <color name="ayanDividerColor">@color/ayanColorLightGray</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
@@ -30,10 +30,10 @@
     <color name="AyanAppEditText_TextColor">@color/ayanTextColor</color>
     <color name="AyanAppEditText_TextColorHint">@color/ayanGreyTextColor</color>
 
-    <color name="ayanCardViewBackgroundColor">@color/white</color>
+    <color name="ayanCardViewBackgroundColor">#000000</color>
 
-    <color name="colorDisableButton">#BDC3C7</color>
-    <color name="textColorDisableButton">@color/ayanColorWhite</color>
+    <color name="colorDisableButton">#2F2E2E</color>
+    <color name="textColorDisableButton">#515050</color>
 
     <color name="rating_bottom_sheet_yes_btn_background_color">@color/colorPrimary</color>
     <color name="rating_bottom_sheet_later_btn_background_color">@color/colorPrimary</color>
@@ -42,8 +42,9 @@
     <color name="rating_bottom_sheet_message_tv_text_color">@color/ayanTextColor</color>
     <color name="BottomSheetRatingRootBackground">@color/ayanRootLayoutBackgroundColor</color>
 
-    <color name="BottomSheetAyanCheckStatusTextViewTextColor">@color/ayanTextColor</color>
+
     <color name="BottomSheetAyanCheckStatusRootBackground">@color/ayanRootLayoutBackgroundColor</color>
+    <color name="BottomSheetAyanCheckStatusTextViewTextColor">@color/ayanTextColor</color>
     <color name="BottomSheetAyanCheckStatusRetryTitleTvTextColor">@color/ayanColorAccent</color>
     <color name="BottomSheetAyanCheckStatusRetryTvTextColor">@color/ayanColorAccent</color>
 
@@ -55,7 +56,7 @@
     <color name="BottomSheetPostInquiryTextViewTextColor">@color/ayanTextColor</color>
     <color name="BottomSheetPostInquiryRootBackground">@color/ayanRootLayoutBackgroundColor</color>
     <color name="BottomSheetPostInquiryButtonTextColor">@color/enable_disable_text_color</color>
-    <color name="BottomSheetPostInquiryPostInquiryBtnTextColor">@color/ayanColorWhite</color>
+    <color name="BottomSheetPostInquiryPostInquiryBtnTextColor">#282828</color>
 
     <color name="DialogAyanVersionControlTextViewTextColor">@color/ayanTextColor</color>
     <color name="DialogAyanVersionControlRootBackground">@color/ayanRootLayoutBackgroundColor</color>
@@ -76,7 +77,7 @@
     <color name="FragmentAyanHistoryAppBarTextColor">@color/ayanColorWhite</color>
     <color name="FragmentAyanHistoryDividerColor">@color/ayanColorWhite</color>
     <color name="FragmentAyanHistoryIndicatorColor">@color/ayanColorBlack</color>
-    <color name="FragmentAyanHistoryNoHistoryTextColor">@color/ayanColorBlack</color>
+    <color name="FragmentAyanHistoryNoHistoryTextColor">@color/ayanColorWhite</color>
 
     <color name="FragmentAyanHistoryDetailRootBackground">@color/ayanFragmentBackgroundColor</color>
     <color name="FragmentAyanHistoryDetailDescriptionTvBackground">@color/ayanColorHighlight</color>
@@ -90,9 +91,9 @@
     <color name="FragmentAyanHistoryDetailFollowUpIconTint">@color/ayanColorAccent</color>
     <color name="FragmentAyanHistoryDetailFollowUpIconBackground">@android:color/transparent</color>
 
-    <color name="FragmentPostTrackingResultRootBackground">#f3f6ff</color>
+    <color name="FragmentPostTrackingResultRootBackground">@color/ayanFragmentBackgroundColor</color>
     <color name="post_tracking_header_color">#303F9F</color>
-    <color name="post_tracking_bg">@color/ayanColorLightGray</color>
+    <color name="post_tracking_bg">@color/ayanColorHighlight</color>
 
     <color name="FragmentRulesRootBackground">@color/ayanFragmentBackgroundColor</color>
 
@@ -128,8 +129,27 @@
     <color name="RowRuleRootBackground">@color/ayanRowBackgroundColor</color>
     <color name="RowRuleRootTitleTextColor">@color/ayanColorPrimary</color>
     <color name="RowRuleRootDescriptionTextColor">@color/ayanTextColor</color>
+    
+    <color name="AyanHistoryAdapterItemBackgroundEven">@color/ayanColorLightGray</color>
+    <color name="AyanHistoryAdapterItemBackgroundOdd">@color/white</color>
 
-<!--    region Drawables-->
+    <color name="HighlightedEvenRowsAdapterItemBackgroundEven">@color/ayanColorHighlight</color>
+    <color name="HighlightedEvenRowsAdapterItemBackgroundOdd">@color/white</color>
+
+    <color name="HighlightedEvenRowsAdapterItemBackgroundEven">@color/ayanColorHighlight</color>
+    <color name="HighlightedEvenRowsAdapterItemBackgroundOdd">@color/white</color>
+
+    <color name="AyanInquiryHistoryAdapterPinIvIsFavorite">@color/ayanColorAccent</color>
+    <color name="AyanInquiryHistoryAdapterPinIvIsNotFavorite">@color/ayanEditTextColor</color>
+
+    <color name="AyanHistoryFragmentSwipeRefreshColor">@color/ayanColorAccent</color>
+    <color name="AyanHistoryFragmentSwipeRefreshSchemeColor1">@color/colorPrimary</color>
+    <color name="AyanHistoryFragmentSwipeRefreshSchemeColor2">@color/colorAccent</color>
+
+    <color name="PostTrackingResultFragmentHeaderRvItemTextColor">@color/white</color>
+
+
+    <!--    region Drawables-->
     <color name="back_ayan_color_accent_button_state_enabled">@color/ayanColorAccent</color>
     <color name="back_ayan_color_accent_button_state_disabled">@color/colorDisableButton</color>
 
@@ -144,9 +164,9 @@
 
     <color name="back_ayan_red_button_solid">@color/ayanRedColor</color>
 
-    <color name="back_bottom_sheet_solid">@color/ayanColorWhite</color>
+    <color name="back_bottom_sheet_solid">@color/black</color>
 
-    <color name="back_dialog_solid">@color/white</color>
+    <color name="back_dialog_solid">@color/black</color>
 
     <color name="back_dialog_save_inquiry_solid">@color/DialogSaveInquiryRootBackground</color>
 

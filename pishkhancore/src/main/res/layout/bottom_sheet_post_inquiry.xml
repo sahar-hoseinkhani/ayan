@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/BottomSheetPostInquiry"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingHorizontal="@dimen/ayanMainPadding">
 
     <TextView
         android:id="@+id/headerTv"
+        style="@style/BottomSheetPostInquiry.TextView.Header"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="start"
         android:text="@string/tv_post_inquiry_title"
-        android:textColor="@color/ayanTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/postalCodeET"
-        style="@style/AyanAppEditText"
+        style="@style/BottomSheetPostInquiry.PostalCode"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/ayanMainPadding"
@@ -30,7 +31,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_post_inquiry"
-        style="@style/AyanAppButton"
+        style="@style/BottomSheetPostInquiry.PostInquiry"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/ayanMainPadding"

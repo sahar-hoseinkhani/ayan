@@ -1,41 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/RowAyanBillDetail"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="horizontal"
-    android:paddingEnd="@dimen/ayanHalfPadding"
-    android:paddingTop="@dimen/ayanCardPadding"
     android:paddingStart="@dimen/ayanHalfPadding"
+    android:paddingTop="@dimen/ayanCardPadding"
+    android:paddingEnd="@dimen/ayanHalfPadding"
     android:paddingBottom="@dimen/ayanCardPadding">
 
     <TextView
         android:id="@+id/keyTv"
-        android:textAlignment="viewStart"
+        style="@style/RowAyanBillDetail.TextView.KeyTv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="start"
-        android:textColor="@color/ayanGreyTextColor" />
+        android:textAlignment="viewStart"
+        tools:text="کلید" />
 
     <TextView
         android:id="@+id/valueTv"
+        style="@style/RowAyanBillDetail.TextView.ValueTv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="2"
         android:gravity="end"
         android:textAlignment="viewEnd"
-        android:textColor="@color/ayanTextColor"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:text="مقدار" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/rowCopyIv"
+        style="@style/RowAyanBillDetail.CopyIv"
         android:layout_width="@dimen/ayanTopIconSize"
         android:layout_height="@dimen/ayanTopIconSize"
         android:layout_marginStart="@dimen/ayanHalfPadding"
-        android:tint="@color/ayanTextColor"
         android:visibility="gone"
-        app:srcCompat="@drawable/ic_outline_file_copy_24" />
+        app:srcCompat="@drawable/ic_outline_file_copy_24"
+        tools:visibility="visible" />
 
 </LinearLayout>

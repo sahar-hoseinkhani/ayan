@@ -2,6 +2,6 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
     <corners android:radius="@dimen/ayanHalfPadding" />
-    <solid android:color="@color/ayanGreenColor" />
+    <solid android:color="@color/back_ayan_green_button_solid" />
 
 </shape>

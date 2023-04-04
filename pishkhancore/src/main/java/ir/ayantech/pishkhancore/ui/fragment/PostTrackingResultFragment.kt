@@ -56,7 +56,7 @@ open class PostTrackingResultFragment : WhyGoogleFragment<FragmentPostTrackingRe
                         context.getString(R.string.tv_acceptance_date_time),
                         postResult.AcceptanceDateTime?.Persian?.DateFormatted
                     )
-                ).filter { !it.Value.isNullOrEmpty() }.onEach { it.textColor = R.color.white })
+                ).filter { !it.Value.isNullOrEmpty() }.onEach { it.textColor = R.color.PostTrackingResultFragmentHeaderRvItemTextColor })
 
             }
         }

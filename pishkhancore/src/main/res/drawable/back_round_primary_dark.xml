@@ -3,13 +3,13 @@
     <item android:state_enabled="true">
         <shape android:shape="rectangle">
             <corners android:radius="8dp"/>
-            <solid android:color="@color/post_tracking_header_color"/>
+            <solid android:color="@color/back_round_primary_dark_state_enabled"/>
         </shape>
     </item>
     <item android:state_enabled="false">
         <shape android:shape="rectangle">
             <corners android:radius="8dp"/>
-            <solid android:color="#9b9b9b"/>
+            <solid android:color="@color/back_round_primary_dark_state_disabled"/>
         </shape>
     </item>
 </selector>

@@ -31,7 +31,7 @@ open class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>()
         super.onCreate()
 
         accessViews {
-            swipeRefreshLayout.setColorSchemeResources(R.color.ayanColorAccent)
+            swipeRefreshLayout.setColorSchemeResources(R.color.AyanHistoryFragmentSwipeRefreshColor)
             inquiryHistoryWp10?.showProgressBar()
             historyRv.verticalSetup()
             delayed {
@@ -39,8 +39,8 @@ open class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>()
             }
             requireContext().let { context ->
                 swipeRefreshLayout.setColorSchemeColors(
-                    ContextCompat.getColor(context, R.color.colorPrimary),
-                    ContextCompat.getColor(context, R.color.colorAccent)
+                    ContextCompat.getColor(context, R.color.AyanHistoryFragmentSwipeRefreshSchemeColor1),
+                    ContextCompat.getColor(context, R.color.AyanHistoryFragmentSwipeRefreshSchemeColor2)
                 )
             }
             swipeRefreshLayout.setOnRefreshListener {

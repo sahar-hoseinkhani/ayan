@@ -3,5 +3,5 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
     <corners android:radius="@dimen/ayanMainRadius" />
-    <solid android:color="@color/ayanRedColor" />
+    <solid android:color="@color/back_ayan_red_button_solid" />
 </shape>

@@ -93,12 +93,12 @@ class AyanInquiryHistoryAdapter(
                             if (data.Favorite)
                                 ContextCompat.getColor(
                                     mcontext,
-                                    R.color.ayanColorAccent
+                                    R.color.AyanInquiryHistoryAdapterPinIvIsFavorite
                                 )
                             else
                                 ContextCompat.getColor(
                                     mcontext,
-                                    R.color.ayanEditTextColor
+                                    R.color.AyanInquiryHistoryAdapterPinIvIsNotFavorite
                                 )
                         )
                     }

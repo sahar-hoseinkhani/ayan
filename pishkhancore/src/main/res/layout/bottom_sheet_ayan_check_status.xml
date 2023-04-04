@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/BottomSheetAyanCheckStatus"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingTop="@dimen/main_padding"
@@ -7,26 +8,24 @@
 
     <TextView
         android:id="@+id/waitTv"
+        style="@style/BottomSheetAyanCheckStatus.TextView.Wait"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/main_padding"
         android:layout_marginEnd="@dimen/main_padding"
-        android:gravity="center|start"
         android:text="@string/please_wait"
-        android:textColor="@color/ayanTextColor"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/descriptionTv"
+        style="@style/BottomSheetAyanCheckStatus.TextView.Description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/waitTv"
         android:layout_marginStart="@dimen/main_padding"
         android:layout_marginTop="@dimen/ayanCardPadding"
         android:layout_marginEnd="@dimen/main_padding"
-        android:gravity="center|start"
-        android:text="@string/getting_info_from_server"
-        android:textColor="@color/ayanTextColor" />
+        android:text="@string/getting_info_from_server" />
 
     <RelativeLayout
         android:id="@+id/retryRl"
@@ -37,37 +36,34 @@
 
         <TextView
             android:id="@+id/titleTv"
+            style="@style/BottomSheetAyanCheckStatus.TextView.RetryTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/main_padding"
             android:layout_marginEnd="@dimen/main_padding"
-            android:gravity="center|start"
             android:text="@string/error"
-            android:textColor="@color/ayanColorAccent"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/errorTv"
+            style="@style/BottomSheetAyanCheckStatus.TextView.RetryError"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/titleTv"
             android:layout_marginStart="@dimen/main_padding"
             android:layout_marginTop="@dimen/ayanCardPadding"
             android:layout_marginEnd="@dimen/main_padding"
-            android:gravity="center|start"
-            android:text="@string/server_cannot_reached"
-            android:textColor="@color/ayanTextColor" />
+            android:text="@string/server_cannot_reached" />
 
         <TextView
             android:id="@+id/retryTv"
+            style="@style/BottomSheetAyanCheckStatus.TextView.Retry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/errorTv"
-            android:gravity="center|start"
             android:layout_alignParentEnd="true"
             android:padding="@dimen/main_padding"
             android:text="@string/retry"
-            android:textColor="@color/ayanColorAccent"
             android:textStyle="bold" />
 
     </RelativeLayout>

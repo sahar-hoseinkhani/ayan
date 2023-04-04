@@ -2,5 +2,5 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="oval">
     <corners android:radius="@dimen/ayanCardPadding" />
-    <solid android:color="@color/ayanEditTextColor" />
+    <solid android:color="@color/back_oval_light_grey_solid" />
 </shape>

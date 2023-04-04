@@ -65,7 +65,7 @@ class AyanHistoryAdapter(
             }
         }
 
-        holder.itemView.setBackgroundResource(if ((position) % 2 == 0) R.color.ayanColorLightGray else R.color.white)
+        holder.itemView.setBackgroundResource(if ((position) % 2 == 0) R.color.AyanHistoryAdapterItemBackgroundEven else R.color.AyanHistoryAdapterItemBackgroundOdd)
 
         holder.itemView.startAnimation(
             AnimationUtils.loadAnimation(

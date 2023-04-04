@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/AyanCardView"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/RowAyanInquiryHistory"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -10,9 +11,9 @@
 
         <LinearLayout
             android:id="@+id/rowLl"
+            style="@style/RowAyanInquiryHistory.Row"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
             android:foreground="?selectableItemBackground"
             android:gravity="center"
             android:minHeight="@dimen/ayanButton"
@@ -21,6 +22,7 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/pinIv"
+                style="@style/RowAyanInquiryHistory.PinIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="@dimen/ayanRclPadding"
@@ -42,26 +44,29 @@
 
                 <TextView
                     android:id="@+id/inquiryHistoryNameTv"
+                    style="@style/RowAyanInquiryHistory.HistoryNameTv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="start"
                     android:textAlignment="viewStart"
-                    android:textColor="@color/ayanTextColor"
-                    android:textSize="@dimen/adButtonTextSize" />
+                    android:textSize="@dimen/adButtonTextSize"
+                    tools:text="نام" />
 
                 <TextView
                     android:id="@+id/inquiryHistoryValueTv"
+                    style="@style/RowAyanInquiryHistory.HistoryValueTv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/ayanCardPadding"
                     android:gravity="start"
                     android:textAlignment="viewStart"
-                    android:textColor="@color/ayanGreyTextColor"
-                    android:textSize="@dimen/adButtonTextSize" />
+                    android:textSize="@dimen/adButtonTextSize"
+                    tools:text="مقدار" />
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/moreIv"
+                style="@style/RowAyanInquiryHistory.MoreIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="?selectableItemBackgroundBorderless"

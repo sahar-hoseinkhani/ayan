@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/DialogAyanVersionControl"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/ayanColorWhite">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/mainContentLl"
@@ -14,33 +15,37 @@
 
         <TextView
             android:id="@+id/titleTv"
-            android:textStyle="bold"
+            style="@style/DialogAyanVersionControl.TextView.Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/ayanColorAccent" />
+            android:textStyle="bold"
+            tools:text="تیتر" />
 
         <TextView
             android:id="@+id/messageTv"
+            style="@style/DialogAyanVersionControl.TextView.Message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/ayanMainPadding"
-            android:textColor="@color/ayanTextColor" />
+            tools:text="توضیحات" />
 
         <TextView
             android:id="@+id/changeLogTv"
+            style="@style/DialogAyanVersionControl.TextView.ChangeLog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/ayanHalfPadding"
-            android:textColor="@color/ayanTextColor" />
+            tools:text="لاگ" />
 
         <TextView
             android:id="@+id/progressTv"
+            style="@style/DialogAyanVersionControl.TextView.Progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/ayanMainPadding"
             android:text="%0"
-            android:textColor="@color/ayanColorAccent"
-            android:visibility="gone" />
+            android:visibility="gone"
+            tools:text="درصد" />
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -60,18 +65,20 @@
 
             <TextView
                 android:id="@+id/positiveTv"
+                style="@style/DialogAyanVersionControl.TextView.Positive"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/ayanMainPadding"
-                android:textColor="@color/ayanColorAccent"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                tools:text="بله" />
 
             <TextView
                 android:id="@+id/negativeTv"
+                style="@style/DialogAyanVersionControl.TextView.Negative"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/ayanColorAccent"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                tools:text="خیر" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

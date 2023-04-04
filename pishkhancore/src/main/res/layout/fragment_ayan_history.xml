@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/FragmentAyanHistory"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/ayanColorLightGray">
+    android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
+        style="@style/FragmentAyanHistory.AppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/ayanColorPrimary"
         app:elevation="0dp">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:contentScrim="@color/ayanColorPrimary"
+            app:contentScrim="@color/FragmentAyanHistoryContentScrim"
             app:layout_scrollFlags="scroll|enterAlways|snap">
 
             <LinearLayout
@@ -36,27 +37,27 @@
 
                     <TextView
                         android:id="@+id/totalBillsCountTv"
+                        style="@style/FragmentAyanHistory.TextView.AppBar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="0"
-                        android:textColor="@color/white"
                         android:textSize="@dimen/text_x_large"
                         android:textStyle="bold" />
 
                     <TextView
+                        style="@style/FragmentAyanHistory.TextView.AppBar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/ayanRclPadding"
                         android:gravity="center"
-                        android:text="@string/transactions_count"
-                        android:textColor="@color/white" />
+                        android:text="@string/transactions_count" />
                 </LinearLayout>
 
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
-                    android:background="@color/white" />
+                    android:background="@color/FragmentAyanHistoryDividerColor" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -75,21 +76,21 @@
 
                         <TextView
                             android:id="@+id/totalAmountTv"
+                            style="@style/FragmentAyanHistory.TextView.AppBar"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="@dimen/ayanCardPadding"
                             android:gravity="center"
                             android:text="0"
-                            android:textColor="@color/white"
                             android:textSize="@dimen/text_x_large"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/rialTv"
+                            style="@style/FragmentAyanHistory.TextView.AppBar"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/rials"
-                            android:textColor="@color/white" />
+                            android:text="@string/rials" />
 
                     </LinearLayout>
 
@@ -124,7 +125,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/ayanMainPadding"
-                app:indicatorColor="@color/ayanTextColor"
+                app:indicatorColor="@color/FragmentAyanHistoryIndicatorColor"
                 app:indicatorRadius="7" />
 
             <LinearLayout
@@ -134,15 +135,16 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="@dimen/ayanMainPadding"
-                android:visibility="gone">
+                android:visibility="gone"
+                tools:visibility="visible">
 
                 <TextView
+                    style="@style/FragmentAyanHistory.TextView.NoItem"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="@dimen/ayanMainPadding"
                     android:text="@string/you_have_not_paid_yet"
-                    android:textColor="@color/ayanTextColor"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -156,6 +158,7 @@
 
             <TextView
                 android:id="@+id/noHistoryTv"
+                style="@style/FragmentAyanHistory.TextView.NoHistory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/ayanMainPadding"
@@ -163,9 +166,9 @@
                 android:layout_marginEnd="@dimen/ayanMainPadding"
                 android:gravity="center"
                 android:text="@string/you_have_not_paid_yet"
-                android:textColor="@color/ayanGreyTextColor"
                 android:textStyle="bold"
-                android:visibility="gone" />
+                android:visibility="gone"
+                tools:visibility="visible" />
 
         </LinearLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

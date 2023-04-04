@@ -3,14 +3,14 @@
     <item android:state_enabled="true">
         <shape android:shape="rectangle">
             <corners android:radius="@dimen/ayanMainRadius"/>
-            <solid android:color="@color/colorPrimary"/>
-            <stroke android:color="@color/ayanGreyTextColor" android:width="@dimen/ayanThinLineHeight"/>
+            <solid android:color="@color/back_round_primary_grey_stroke_state_enabled_solid"/>
+            <stroke android:color="@color/back_round_primary_grey_stroke_state_enabled_stroke" android:width="@dimen/ayanThinLineHeight"/>
         </shape>
     </item>
     <item android:state_enabled="false">
         <shape android:shape="rectangle">
             <corners android:radius="@dimen/ayanMainRadius"/>
-            <solid android:color="@color/ayanGreyTextColor"/>
+            <solid android:color="@color/back_round_primary_grey_stroke_state_disabled"/>
         </shape>
     </item>
 </selector>

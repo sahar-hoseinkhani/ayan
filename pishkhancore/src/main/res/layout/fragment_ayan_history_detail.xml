@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/FragmentAyanHistoryDetail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="@color/ayanColorLightGray">
+    android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -22,9 +23,11 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/productIv"
+                style="@style/FragmentAyanHistoryDetail.ProductIv"
                 android:layout_width="@dimen/ayanButton"
                 android:layout_height="@dimen/ayanButton"
-                android:layout_marginEnd="@dimen/main_padding" />
+                android:layout_marginEnd="@dimen/main_padding"
+                tools:src="@drawable/ic_gasbill" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -35,22 +38,24 @@
 
                 <TextView
                     android:id="@+id/titleTv"
+                    style="@style/FragmentAyanHistoryDetail.TextView.Title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
                     android:ellipsize="end"
                     android:gravity="start"
                     android:singleLine="true"
-                    android:textColor="@color/ayanTextColor"
                     android:textSize="@dimen/text_x_large"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:text="تیتر" />
 
                 <TextView
                     android:id="@+id/dateTimeTv"
+                    style="@style/FragmentAyanHistoryDetail.TextView.DateTime"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="start"
-                    android:textColor="@color/ayanTextColor" />
+                    tools:text="تاریخ" />
             </LinearLayout>
 
             <LinearLayout
@@ -60,18 +65,18 @@
 
                 <TextView
                     android:id="@+id/amountTv"
+                    style="@style/FragmentAyanHistoryDetail.TextView.Amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/ayanCardPadding"
-                    android:textColor="@color/ayanTextColor"
                     android:textSize="@dimen/text_x_large"
                     android:textStyle="bold" />
 
                 <TextView
+                    style="@style/FragmentAyanHistoryDetail.TextView.Rials"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/rials"
-                    android:textColor="@color/ayanTextColor" />
+                    android:text="@string/rials" />
 
             </LinearLayout>
 
@@ -79,12 +84,13 @@
 
         <TextView
             android:id="@+id/descriptionTv"
+            style="@style/FragmentAyanHistoryDetail.TextView.Description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/ayanColorHighlight"
             android:gravity="center"
             android:padding="@dimen/main_padding"
-            app:layout_constraintTop_toBottomOf="@+id/topLl" />
+            app:layout_constraintTop_toBottomOf="@+id/topLl"
+            tools:text="توضیحات" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/detailsRv"
@@ -110,25 +116,26 @@
 
             <LinearLayout
                 android:id="@+id/printLl"
+                style="@style/FragmentAyanHistoryDetail.Print"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/ayanColorWhite"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/tv1"
+                    style="@style/FragmentAyanHistoryDetail.TextView.Print"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:ellipsize="end"
                     android:gravity="center"
                     android:text="@string/view_receipt"
-                    android:textColor="@color/ayanColorAccent"
                     android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/iv1"
+                    style="@style/FragmentAyanHistoryDetail.PrintIcon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/ayanCardPadding"
@@ -138,31 +145,32 @@
 
             <LinearLayout
                 android:id="@+id/followUpLl"
+                style="@style/FragmentAyanHistoryDetail.FollowUp"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/ayanLineHeight"
                 android:layout_weight="1"
-                android:background="@color/ayanColorWhite"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                android:visibility="gone"
+                tools:visibility="visible">
 
                 <TextView
                     android:id="@+id/tv2"
+                    style="@style/FragmentAyanHistoryDetail.TextView.FollowUp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:ellipsize="end"
                     android:gravity="center"
                     android:text="@string/followup_from_the_bank"
-                    android:textColor="@color/ayanColorAccent"
                     android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/iv2"
+                    style="@style/FragmentAyanHistoryDetail.FollowUpIcon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/ayanCardPadding"
-                    android:tint="@color/ayanColorAccent"
                     app:srcCompat="@drawable/ic_outline_account_balance_24" />
             </LinearLayout>
 
@@ -170,7 +178,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_post_inquiry"
-            style="@style/AyanAppButton"
+            style="@style/FragmentAyanHistoryDetail.PostInquiryButton"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginHorizontal="@dimen/ayanMainPadding"

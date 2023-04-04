@@ -3,13 +3,13 @@
     <item android:state_enabled="true">
         <shape android:shape="rectangle">
             <corners android:radius="8dp" />
-            <solid android:color="@color/ayanColorAccent" />
+            <solid android:color="@color/back_ayan_color_accent_button_state_enabled" />
         </shape>
     </item>
     <item android:state_enabled="false">
         <shape android:shape="rectangle">
             <corners android:radius="8dp" />
-            <solid android:color="@color/colorDisableButton" />
+            <solid android:color="@color/back_ayan_color_accent_button_state_disabled" />
         </shape>
     </item>
 
