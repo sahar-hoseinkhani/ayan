@@ -54,4 +54,6 @@
     <string name="rating_bottom_sheet_message">Please rate app for supporting us and help to improve.</string>
     <string name="rate">rate</string>
     <string name="later">later</string>
+    <string name="thanks_for_your_feedback">Thanks for your feedback.</string>
+
 </resources>

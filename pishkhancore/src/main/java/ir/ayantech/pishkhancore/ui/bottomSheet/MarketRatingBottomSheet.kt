@@ -4,17 +4,29 @@ import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.Toast
+import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.databinding.BottomSheetRatingBinding
 import ir.ayantech.pishkhancore.helper.showCafeBazaarIntent
+import ir.ayantech.pishkhancore.helper.showGalaxyStoreIntent
 import ir.ayantech.pishkhancore.helper.showMyketIntent
+import ir.ayantech.pishkhancore.helper.showRatingIntent
 import ir.ayantech.pishkhancore.storage.MarketRating
 import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 
 class MarketRatingBottomSheet(
     private val activity: WhyGoogleActivity<*>,
     private val applicationId: String,
+    private val flavor: String,
     private val onOptionsClicked: ((hasRated: Boolean) -> Unit)? = null
 ) : AyanBaseBottomSheet<BottomSheetRatingBinding>() {
+
+    @Deprecated(message = "pass the flavor parameter to handle which market's intent should be call.")
+    constructor(
+        activity: WhyGoogleActivity<*>,
+        applicationId: String,
+        onOptionsClicked: ((hasRated: Boolean) -> Unit)? = null
+    ) : this(activity, applicationId,"", onOptionsClicked)
 
     override val binder: (LayoutInflater) -> BottomSheetRatingBinding
         get() = BottomSheetRatingBinding::inflate
@@ -24,7 +36,9 @@ class MarketRatingBottomSheet(
 
         binding.apply {
             yesBtn.setOnClickListener {
-                showRatingIntent()
+                activity.showRatingIntent(flavor, applicationId) {
+                    Toast.makeText(context, getString(R.string.thanks_for_your_feedback), Toast.LENGTH_SHORT).show()
+                }
                 onButtonClicked(hasRated = true)
             }
             laterBtn.setOnClickListener {
@@ -37,13 +51,5 @@ class MarketRatingBottomSheet(
         MarketRating.saveUserHasRated(activity, hasRated = hasRated)
         onOptionsClicked?.invoke(hasRated)
         dismiss()
-    }
-
-    private fun showRatingIntent() {
-        activity.showCafeBazaarIntent(
-            applicationId
-        ) {
-            activity.showMyketIntent(applicationId)
-        }
     }
 }

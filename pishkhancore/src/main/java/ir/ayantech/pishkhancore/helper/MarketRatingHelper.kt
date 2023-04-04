@@ -1,12 +1,37 @@
 package ir.ayantech.pishkhancore.helper
 
+import android.R.attr.targetPackage
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
+import android.content.pm.ApplicationInfo
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.util.Log
+import android.widget.Toast
+import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.storage.MarketRating
 import ir.ayantech.pishkhancore.ui.bottomSheet.MarketRatingBottomSheet
 import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.helper.trying
+
+private const val CAFE_BAZAAR = "cafebazaar"
+private const val MYKET = "myket"
+private const val PLAY_STORE = "playstore"
+private const val XIAOMI_STORE = "xiaomistore"
+private const val GALAXY_STORE = "galaxystore"
+
+fun WhyGoogleActivity<*>.showRatingIntent(applicationId: String, flavor: String, onFailed: (() -> Unit)? = null) {
+    when(flavor.lowercase()) {
+        CAFE_BAZAAR -> showCafeBazaarIntent(applicationId) { onFailed?.invoke() }
+        MYKET -> showMyketIntent(applicationId) { onFailed?.invoke() }
+        GALAXY_STORE -> showGalaxyStoreIntent(applicationId) { onFailed?.invoke() }
+        else -> {
+            onFailed?.invoke()
+        }
+    }
+}
 
 fun WhyGoogleActivity<*>.showRatingBottomSheet(applicationId: String, callback: ((hasRated: Boolean) -> Unit)? = null) {
     if (!MarketRating.getUserHasRated(this)) {
@@ -49,6 +74,46 @@ fun WhyGoogleActivity<*>.showMyketIntent(
         startActivity(intent)
     } catch (e: Exception) {
         Log.e("MarketIntent", "startMarketIntent: Myket => ${e.printStackTrace()}")
+        onFailed?.invoke()
+    }
+}
+
+fun WhyGoogleActivity<*>.showGalaxyStoreIntent(
+    applicationId: String,
+    onFailed: (() -> Unit)? = null
+) {
+    try {
+        val ai: ApplicationInfo = packageManager.getApplicationInfo(
+            "com.sec.android.app.samsungapps",
+            PackageManager.GET_META_DATA
+        )
+        val inappReviewVersion =
+            ai.metaData.getInt("com.sec.android.app.samsungapps.review.inappReview", 0)
+        if (inappReviewVersion > 0) {
+            val intent = Intent("com.sec.android.app.samsungapps.REQUEST_INAPP_REVIEW_AUTHORITY")
+            intent.setPackage("com.sec.android.app.samsungapps")
+            intent.putExtra("callerPackage", applicationId) // applicationId : package name
+
+            sendBroadcast(intent)
+            val filter = IntentFilter()
+            filter.addAction("com.sec.android.app.samsungapps.RESPONSE_INAPP_REVIEW_AUTHORITY")
+            object : BroadcastReceiver() {
+                override fun onReceive(context: Context?, intent: Intent?) {
+//                    val hasAuthority = intent?.getBooleanExtra("hasAuthority", false)
+
+                    val deeplinkUri = intent?.getStringExtra("deeplinkUri")
+                    val newIntent = Intent()
+                    newIntent.data = Uri.parse(deeplinkUri)
+
+                    newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_INCLUDE_STOPPED_PACKAGES)
+                    startActivity(newIntent)
+                }
+            }
+        } else {
+            onFailed?.invoke()
+        }
+    } catch (e: Exception) {
+        Log.e("MarketIntent", "startMarketIntent: GalaxyStore => ${e.printStackTrace()}")
         onFailed?.invoke()
     }
 }
