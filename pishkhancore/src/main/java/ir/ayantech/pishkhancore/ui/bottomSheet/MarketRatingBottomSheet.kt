@@ -1,15 +1,11 @@
 package ir.ayantech.pishkhancore.ui.bottomSheet
 
-import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
 import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.databinding.BottomSheetRatingBinding
-import ir.ayantech.pishkhancore.helper.showCafeBazaarIntent
-import ir.ayantech.pishkhancore.helper.showGalaxyStoreIntent
-import ir.ayantech.pishkhancore.helper.showMyketIntent
 import ir.ayantech.pishkhancore.helper.showRatingIntent
 import ir.ayantech.pishkhancore.storage.MarketRating
 import ir.ayantech.whygoogle.activity.WhyGoogleActivity
@@ -17,11 +13,11 @@ import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 class MarketRatingBottomSheet(
     private val activity: WhyGoogleActivity<*>,
     private val applicationId: String,
-    private val flavor: String,
+    private val marketName: String,
     private val onOptionsClicked: ((hasRated: Boolean) -> Unit)? = null
 ) : AyanBaseBottomSheet<BottomSheetRatingBinding>() {
 
-    @Deprecated(message = "pass the flavor parameter to handle which market's intent should be call.")
+    @Deprecated(message = "pass the market name parameter to handle which market's intent should be call.")
     constructor(
         activity: WhyGoogleActivity<*>,
         applicationId: String,
@@ -36,7 +32,7 @@ class MarketRatingBottomSheet(
 
         binding.apply {
             yesBtn.setOnClickListener {
-                activity.showRatingIntent(flavor, applicationId) {
+                activity.showRatingIntent(marketName, applicationId) {
                     Toast.makeText(context, getString(R.string.thanks_for_your_feedback), Toast.LENGTH_SHORT).show()
                 }
                 onButtonClicked(hasRated = true)

@@ -223,12 +223,16 @@
         <item name="android:background">@color/FragmentAyanHistoryAppBarBackground</item>
     </style>
     <style name="FragmentAyanHistory.TextView">
+        <item name="android:background">@color/FragmentAyanHistoryTextViewBackground</item>
         <item name="android:textColor">@color/FragmentAyanHistoryTextColor</item>
     </style>
     <style name="FragmentAyanHistory.TextView.AppBar">
         <item name="android:textColor">@color/FragmentAyanHistoryAppBarTextColor</item>
     </style>
     <style name="FragmentAyanHistory.TextView.NoItem" parent="FragmentAyanHistory.TextView"/>
+    <style name="FragmentAyanHistory.TextView.TotalPayment" parent="FragmentAyanHistory.TextView">
+        <item name="android:textColor">@color/FragmentAyanHistoryTotalPaymentTextColor</item>
+    </style>
     <style name="FragmentAyanHistory.TextView.NoHistory" parent="FragmentAyanHistory.TextView">
         <item name="android:textColor">@color/FragmentAyanHistoryNoHistoryTextColor</item>
     </style>
@@ -320,7 +324,9 @@
     <style name="RowAyanHistory.DividerShape">
         <item name="android:background">@drawable/gray_circle_border</item>
     </style>
-    <style name="RowAyanHistory.InquiryTypeIcon"/>
+    <style name="RowAyanHistory.InquiryTypeIcon">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
     <style name="RowAyanHistory.TextView">
         <item name="android:textColor">@color/RowAyanHistoryTextViewTextColor</item>
     </style>

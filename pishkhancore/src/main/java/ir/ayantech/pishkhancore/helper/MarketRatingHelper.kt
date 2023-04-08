@@ -1,6 +1,5 @@
 package ir.ayantech.pishkhancore.helper
 
-import android.R.attr.targetPackage
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -9,8 +8,6 @@ import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.util.Log
-import android.widget.Toast
-import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.storage.MarketRating
 import ir.ayantech.pishkhancore.ui.bottomSheet.MarketRatingBottomSheet
 import ir.ayantech.whygoogle.activity.WhyGoogleActivity
@@ -22,8 +19,8 @@ private const val PLAY_STORE = "playstore"
 private const val XIAOMI_STORE = "xiaomistore"
 private const val GALAXY_STORE = "galaxystore"
 
-fun WhyGoogleActivity<*>.showRatingIntent(applicationId: String, flavor: String, onFailed: (() -> Unit)? = null) {
-    when(flavor.lowercase()) {
+fun WhyGoogleActivity<*>.showRatingIntent(applicationId: String, marketName: String, onFailed: (() -> Unit)? = null) {
+    when(marketName.lowercase()) {
         CAFE_BAZAAR -> showCafeBazaarIntent(applicationId) { onFailed?.invoke() }
         MYKET -> showMyketIntent(applicationId) { onFailed?.invoke() }
         GALAXY_STORE -> showGalaxyStoreIntent(applicationId) { onFailed?.invoke() }
@@ -33,6 +30,25 @@ fun WhyGoogleActivity<*>.showRatingIntent(applicationId: String, flavor: String,
     }
 }
 
+fun WhyGoogleActivity<*>.showRatingBottomSheet(applicationId: String, marketName: String, callback: ((hasRated: Boolean) -> Unit)? = null) {
+    if (!MarketRating.getUserHasRated(this)) {
+        trying {
+            MarketRatingBottomSheet(
+                activity = this,
+                applicationId = applicationId,
+                marketName = marketName,
+                onOptionsClicked = callback
+            ).show(this.supportFragmentManager, MarketRatingBottomSheet::class.java.simpleName)
+        }
+    } else {
+        callback?.invoke(true)
+    }
+}
+
+@Deprecated(
+    message = "pass the market name parameter to handle which market's intent should be call.",
+    replaceWith = ReplaceWith("use showRatingBottomSheet function with applicationId, marketName and callback parameters.")
+)
 fun WhyGoogleActivity<*>.showRatingBottomSheet(applicationId: String, callback: ((hasRated: Boolean) -> Unit)? = null) {
     if (!MarketRating.getUserHasRated(this)) {
         trying {

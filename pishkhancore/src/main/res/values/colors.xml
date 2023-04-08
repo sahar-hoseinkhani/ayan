@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--    Why Google-->
+    <color name="back_expand">@android:color/transparent</color>
+
     <color name="ayanColorLightGray">#f3f6ff</color>
     <color name="ayanGreyTextColor">#9b9b9b</color>
     <color name="ayanColorHighlight">#1a9b9b9b</color>
@@ -73,10 +76,12 @@
     <color name="FragmentAyanHistoryAppBarBackground">@color/ayanColorPrimary</color>
     <color name="FragmentAyanHistoryContentScrim">@color/FragmentAyanHistoryAppBarBackground</color>
     <color name="FragmentAyanHistoryTextColor">@color/ayanTextColor</color>
+    <color name="FragmentAyanHistoryTextViewBackground">@android:color/transparent</color>
     <color name="FragmentAyanHistoryAppBarTextColor">@color/ayanColorWhite</color>
     <color name="FragmentAyanHistoryDividerColor">@color/ayanColorWhite</color>
     <color name="FragmentAyanHistoryIndicatorColor">@color/ayanColorBlack</color>
     <color name="FragmentAyanHistoryNoHistoryTextColor">@color/ayanColorBlack</color>
+    <color name="FragmentAyanHistoryTotalPaymentTextColor">@color/white</color>
 
     <color name="FragmentAyanHistoryDetailRootBackground">@color/ayanFragmentBackgroundColor</color>
     <color name="FragmentAyanHistoryDetailDescriptionTvBackground">@color/ayanColorHighlight</color>
@@ -96,7 +101,7 @@
 
     <color name="FragmentRulesRootBackground">@color/ayanFragmentBackgroundColor</color>
 
-    <color name="RowAyanBillDetailRootBackground">@color/ayanRowBackgroundColor</color>
+    <color name="RowAyanBillDetailRootBackground">@android:color/transparent</color>
     <color name="RowAyanBillDetailTextViewTextColor">@color/ayanTextColor</color>
     <color name="RowAyanBillDetailKeyTvTextColor">@color/ayanGreyTextColor</color>
     <color name="RowAyanBillDetailCopyIvTint">@color/ayanTextColor</color>
@@ -118,14 +123,14 @@
     <color name="RowAyanJusticeSharesDetailsIconTint">@color/ayanColorAccent</color>
 
     <color name="RowAyanMultiTypeRootBackground">@color/ayanRowBackgroundColor</color>
-    <color name="RowAyanMultiTypeDetailsRvBackground">@color/ayanColorLightGray</color>
+    <color name="RowAyanMultiTypeDetailsRvBackground">@android:color/transparent</color>
 
     <color name="RowBillDetailRootBackground">@android:color/transparent</color>
     <color name="RowBillDetailKeyTvTextColor">#9b9b9b</color>
     <color name="RowBillDetailValueTvTextColor">@color/white</color>
     <color name="RowBillDetailCopyIconTint">@color/white</color>
 
-    <color name="RowRuleRootBackground">@color/ayanRowBackgroundColor</color>
+    <color name="RowRuleRootBackground">@android:color/transparent</color>
     <color name="RowRuleRootTitleTextColor">@color/ayanColorPrimary</color>
     <color name="RowRuleRootDescriptionTextColor">@color/ayanTextColor</color>
 

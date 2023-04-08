@@ -95,12 +95,12 @@
                     </LinearLayout>
 
                     <TextView
+                        style="@style/FragmentAyanHistory.TextView.TotalPayment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/ayanRclPadding"
                         android:gravity="center"
-                        android:text="@string/total_payment_amount"
-                        android:textColor="@color/white" />
+                        android:text="@string/total_payment_amount" />
                 </LinearLayout>
 
             </LinearLayout>
