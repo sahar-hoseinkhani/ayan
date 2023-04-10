@@ -166,6 +166,17 @@
     </style>
     <!--    endregion-->
 
+<!--    region BottomSheetOptionalLogin Layout-->
+    <style name="BottomSheetOptionalLogin">
+        <item name="android:background">@color/BottomSheetOptionalLoginRootBackground</item>
+    </style>
+    <style name="BottomSheetOptionalLogin.TextView">
+        <item name="android:textColor">@color/BottomSheetOptionalLoginTextViewTextColor</item>
+    </style>
+    <style name="BottomSheetOptionalLogin.LoginButton" parent="AyanAppButton"/>
+    <style name="BottomSheetOptionalLogin.EnterButton" parent="AyanAppButton.Outline"/>
+<!--    endregion-->
+
 <!--    region DialogAyanVersionControl Layout-->
     <style name="DialogAyanVersionControl">
         <item name="android:background">@color/DialogAyanVersionControlRootBackground</item>
@@ -296,6 +307,31 @@
     </style>
     <style name="FragmentRules.ContactSupportButton" parent="AyanAppButton"/>
 <!--    endregion-->
+
+    <!--    region FragmentLogin Layout-->
+    <style name="FragmentLogin">
+        <item name="android:background">@color/FragmentLoginRootBackground</item>
+    </style>
+    <style name="FragmentLogin.TextView">
+        <item name="android:textColor">@color/FragmentLoginTextViewTextColor</item>
+    </style>
+    <style name="FragmentLogin.TextView.EnterPhoneNumber" parent="FragmentLogin.TextView"/>
+    <style name="FragmentLogin.TextView.EnterOtpCode" parent="FragmentLogin.TextView"/>
+    <style name="FragmentLogin.TextView.EditPhoneNumber" parent="FragmentLogin.TextView">
+        <item name="android:textColor">@color/FragmentLoginEditPhoneNumberTextViewTextColor</item>
+        <item name="drawableTint">@color/FragmentLoginEditPhoneNumberTextViewTextColor</item>
+    </style>
+    <style name="FragmentLogin.TextView.ResendOtpCode" parent="FragmentLogin.TextView">
+        <item name="android:textColor">@color/FragmentLoginResendOtpCodeTextViewTextColor</item>
+        <item name="drawableTint">@color/FragmentLoginResendOtpCodeTextViewTextColor</item>
+    </style>
+    <style name="FragmentLogin.EditText" parent="AyanAppEditText"/>
+    <style name="FragmentLogin.EditText.PhoneNumber" parent="FragmentLogin.EditText"/>
+    <style name="FragmentLogin.EditText.OtpCode" parent="FragmentLogin.EditText"/>
+    <style name="FragmentLogin.Button" parent="AyanAppButton"/>
+    <style name="FragmentLogin.Button.SendOtp" parent="FragmentLogin.Button"/>
+    <style name="FragmentLogin.Button.ConfirmOtp" parent="FragmentLogin.Button"/>
+    <!--    endregion-->
 
 <!--    region RowAyanBillDetail Layout-->
     <style name="RowAyanBillDetail">

@@ -56,4 +56,14 @@
     <string name="later">later</string>
     <string name="thanks_for_your_feedback">Thanks for your feedback.</string>
 
+    <string name="login_via_phone_number">Login via phone number</string>
+    <string name="skip_and_enter_app">Skip and enter</string>
+    <string name="optional_login_description">Login via phone number to save your data and history</string>
+
+    <string name="enter_phone_number_to_login">Enter phone number to Login</string>
+    <string name="edit_phone_number">Edit phone number</string>
+    <string name="send_otp_code">Send code</string>
+    <string name="enter_otp_code">Enter code that sent to %s</string>
+    <string name="confirm">Confirm</string>
+    <string name="resend_otp_code">Resend code %s</string>
 </resources>

@@ -55,4 +55,14 @@
     <string name="later">بعدا</string>
     <string name="thanks_for_your_feedback">از بازخورد شما سپاس‌گزاریم...</string>
 
+    <string name="login_via_phone_number">ورود با شماره همراه</string>
+    <string name="skip_and_enter_app">ورود به برنامه</string>
+    <string name="optional_login_description">کاربر گرامی با ورود به حساب کاربری از طریق شماره همراه خود می توانید اطلاعات و سوابق خود را نگهداری کنید تا با حذف شدن برنامه اطلاعات شما از بین نروند.</string>
+
+    <string name="enter_phone_number_to_login">برای ورود به برنامه شماره همراه خود را وارد نمایید.</string>
+    <string name="edit_phone_number">ویرایش شماره همراه</string>
+    <string name="send_otp_code">ارسال کد</string>
+    <string name="enter_otp_code">کد ارسال شده به شماره %s را در بخش زیر وارد نمایید.</string>
+    <string name="confirm">تایید</string>
+    <string name="resend_otp_code">ارسال مجدد کد %s</string>
 </resources>

@@ -28,7 +28,7 @@
     <color name="PishkhanCoreTheme_ColorPrimary">@color/colorPrimary</color>
 
     <color name="AyanAppButton_TextColor">@color/ayanColorWhite</color>
-    <color name="AyanAppButtonOutline_TextColor">@color/ayanColorWhite</color>
+    <color name="AyanAppButtonOutline_TextColor">@color/ayanColorAccent</color>
 
     <color name="AyanAppEditText_TextColor">@color/ayanTextColor</color>
     <color name="AyanAppEditText_TextColorHint">@color/ayanGreyTextColor</color>
@@ -60,6 +60,9 @@
     <color name="BottomSheetPostInquiryRootBackground">@color/ayanRootLayoutBackgroundColor</color>
     <color name="BottomSheetPostInquiryButtonTextColor">@color/enable_disable_text_color</color>
     <color name="BottomSheetPostInquiryPostInquiryBtnTextColor">#282828</color>
+
+    <color name="BottomSheetOptionalLoginRootBackground">@color/ayanRootLayoutBackgroundColor</color>
+    <color name="BottomSheetOptionalLoginTextViewTextColor">@color/ayanTextColor</color>
 
     <color name="DialogAyanVersionControlTextViewTextColor">@color/ayanTextColor</color>
     <color name="DialogAyanVersionControlRootBackground">@color/ayanRootLayoutBackgroundColor</color>
@@ -101,6 +104,11 @@
     <color name="post_tracking_bg">@color/ayanColorHighlight</color>
 
     <color name="FragmentRulesRootBackground">@color/ayanFragmentBackgroundColor</color>
+
+    <color name="FragmentLoginRootBackground">@color/ayanFragmentBackgroundColor</color>
+    <color name="FragmentLoginTextViewTextColor">@color/ayanTextColor</color>
+    <color name="FragmentLoginEditPhoneNumberTextViewTextColor">@color/ayanGreenColor</color>
+    <color name="FragmentLoginResendOtpCodeTextViewTextColor">@color/ayanColorAccent</color>
 
     <color name="RowAyanBillDetailRootBackground">@android:color/transparent</color>
     <color name="RowAyanBillDetailTextViewTextColor">@color/ayanTextColor</color>

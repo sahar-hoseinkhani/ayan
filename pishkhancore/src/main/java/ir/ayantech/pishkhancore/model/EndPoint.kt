@@ -15,6 +15,7 @@ object EndPoint {
     const val InquiryBookmarkItem = "InquiryBookmarkItem"
     const val UserSubscriptionGetInfo = "UserSubscriptionGetInfo"
     const val InquiryPostPackageTracking = "InquiryPostPackageTracking"
-
-
+    const val DeviceRegistrationRequest = "DeviceRegistrationRequest"    //	To Send OTP Message For Registration.
+    const val DeviceRegistrationConfirm = "DeviceRegistrationConfirm"    //	To Confirm Device Registration.
+    const val DeviceReport = "DeviceReport"
 }

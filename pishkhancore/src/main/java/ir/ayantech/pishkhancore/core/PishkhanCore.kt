@@ -3,19 +3,16 @@ package ir.ayantech.pishkhancore.core
 import PishkhanUser
 import android.app.Application
 import android.content.Context
+import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
-import com.coolerfall.download.BuildConfig.VERSION_NAME
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import ir.ayantech.ayannetworking.api.*
 import ir.ayantech.ayannetworking.ayanModel.LogLevel
-import ir.ayantech.pishkhancore.BuildConfig
-import ir.ayantech.pishkhancore.R
-import ir.ayantech.pishkhancore.core.PishkhanCore.applicationUniqueToken
 import ir.ayantech.pishkhancore.model.*
 import ir.ayantech.pishkhancore.ui.bottomSheet.AyanCheckStatusBottomSheet
 import ir.ayantech.pishkhancore.ui.fragment.AyanHistoryFragment
 import ir.ayantech.pishkhancore.ui.fragment.AyanRulesFragment
+import ir.ayantech.pishkhancore.ui.fragment.LoginFragment
 import ir.ayantech.pushsdk.core.AyanNotification
 import ir.ayantech.pushsdk.networking.PushNotificationNetworking
 import ir.ayantech.whygoogle.activity.WhyGoogleActivity
@@ -119,25 +116,105 @@ object PishkhanCore {
         changeStatus: OnChangeStatus,
         failure: OnFailure,
         initAdvertisement: () -> Unit,
+        forceLogin: Boolean = false,
+        @DrawableRes productImageResource: Int? = null,
     ) {
-        loginPishkhan(
-            activity = activity,
-            additionalData = additionalData,
-            mobileNumber = mobileNumber,
-            referenceToken = referenceToken,
-            changeStatus = changeStatus,
-            failure = failure,
-            callback = { loginStatus ->
+        if (forceLogin) {
+            if (getUserPhoneNumber(context = activity).isEmpty()) {
+                getToken(
+                    activity = activity,
+                    changeStatus = changeStatus,
+                    failure = failure,
+                    userSubscriptionGetInfoInput = userSubscriptionGetInfoInput,
+                    productImageResource = productImageResource,
+                    callback = {
+                        initAdvertisement()
+                    }
+                )
+            } else {
                 activity.updateToken(
                     userSubscriptionGetInfoInput = userSubscriptionGetInfoInput,
-                    loginStatus = loginStatus,
+                    loginStatus = true,
                     initAdvertisement = initAdvertisement,
                     changeStatus = changeStatus,
                     failure = failure
                 )
             }
+        } else {
+            loginPishkhan(
+                activity = activity,
+                additionalData = additionalData,
+                mobileNumber = mobileNumber,
+                referenceToken = referenceToken,
+                changeStatus = changeStatus,
+                failure = failure,
+                callback = { loginStatus ->
+                    activity.updateToken(
+                        userSubscriptionGetInfoInput = userSubscriptionGetInfoInput,
+                        loginStatus = loginStatus,
+                        initAdvertisement = initAdvertisement,
+                        changeStatus = changeStatus,
+                        failure = failure
+                    )
+                }
+            )
+        }
+    }
+
+    private fun getToken(
+        activity: AppCompatActivity,
+        userSubscriptionGetInfoInput: UserSubscriptionGetInfoInput,
+        changeStatus: OnChangeStatus,
+        failure: OnFailure,
+        @DrawableRes productImageResource: Int? = null,
+        callback: () -> Unit,
+    ) {
+        ayanApi?.ayanCall<DeviceReportOutput>(
+            AyanCallStatus {
+                success {
+                    it.response?.Parameters?.Token?.let { token ->
+                        PishkhanUser.saveSession(activity, token)
+                        startLoginFragment(
+                            activity = activity as WhyGoogleActivity<*>,
+                            fragment = LoginFragment(),
+                            changeStatus = changeStatus,
+                            failure = failure,
+                            callback = callback,
+                            productImageResource = productImageResource
+                        )
+                    }
+                }
+                changeStatus(changeStatus)
+                failure(failure)
+            },
+            EndPoint.DeviceReport,
+            DeviceReportInput(
+                DeviceType = userSubscriptionGetInfoInput.DeviceType,
+                DeviceVersion = userSubscriptionGetInfoInput.DeviceVersion,
+                ReferenceToken = userSubscriptionGetInfoInput.ReferenceToken,
+                ReferenceTokenTypeName = userSubscriptionGetInfoInput.ReferenceTokenTypeName
+            ),
+            hasIdentity = false
         )
     }
+
+    fun startLoginFragment(
+        activity: WhyGoogleInterface,
+        fragment: LoginFragment,
+        changeStatus: OnChangeStatus,
+        failure: OnFailure,
+        @DrawableRes productImageResource: Int? = null,
+        callback: () -> Unit
+    ) {
+        activity.start(fragment.also {
+            it.callback = callback
+            it.changeStatus = changeStatus
+            it.failure = failure
+            it.productImageResource = productImageResource
+        })
+    }
+
+    fun getUserPhoneNumber(context: Context) = PishkhanUser.getPhoneNumber(context = context)
 
     private fun AppCompatActivity.updateToken(
         userSubscriptionGetInfoInput: UserSubscriptionGetInfoInput,
