@@ -200,7 +200,7 @@ object PishkhanCore {
 
     fun startLoginFragment(
         activity: WhyGoogleInterface,
-        fragment: LoginFragment,
+        fragment: LoginFragment = LoginFragment(),
         changeStatus: OnChangeStatus,
         failure: OnFailure,
         @DrawableRes productImageResource: Int? = null,

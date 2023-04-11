@@ -54,7 +54,7 @@
                 android:gravity="center"
                 android:hint="09123456789"
                 android:inputType="phone"
-                android:letterSpacing="0.5"
+                android:letterSpacing="0.1"
                 android:maxLength="11"
                 android:maxLines="1" />
 
@@ -114,9 +114,9 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
-                android:hint="_ _ _ _"
-                android:inputType="phone"
-                android:letterSpacing="1"
+                android:hint="____"
+                android:inputType="numberDecimal"
+                android:letterSpacing="1.5"
                 android:maxLength="4"
                 android:maxLines="1" />
 

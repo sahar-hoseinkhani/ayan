@@ -68,6 +68,10 @@ dependencies {
     //Advertisement
     compileOnly(ayan.WhyGoogle.whyGoogleAdvertisement)
 
+    //SMS Retriever API
+    implementation ("com.google.android.gms:play-services-auth:20.5.0")
+    implementation ("com.google.android.gms:play-services-auth-api-phone:18.0.1")
+
 }
 
 
@@ -90,7 +94,7 @@ afterEvaluate {
                 artifactId = "ayan"
 
                 // Version Library Name (Example : "1.0.0")
-                version = "3.0.0"
+                version = "3.1.0"
             }
         }
     }

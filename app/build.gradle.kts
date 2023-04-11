@@ -50,4 +50,11 @@ dependencies {
     implementation(AndroidX.multiDex)
     //Why Google
     implementation(ayan.WhyGoogle.whyGoogle)
+
+    implementation(ayan.Networking.pishkhanNetworking)
+    //-----------------------------------Ayan-----------------------------------
+    implementation(ayan.WhyGoogle.whyGoogle)
+    implementation("com.coolerfall:android-http-download-manager:1.6.1")
+    implementation("com.github.shadowalker77:wp7progressbar:1.1.0")
+    implementation("com.github.shadowalker77:pushnotification:1.1.8")
 }
