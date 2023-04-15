@@ -20,30 +20,28 @@ import ir.ayantech.ayannetworking.api.OnFailure
 import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.core.PishkhanCore
 import ir.ayantech.pishkhancore.databinding.FragmentLoginBinding
-import ir.ayantech.pishkhancore.helper.SMSBroadcastReceiver
-import ir.ayantech.pishkhancore.helper.startTimer
-import ir.ayantech.pishkhancore.helper.textChanges
+import ir.ayantech.pishkhancore.helper.*
 import ir.ayantech.pishkhancore.model.*
+import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.fragment.WhyGoogleFragment
 import ir.ayantech.whygoogle.helper.changeVisibility
 import ir.ayantech.whygoogle.helper.isNotNull
 import ir.ayantech.whygoogle.helper.isNull
 import ir.ayantech.whygoogle.helper.makeVisible
 
-class LoginFragment: WhyGoogleFragment<FragmentLoginBinding>() {
+open class LoginFragment: WhyGoogleFragment<FragmentLoginBinding>() {
 
     private var phoneNumber = ""
     private var timer: CountDownTimer? = null
     private var smsBroadcastReceiver: SMSBroadcastReceiver? = null
-    private val REQUEST_USER_CONSENT = 200
 
     var callback: (() -> Unit)? = null
     var changeStatus: OnChangeStatus? = null
     var failure: OnFailure? = null
     @DrawableRes var productImageResource: Int? = null
 
-    var otpCodeLength: Int = 4
-    var autoConfirmAfterCodeReceived = true
+    open var otpCodeLength: Int = 4
+    open var autoConfirmAfterCodeReceived = true
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentLoginBinding
         get() = FragmentLoginBinding::inflate
@@ -80,6 +78,7 @@ class LoginFragment: WhyGoogleFragment<FragmentLoginBinding>() {
                 phoneNumberEt.isEnabled = true
                 phoneNumberEt.requestFocus()
                 phoneNumberEt.selectAll()
+                (requireActivity() as? WhyGoogleActivity<*>)?.showKeyboard()
             }
         }
     }
@@ -97,6 +96,8 @@ class LoginFragment: WhyGoogleFragment<FragmentLoginBinding>() {
                     resendOtpTv.makeVisible()
                     editPhoneNumberTv.makeVisible()
                     sentCodeDescription.text = getString(R.string.enter_otp_code, phoneNumber)
+                    otpCodeEt.requestFocus()
+                    (requireActivity() as? WhyGoogleActivity<*>)?.showKeyboard()
                     timer?.cancel()
                     timer = startTimer(
                         millisInFuture = resp?.CountDown ?: 120000,
@@ -126,6 +127,7 @@ class LoginFragment: WhyGoogleFragment<FragmentLoginBinding>() {
                 input = DeviceRegistrationConfirmInput(phoneNumber, otpCodeEt.text.toString()),
                 ayanCallStatus = AyanCallStatus {
                     success {
+                        (requireActivity() as? WhyGoogleActivity<*>)?.hideKeyboard()
                         PishkhanUser.savePhoneNumber(context = requireActivity(), phoneNumber = phoneNumber)
                         callback?.invoke()
                     }
@@ -175,6 +177,7 @@ class LoginFragment: WhyGoogleFragment<FragmentLoginBinding>() {
             val firstLine = message?.split("\n")?.firstOrNull()
             val code = firstLine?.split(":")?.get(1)?.trim()
             binding.otpCodeEt.setText(code)
+            (requireActivity() as? WhyGoogleActivity<*>)?.hideKeyboard()
             if (autoConfirmAfterCodeReceived)
                 confirmCode()
         }
