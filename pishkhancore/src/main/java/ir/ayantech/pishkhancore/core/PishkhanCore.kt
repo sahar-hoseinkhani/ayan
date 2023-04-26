@@ -251,6 +251,7 @@ object PishkhanCore {
 
     fun logout(context: Context) {
         PishkhanUser.saveSession(context, "")
+        PishkhanUser.savePhoneNumber(context, "")
     }
 
     fun startHistoryFragment(

@@ -27,6 +27,8 @@ open class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>()
     var failure: OnFailure? = null
     var onGetHistoryResult: SimpleCallBack? = null
 
+    open var productName: String = ""
+
     override fun onCreate() {
         super.onCreate()
 
@@ -131,7 +133,8 @@ open class AyanHistoryFragment : WhyGoogleFragment<FragmentAyanHistoryBinding>()
                 },
                 EndPoint.PaymentHistoryGetTransactionList,
                 PaymentHistoryGetTransactionListInput(
-                    "", ""
+                    TransactionCategoryTypeName = "",
+                    TransactionTypeName = productName
                 )
             )
         }
