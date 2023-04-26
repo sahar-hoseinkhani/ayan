@@ -32,7 +32,10 @@ class MarketRatingBottomSheet(
 
         binding.apply {
             yesBtn.setOnClickListener {
-                activity.showRatingIntent(marketName, applicationId) {
+                activity.showRatingIntent(
+                    applicationId = applicationId,
+                    marketName = marketName
+                ) {
                     Toast.makeText(context, getString(R.string.thanks_for_your_feedback), Toast.LENGTH_SHORT).show()
                 }
                 onButtonClicked(hasRated = true)
