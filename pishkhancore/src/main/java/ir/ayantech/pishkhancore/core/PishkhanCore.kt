@@ -8,16 +8,18 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import ir.ayantech.ayannetworking.api.*
 import ir.ayantech.ayannetworking.ayanModel.LogLevel
+import ir.ayantech.pishkhancore.core.PishkhanCore.ayanApi
 import ir.ayantech.pishkhancore.model.*
 import ir.ayantech.pishkhancore.ui.bottomSheet.AyanCheckStatusBottomSheet
 import ir.ayantech.pishkhancore.ui.fragment.AyanHistoryFragment
 import ir.ayantech.pishkhancore.ui.fragment.AyanRulesFragment
 import ir.ayantech.pishkhancore.ui.fragment.LoginFragment
-import ir.ayantech.pushsdk.core.AyanNotification
-import ir.ayantech.pushsdk.networking.PushNotificationNetworking
+//import ir.ayantech.pushsdk.core.AyanNotification
+//import ir.ayantech.pushsdk.networking.PushNotificationNetworking
 import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.helper.BooleanCallBack
 import ir.ayantech.whygoogle.standard.WhyGoogleInterface
+import java.io.Serializable
 
 object PishkhanCore {
     var applicationUniqueToken: String? = null
@@ -40,9 +42,9 @@ object PishkhanCore {
         this.baseUrl = baseUrl
         this.serviceBaseUrl = serviceBaseUrl
         this.versionControllingBaseUrl = versionControllingBaseUrl
-        AyanNotification.initialize(application)
-        PushNotificationNetworking.ayanApi.defaultBaseUrl = pushNotificationUrl
-        AyanNotification.reportExtraInfo(AppExtraInfo(PishkhanUser.getSession(application)))
+//        AyanNotification.initialize(application)
+//        PushNotificationNetworking.ayanApi.defaultBaseUrl = pushNotificationUrl
+//        AyanNotification.reportExtraInfo(AppExtraInfo(PishkhanUser.getSession(application)))
         this.ayanApi = AyanApi(
             application,
             { PishkhanUser.getSession(application) },
@@ -58,18 +60,19 @@ object PishkhanCore {
         mobileNumber: String? = null,
         referenceToken: String? = null,
         callback: BooleanCallBack
-    ): BottomSheetDialogFragment? {
+    ): BottomSheetDialogFragment {
         var bsheet: BottomSheetDialogFragment? = null
-        applicationUniqueToken?.let {
+//        applicationUniqueToken?.let {
             bsheet = AyanCheckStatusBottomSheet(
-                activity,
-                it,
-                additionalData,
-                mobileNumber,
-                referenceToken,
-                callback
-            )
-        }
+            ).also {
+//                    it.appCompatActivity = activity as Serializable
+                    it.applicationUniqueToken = applicationUniqueToken
+                    it.additionalData = additionalData
+                    it.mobileNumber = mobileNumber
+                    it.referenceToken = referenceToken
+                    it.callBack = callback as Serializable
+            }
+//        }
         return bsheet
     }
 

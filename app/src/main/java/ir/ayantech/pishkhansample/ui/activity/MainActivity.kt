@@ -1,6 +1,7 @@
 package ir.ayantech.pishkhansample.ui.activity
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -8,10 +9,13 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import ir.ayantech.pishkhancore.core.PishkhanCore
 import ir.ayantech.pishkhancore.model.UserSubscriptionGetInfoInput
+import ir.ayantech.pishkhancore.ui.bottomSheet.AyanCheckStatusBottomSheet
 import ir.ayantech.pishkhansample.R
 import ir.ayantech.pishkhansample.databinding.ActivityMainBinding
+import ir.ayantech.pishkhansample.ui.fragment.InquiryHistoryFragment
 import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.helper.SimpleCallBack
+import java.io.Serializable
 
 class MainActivity : WhyGoogleActivity<ActivityMainBinding>() {
     var bsheet: BottomSheetDialogFragment? = null
@@ -26,7 +30,9 @@ class MainActivity : WhyGoogleActivity<ActivityMainBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+//        setContentView(R.layout.activity_main)
+
+
 
         PishkhanCore.loginPishkhanWithUpdatedToken(
             activity = this,
@@ -38,9 +44,10 @@ class MainActivity : WhyGoogleActivity<ActivityMainBinding>() {
             ),
             changeStatus = {},
             failure = {
+                start(InquiryHistoryFragment())
                 Toast.makeText(this, it.failureMessage, Toast.LENGTH_SHORT).show()
             },
-            forceLogin = true,
+            forceLogin = false,
             productImageResource = R.drawable.ic_technicalexaminationcertificate,
             initAdvertisement = {
                 PishkhanCore.startLoginFragment(
@@ -89,8 +96,8 @@ class MainActivity : WhyGoogleActivity<ActivityMainBinding>() {
 
     override fun onDestroy() {
         super.onDestroy()
-        if (bsheet != null && (bsheet as BottomSheetDialog).isShowing) {
-            ((bsheet as BottomSheetDialog)).dismiss()
+        if (bsheet != null && (bsheet as BottomSheetDialogFragment).showsDialog) {
+            ((bsheet as BottomSheetDialogFragment)).dismiss()
         }
     }
 

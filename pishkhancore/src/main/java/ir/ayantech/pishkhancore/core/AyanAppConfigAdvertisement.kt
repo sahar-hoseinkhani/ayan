@@ -6,6 +6,7 @@ import ir.ayantech.pishkhancore.model.AppConfigAdvertisementOutput
 import ir.ayantech.pishkhancore.model.EndPoint
 import ir.ayantech.pishkhancore.ui.bottomSheet.AyanGeneralErrorBottomSheet
 import ir.ayantech.whygoogle.activity.WhyGoogleActivity
+import java.io.Serializable
 
 object AyanAppConfigAdvertisement {
 
@@ -21,13 +22,12 @@ object AyanAppConfigAdvertisement {
                     }
                 }
                 changeStatus { }
-                failure {
-                    AyanGeneralErrorBottomSheet(
-                        title = activity.resources.getString(R.string.error),
-                        message = it.failureMessage,
-                        buttonText = activity.resources.getString(R.string.retry)
-                    ) {
-                        it.reCallApi()
+                failure {failure ->
+                    AyanGeneralErrorBottomSheet().also {
+                        it.title = activity.resources.getString(R.string.error)
+                        it.message = failure.failureMessage
+                        it.buttonText = activity.resources.getString(R.string.retry)
+                        it.retry = failure.reCallApi as Serializable
                     }.show(activity.supportFragmentManager, "AyanGeneralErrorBottomSheet")
                 }
             },

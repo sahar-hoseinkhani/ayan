@@ -12,6 +12,7 @@ import ir.ayantech.pishkhancore.storage.MarketRating
 import ir.ayantech.pishkhancore.ui.bottomSheet.MarketRatingBottomSheet
 import ir.ayantech.whygoogle.activity.WhyGoogleActivity
 import ir.ayantech.whygoogle.helper.trying
+import java.io.Serializable
 
 private const val CAFE_BAZAAR = "cafebazaar"
 private const val MYKET = "myket"
@@ -33,12 +34,11 @@ fun WhyGoogleActivity<*>.showRatingIntent(applicationId: String, marketName: Str
 fun WhyGoogleActivity<*>.showRatingBottomSheet(applicationId: String, marketName: String, callback: ((hasRated: Boolean) -> Unit)? = null) {
     if (!MarketRating.getUserHasRated(this)) {
         trying {
-            MarketRatingBottomSheet(
-                activity = this,
-                applicationId = applicationId,
-                marketName = marketName,
-                onOptionsClicked = callback
-            ).show(this.supportFragmentManager, MarketRatingBottomSheet::class.java.simpleName)
+            MarketRatingBottomSheet().also {
+                it.applicationId = applicationId
+                it.marketName = marketName
+                it.onOptionsClicked = callback as Serializable
+            }.show(this.supportFragmentManager, MarketRatingBottomSheet::class.java.simpleName)
         }
     } else {
         callback?.invoke(true)
