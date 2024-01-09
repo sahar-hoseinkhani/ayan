@@ -14,13 +14,13 @@ import ir.ayantech.pishkhancore.core.PishkhanCore
 import ir.ayantech.pishkhancore.core.VersionControl
 import ir.ayantech.pishkhancore.databinding.BottomSheetAyanCheckStatusBinding
 import ir.ayantech.pishkhancore.helper.InformationHelper
+import ir.ayantech.pishkhancore.helper.nullableFragmentArgument
 import ir.ayantech.pishkhancore.model.EndPoint
 import ir.ayantech.pishkhancore.model.LoginInput
 import ir.ayantech.pishkhancore.model.LoginOutput
 import ir.ayantech.whygoogle.helper.BooleanCallBack
 import ir.ayantech.whygoogle.helper.makeGone
 import ir.ayantech.whygoogle.helper.makeVisible
-import ir.ayantech.whygoogle.helper.nullableFragmentArgument
 import java.io.Serializable
 
 class AyanCheckStatusBottomSheet(

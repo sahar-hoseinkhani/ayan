@@ -5,13 +5,13 @@ import androidx.appcompat.widget.AppCompatButton
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
 import com.afollestad.materialdialogs.customview.getCustomView
-import ir.ayantech.advertisement.helper.trying
 import ir.ayantech.ayannetworking.api.OnChangeStatus
 import ir.ayantech.ayannetworking.api.OnFailure
 import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.core.PishkhanCore
 import ir.ayantech.pishkhancore.ui.fragment.LoginFragment
 import ir.ayantech.whygoogle.activity.WhyGoogleActivity
+import ir.ayantech.whygoogle.helper.trying
 
 fun MaterialDialog.showOptionalLoginBottomSheet(
     activity: WhyGoogleActivity<*>,

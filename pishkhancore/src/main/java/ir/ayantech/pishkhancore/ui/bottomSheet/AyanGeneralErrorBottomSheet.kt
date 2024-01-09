@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import ir.ayantech.pishkhancore.databinding.BottomSheetAyanErrorBinding
+import ir.ayantech.pishkhancore.helper.nullableFragmentArgument
 import ir.ayantech.whygoogle.helper.SimpleCallBack
-import ir.ayantech.whygoogle.helper.nullableFragmentArgument
 import java.io.Serializable
 
 class AyanGeneralErrorBottomSheet() : AyanBaseBottomSheet<BottomSheetAyanErrorBinding>() {

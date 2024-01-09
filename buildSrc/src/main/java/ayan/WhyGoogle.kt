@@ -1,10 +1,10 @@
 package ayan
 
 object WhyGoogle {
-    private const val whyGoogleVersion = "0.8.2"
+    private const val whyGoogleVersion = "0.5.18"
     const val whyGoogle = "com.github.shadowalker77:whygoogle:${whyGoogleVersion}"
 
-    private const val whyGoogleAdvertisementVersion = "1.4.7"
+    private const val whyGoogleAdvertisementVersion = "2.1.3"
     const val whyGoogleAdvertisement =
-        "com.github.alitafreshi:why-google-advertisement:$whyGoogleAdvertisementVersion"
+        "com.github.AyanTech:WhyGoogleAdvertisement:$whyGoogleAdvertisementVersion"
 }

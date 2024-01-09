@@ -5,11 +5,11 @@ import androidx.appcompat.widget.AppCompatButton
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
 import com.afollestad.materialdialogs.customview.getCustomView
-import ir.ayantech.advertisement.helper.trying
 import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.core.getPassportStatusFromPost
 import ir.ayantech.pishkhancore.helper.textChanges
 import ir.ayantech.pishkhancore.model.post_package.InquiryPostPackageTrackingOutput
+import ir.ayantech.whygoogle.helper.trying
 
 fun MaterialDialog.postInquiryBottomSheet(navigateToPostResult: (InquiryPostPackageTrackingOutput?) -> Unit) {
     cornerRadius(8f)

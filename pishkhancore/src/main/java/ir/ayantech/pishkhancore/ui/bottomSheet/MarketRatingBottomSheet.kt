@@ -6,10 +6,10 @@ import android.view.View
 import android.widget.Toast
 import ir.ayantech.pishkhancore.R
 import ir.ayantech.pishkhancore.databinding.BottomSheetRatingBinding
+import ir.ayantech.pishkhancore.helper.nullableFragmentArgument
 import ir.ayantech.pishkhancore.helper.showRatingIntent
 import ir.ayantech.pishkhancore.storage.MarketRating
 import ir.ayantech.whygoogle.activity.WhyGoogleActivity
-import ir.ayantech.whygoogle.helper.nullableFragmentArgument
 import java.io.Serializable
 
 class MarketRatingBottomSheet(

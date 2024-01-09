@@ -94,7 +94,7 @@ afterEvaluate {
                 artifactId = "ayan"
 
                 // Version Library Name (Example : "1.0.0")
-                version = "3.3.0"
+                version = "3.3.1"
             }
         }
     }
