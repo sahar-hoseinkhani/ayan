@@ -14,6 +14,8 @@ import ir.ayantech.pishkhancore.ui.bottomSheet.AyanCheckStatusBottomSheet
 import ir.ayantech.pishkhancore.ui.fragment.AyanHistoryFragment
 import ir.ayantech.pishkhancore.ui.fragment.AyanRulesFragment
 import ir.ayantech.pishkhancore.ui.fragment.LoginFragment
+import ir.ayantech.pushsdk.core.AyanNotification
+import ir.ayantech.pushsdk.networking.PushNotificationNetworking
 //import ir.ayantech.pushsdk.core.AyanNotification
 //import ir.ayantech.pushsdk.networking.PushNotificationNetworking
 import ir.ayantech.whygoogle.activity.WhyGoogleActivity
@@ -42,9 +44,9 @@ object PishkhanCore {
         this.baseUrl = baseUrl
         this.serviceBaseUrl = serviceBaseUrl
         this.versionControllingBaseUrl = versionControllingBaseUrl
-//        AyanNotification.initialize(application)
-//        PushNotificationNetworking.ayanApi.defaultBaseUrl = pushNotificationUrl
-//        AyanNotification.reportExtraInfo(AppExtraInfo(PishkhanUser.getSession(application)))
+        AyanNotification.initialize(application)
+        PushNotificationNetworking.ayanApi.defaultBaseUrl = pushNotificationUrl
+        AyanNotification.reportExtraInfo(AppExtraInfo(PishkhanUser.getSession(application)))
         this.ayanApi = AyanApi(
             application,
             { PishkhanUser.getSession(application) },
